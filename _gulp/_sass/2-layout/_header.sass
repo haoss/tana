@@ -126,3 +126,86 @@
           background: $color-blue
       strong
         color: $color-blue
+
+  &__text
+    float: left
+    font-family: $font-intro
+    text-transform: uppercase
+    margin-left: 30px
+    margin-top: 22px
+    strong
+      font-size: rem(25)
+      display: block
+      line-height: 1
+      margin-bottom: 3px
+      color: $color-dark
+      font-family: $font-intro
+    small
+      display: block
+      font-size: rem(15)
+      color: #767779
+      letter-spacing: 2.5px
+
+  &__search
+    float: right
+    margin-right: 30px
+    width: 512px
+    margin-top: 26px
+    position: relative
+    &.is-search
+      .header__search__input
+        border-color: $color-blue
+      .header__fast-search
+        opacity: 1
+        visibility: visible
+    form
+      position: relative
+      +clearfix
+    &__input
+      width: calc(100% - 37px)
+      border: 1px solid transparent
+      background: #eff3f8
+      height: 37px
+      padding: 0 15px
+      font-size: rem(12)
+      font-family: $font-roboto
+      color: $primary-color
+      transition: border 0.35s
+    &__btn
+      width: 37px
+      height: 37px
+      background-color: $color-blue
+      border: 0
+      position: relative
+      color: $color-white
+      float: right
+      font-size: rem(20)
+      i
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+
+  &__fast-search
+    position: absolute
+    top: 36px
+    left: 0
+    right: 0
+    background: $color-white
+    z-index: 10
+    border: 1px solid $color-blue
+    opacity: 0
+    visibility: hidden
+    transition: opacity 0.35s
+    ul
+      padding: 0
+      margin: 0
+      li
+        list-style: none
+        margin: 0
+        a
+          display: block
+          text-decoration: none
+        &.last
+          a
+            border-top: 1px solid #eff3f8

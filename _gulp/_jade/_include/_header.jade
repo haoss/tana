@@ -30,7 +30,25 @@ header.header
   .header__bottom
     .container
       
-      .header__search
+      .header__text
+        strong расходные материалы и запчасти 
+        small для промышленного швейного оборудования
+      
+      .header__search.is-search
+        form(action="#!").header__search__form
+          input(type="text" placeholder="Введите наименование").header__search__input
+          button(type="submit").header__search__btn
+            i.ion-android-search
+        .header__fast-search
+          ul
+            li
+              a(href="#!") 1
+            li
+              a(href="#!") 2
+            li
+              a(href="#!") 3
+            li.last
+              a(href="#!") Все резуальтаты поиска
       
   .header__menu
     .container

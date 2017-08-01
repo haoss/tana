@@ -79,6 +79,22 @@ $(document).on('ready', function(){
     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
 
+  // Header search
+  $('.header__search__input').on('keypress', function(e){
+    // e.preventDefault();
+    e.stopPropagation();
+    $('.header__search').addClass('is-search');
+    console.log(e);
+  });
+  $('.header__search__input').on('click', function(e){
+    e.stopPropagation();
+  });
+  $(document).on('click', function(){
+    setTimeout(function(){
+      $('.header__search').removeClass('is-search');
+    }, 1000);
+  });
+
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
