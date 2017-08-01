@@ -95,6 +95,20 @@ $(document).on('ready', function(){
     }, 1000);
   });
 
+  // Seo text
+  // seoText();
+
+  // Main banner carousel
+  $('.main-carousel').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: false,
+    customPaging: function(slider, i) {
+      return $('<span>').text(i + 1);
+    }
+  })
+
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
@@ -112,6 +126,11 @@ $(document).on('ready', function(){
 $(window).on('load', function() {
   // $(".loader_inner").fadeOut();
   $(".loader").delay(400).fadeOut("slow");
+});
+
+$(window).on('resize', function(){
+  // Seo text
+  // seoText();
 });
 
 /*
@@ -177,4 +196,22 @@ function simpleForm(form, callback) {
 
     return false;
   });
+}
+
+function seoText(){
+  var body = $('.footer__seo__text');
+  var bodyHeight = body.height();
+  var p = body.find('p:first-child');
+  var pHeight = p.height();
+  var width = $(window).width();
+
+  if (width < 767) {
+    body.height(pHeight);
+  } else if (width > 7671) {
+    body.height('inherit');
+  }
+
+
+
+  console.log(p.height());
 }

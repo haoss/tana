@@ -1,8 +1,37 @@
 /* modules */
 
-/* gallery */
-.gallery
-  &__item
-    padding: 5px
-    background: $color-white
-    box-shadow: 0 0 5px rgba($color-black,0.5)
+.main-carousel
+  .slick-dots
+    text-align: left
+    position: absolute
+    bottom: 16px
+    left: 16px
+    margin: 0
+    padding: 0
+    font-size: rem(12)
+    li
+      margin: 0
+      list-style: none
+      width: auto
+      height: auto
+      span
+        display: inline-block
+        height: 15px
+        width: 15px
+        background: rgba($color-white, 0.1)
+        text-align: center
+        line-height: 16px
+        color: #252528
+        font-family: $font-intro
+        overflow: hidden
+        transition: all 0.35s
+        position: relative
+        z-index: 50
+        &:hover
+          background: rgba($color-white, 0.5)
+      &.slick-active
+        span
+          background: $color-blue
+          color: $color-white
+      &+li
+        margin-left: 3px

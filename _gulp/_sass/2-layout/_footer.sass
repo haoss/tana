@@ -1,4 +1,86 @@
 /* footer */
 .footer
-  background-color: $color-gray
-  height: 100px
+  font-size: rem(13)
+  &__seo
+    background: #eff3f8
+    font-size: rem(13)
+    padding-top: 37px
+    padding-bottom: 35px
+    &__text
+      color: #6f7075
+      columns: 2
+      p
+        line-height: 1.55
+
+  &__about
+    background: #202124
+    font-size: rem(11)
+    text-align: center
+    color: #727379
+    padding: 10px 0
+    p
+      margin: 0
+      line-height: 1.6
+
+  &__bottom
+    background: #2e2f33
+    color: #cdcdcd
+    padding-top: 23px
+    padding-bottom: 23px
+    font-size: rem(11)
+    a
+      color: #cdcdcd
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
+  &__title
+    color: #727379
+    font-size: rem(13)
+    text-transform: uppercase
+    font-family: $font-intro
+    margin-bottom: 15px
+
+  &__navigation
+    ul
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        margin: 0 0 5px 0
+
+  &__info
+    font-size: rem(11)
+    p
+      margin-bottom: 0
+    strong
+      font-family: $font-intro
+      display: inline-block
+      line-height: 1
+      font-size: rem(13)
+      position: relative
+      padding-left: 22px
+      margin-bottom: 15px
+      margin-top: 2px
+      font-weight: 400
+      a
+        color: #cdcdcd
+        text-decoration: none
+        &:hover
+          text-decoration: none
+      &::before
+        height: 15px
+        width: 15px
+        border-radius: 50%
+        overflow: hidden
+        font-family: $font-ionicons
+        content: "\f4b9"
+        color: #2e2f33
+        background: #727379
+        text-align: center
+        line-height: 15px
+        position: absolute
+        display: block
+        left: 0
+        top: -1px
+        font-size: rem(13)

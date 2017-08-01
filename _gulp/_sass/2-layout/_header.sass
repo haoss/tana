@@ -27,6 +27,8 @@
 
   &__menu
     background-color: $color-dark
+    height: 40px
+    position: relative
 
   &__phone
     font-size: rem(20)
@@ -89,7 +91,7 @@
       width: 44px
       height: 44px
       i
-        transition: background 0.25s
+        // transition: background 0.25s
       span
         position: absolute
         width: 19px
@@ -100,10 +102,10 @@
         color: $color-white
         font-size: rem(9)
         text-align: center
-        line-height: 21px
+        line-height: 20px
         right: -3px
         top: -3px
-        transition: color 0.35s
+        transition: all 0.35s
     strong
       font-size: rem(20)
       display: block
@@ -155,6 +157,7 @@
     &.is-search
       .header__search__input
         border-color: $color-blue
+        background-color: $color-white
       .header__fast-search
         opacity: 1
         visibility: visible
@@ -171,6 +174,9 @@
       font-family: $font-roboto
       color: $primary-color
       transition: border 0.35s
+      position: absolute
+      left: 0
+      top: 0
     &__btn
       width: 37px
       height: 37px
@@ -185,6 +191,8 @@
         left: 50%
         top: 50%
         transform: translate(-50%,-50%)
+      &:hover
+        background-color: darken($color-blue, 10%)
 
   &__fast-search
     position: absolute
