@@ -1,8 +1,128 @@
 /* header */
 .header
-  background-color: $color-gray
-  height: 100px
+  margin-bottom: 32px
+  &__logo
+    position: relative
+    display: inline-block
+    float: left
+    img
+      display: block
+      width: 252px
+      height: 50px
+    &>a
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      z-index: 10
 
-  ul
-    li
-      display: inline
+  &__top
+    border-bottom: 1px solid #eff3f8
+    padding: 17px 0 0 0
+    height: 84px
+
+  &__bottom
+    height: 89px
+
+  &__menu
+    background-color: $color-dark
+
+  &__phone
+    font-size: rem(20)
+    float: left
+    margin-left: 47px
+    padding-top: 7px
+    width: 160px
+    strong
+      display: block
+      font-family: $font-intro
+      line-height: 1
+      margin-bottom: 1px
+      a
+        text-decoration: none
+        color: $color-dark
+    small
+      display: block
+      font-size: rem(11)
+      a
+        text-decoration: none
+        display: inline-block
+        border-bottom: 1px dashed $color-blue
+        &:hover
+          border-bottom-color: transparent
+
+  &__time
+    margin-left: 66px
+    float: left
+    padding-top: 7px
+    font-size: rem(20)
+    strong
+      display: block
+      font-family: $font-intro
+      line-height: 1
+      margin-bottom: 1px
+    small
+      display: block
+      font-size: rem(11)
+      color: #9b9b9b
+
+  &__cart
+    position: relative
+    float: right
+    padding-left: 55px
+    min-height: 44px
+    min-width: 167px
+    padding-top: 5px
+    margin-top: 4px
+    &>a
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      z-index: 10
+    &__icon
+      position: absolute
+      left: 0
+      top: 0
+      width: 44px
+      height: 44px
+      i
+        transition: background 0.25s
+      span
+        position: absolute
+        width: 19px
+        height: 19px
+        border-radius: 50%
+        overflow: hidden
+        background: $color-dark
+        color: $color-white
+        font-size: rem(9)
+        text-align: center
+        line-height: 21px
+        right: -3px
+        top: -3px
+        transition: color 0.35s
+    strong
+      font-size: rem(20)
+      display: block
+      font-family: $font-intro
+      line-height: 1
+      margin-bottom: 3px
+      color: $color-dark
+      transition: color 0.35s
+    small
+      display: block
+      font-size: rem(11)
+      color: #9b9b9b
+      i
+        vertical-align: 0px
+    &:hover
+      .icon--cart
+        @include sprite($icon-cart-hover)
+      .header__cart__icon
+        span
+          background: $color-blue
+      strong
+        color: $color-blue

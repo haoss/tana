@@ -1,15 +1,47 @@
 // Header
 header.header
-  .container
-    
-    -var navigation = { 'Главная': '#', 'О нас': '#', 'Продукция': '#', 'Сотрудничество': '#', 'Наши магазины': '#', 'Контакты': '#'};
-    
-    nav.navigation(role="navigation")
-      ul
-        each val, key in navigation
-          if active === key
-            li.active
-              a(href=val, title=key)= key
-          else
-            li
-              a(href=val, title=key)= key
+  
+  .header__top
+    .container
+      
+      .header__logo
+        a(href="#!")
+        img(src="./img/logo-tana.svg", alt="")
+      
+      .header__phone.hidden-xs
+        strong
+          a(href="callto:") 8 800 555 50 50
+        small
+          a(href="#popup-call").open-popup-link Заказать обратный звонок
+      
+      .header__time.hidden-sm.hidden-xs
+        strong 9:00 - 18:00
+        small Пн - Пт , Сб - ВС выходной
+      
+      .header__cart
+        a(href="#!")
+        .header__cart__icon
+          i.icon.icon--cart
+          span 97
+        strong корзина
+        small Товаров на 99 880
+          i.icon-rouble
+  
+  .header__bottom
+    .container
+      
+      .header__search
+      
+  .header__menu
+    .container
+      -var navigation = { 'Главная': '#', 'О компании': '#', 'Оплата и доставка': '#', 'Производители': '#', 'Контакты': '#', 'Спец.предложения': '#'};
+      
+      nav.navigation(role="navigation")
+        ul
+          each val, key in navigation
+            if active === key
+              li.active
+                a(href=val, title=key)= key
+            else
+              li
+                a(href=val, title=key)= key

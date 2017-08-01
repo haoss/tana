@@ -27,9 +27,26 @@
     transform: none !important
     animation: none !important
 
+  .header
+    &__logo
+      margin-top: 3px
+      img
+        width: 221px
+        height: 44px
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
-  /**/
+  .header
+    &__logo
+      margin-top: 9px
+      img
+        width: 163px
+        height: 32px
+    &__cart
+      padding-left: 0
+      min-width: 110px
+      &__icon
+        display: none
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

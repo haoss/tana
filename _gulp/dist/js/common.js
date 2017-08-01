@@ -79,8 +79,6 @@ $(document).on('ready', function(){
     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
 
-  console.log('ready');
-
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
@@ -98,7 +96,6 @@ $(document).on('ready', function(){
 $(window).on('load', function() {
   // $(".loader_inner").fadeOut();
   $(".loader").delay(400).fadeOut("slow");
-  console.log('load');
 });
 
 /*

@@ -11,19 +11,63 @@
     </head>
     <body>
         <!-- Preloader-->
+        <div class="loader">
+            <div class="loader__block"></div>
+        </div>
+        <div id="popup-call" class="popup mfp-hide">
+            <div class="form">
+                <form action="#!">
+                    <fieldset>
+                        <legend>обратный звонок</legend>
+                        <div class="form-group has-feedback has-error">
+                            <label class="hidden">Ваше имя</label>
+                            <input type="text" placeholder="Ваше имя" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="hidden">Номер телефона</label>
+                            <input type="text" placeholder="Номер телефона" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="hidden">Время звонка</label>
+                            <select class="form-control">
+                                <option>Время звонка</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">заказать звонок</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
         <!-- Header-->
         <header class="header">
-            <div class="container">
-                <nav role="navigation" class="navigation">
-                    <ul>
-                        <li class="active"><a href="#" title="Главная">Главная</a></li>
-                        <li><a href="#" title="О нас">О нас</a></li>
-                        <li><a href="#" title="Продукция">Продукция</a></li>
-                        <li><a href="#" title="Сотрудничество">Сотрудничество</a></li>
-                        <li><a href="#" title="Наши магазины">Наши магазины</a></li>
-                        <li><a href="#" title="Контакты">Контакты</a></li>
-                    </ul>
-                </nav>
+            <div class="header__top">
+                <div class="container">
+                    <div class="header__logo"><a href="#!"></a><img src="./img/logo-tana.svg" alt=""></div>
+                    <div class="header__phone hidden-xs"><strong><a href="callto:">8 800 555 50 50</a></strong><small><a href="#popup-call" class="open-popup-link">Заказать обратный звонок</a></small></div>
+                    <div class="header__time hidden-sm hidden-xs"><strong>9:00 - 18:00</strong><small>Пн - Пт , Сб - ВС выходной</small></div>
+                    <div class="header__cart"><a href="#!"></a>
+                        <div class="header__cart__icon"><i class="icon icon--cart"></i><span>97</span></div><strong>корзина</strong><small>Товаров на 99 880<i class="icon-rouble"></i></small>
+                    </div>
+                </div>
+            </div>
+            <div class="header__bottom">
+                <div class="container">
+                    <div class="header__search"></div>
+                </div>
+            </div>
+            <div class="header__menu">
+                <div class="container">
+                    <nav role="navigation" class="navigation">
+                        <ul>
+                            <li class="active"><a href="#" title="Главная">Главная</a></li>
+                            <li><a href="#" title="О компании">О компании</a></li>
+                            <li><a href="#" title="Оплата и доставка">Оплата и доставка</a></li>
+                            <li><a href="#" title="Производители">Производители</a></li>
+                            <li><a href="#" title="Контакты">Контакты</a></li>
+                            <li><a href="#" title="Спец.предложения">Спец.предложения</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
         <div class="content">
@@ -51,7 +95,7 @@
         -->
         <!-- Footer js-->
         <!-- Load Scripts-->
-        <script src="./js/libs.js" async></script>
-        <script src="./js/common.js" async></script>
+        <script src="./js/libs.js"></script>
+        <script src="./js/common.js"></script>
     </body>
 </html>

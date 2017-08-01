@@ -6,3 +6,35 @@
     li
         list-style: none
         margin: 0
+
+.navigation
+  font-size: rem(15)
+  ul
+    display: table
+    width: 100%
+    &>li
+      display: table-cell
+      width: auto
+      &>a
+        display: block
+        text-align: center
+        // width: 1000px
+        height: 40px
+        line-height: 36px
+        vertical-align: middle
+        text-decoration: none
+        color: $color-white
+        text-transform: uppercase
+        font-family: $font-intro
+        border: 3px solid transparent
+        transition: color 0.35s, background-color 0.35s
+        white-space: nowrap
+        &:hover
+          border-color: $color-white
+          background-color: $color-blue
+      &.active
+        &>a
+          background-color: $color-lightdark
+          &:hover
+            border-color: transparent
+            background-color: $color-lightdark
