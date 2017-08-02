@@ -1,6 +1,7 @@
 /* modules */
 
 .main-carousel
+  overflow: hidden
   .slick-dots
     text-align: left
     position: absolute
@@ -35,3 +36,205 @@
           color: $color-white
       &+li
         margin-left: 3px
+
+.hamburger
+  &--header
+    opacity: 1 !important
+    padding: 0 15px
+    height: 40px
+    width: 120px
+    position: relative
+    text-align: center
+    display: none
+    margin: 0 auto
+    .hamburger-box
+      width: 14px
+      height: 12px
+      // background-color: pink
+    .hamburger-inner
+      &::before, &::after
+        background-color: #989898
+        border-radius: 0
+        width: 14px
+        height: 2px
+      &::before
+        top: 5px !important
+      &::after
+        top: 10px !important
+      background-color: #989898
+      border-radius: 0
+      width: 14px
+      height: 2px
+      margin-top: 0
+      top: 0 !important
+    &.is-active
+      .hamburger-inner
+        transform: translate3d(0, 5px, 0) rotate(45deg)
+        background-color: $color-white
+        &::before, &::after
+          background-color: $color-white
+        &::before
+          transform: rotate(-45deg) translate3d(-5.71429px, -2px, 0)
+        &::after
+          transform: translate3d(0, -10px, 0) rotate(-90deg)
+      strong
+        color: $color-white
+    strong
+      color: #989898
+      text-transform: uppercase
+      font-size: rem(18)
+      font-family: $font-intro
+      margin-left: 7px
+      // position: absolute
+
+// Section
+.section__head
+  font-size: rem(28)
+  font-family: $font-intro
+  text-transform: uppercase
+  color: $color-blue
+  margin-bottom: 20px
+  padding-left: 54px
+  position: relative
+  line-height: 1
+  &::before
+    position: absolute
+    left: 0
+    top: 14px
+    height: 1px
+    width: 40px
+    background-color: $color-blue
+    content: ''
+  &--small
+    font-size: rem(14)
+    padding-left: 50px
+    &::before
+      top: 6px
+
+// Catalog
+.catalog
+  &__block
+    position: relative
+    background: transparent
+    padding: 30px 7px 7px 7px
+    width: 33.3%
+    box-shadow: 0 0 0 rgba($color-black, 0.15)
+    height: 435px
+    float: left
+    transition: box-shadow 0.35s
+    margin-bottom: 20px
+    &:nth-child(odd)
+      background-color: pink
+      &::after, &::before
+        content: ''
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 0
+        width: 1px
+        background: #e5e5e5
+      &::before
+        right: inherit
+        left: 0
+    &:hover
+      box-shadow: 0 0 30px rgba($color-black, 0.15)
+      z-index: 5
+      border-color: transparent
+      background: $color-white
+      .catalog__block__line
+        opacity: 1
+      .catalog__block__bottom
+        background: #eff3f8
+      .catalog__block__title
+        color: $color-blue
+    &__line
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      height: 5px
+      background-color: $color-blue
+      opacity: 0
+      transition: opacity 0.35s
+      &::after
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: 5px
+        content: ''
+        width: 0
+        height: 0
+        border-left: 6px solid transparent
+        border-right: 6px solid transparent
+        border-top: 6px solid $color-blue
+    &__bottom
+      background: transparent
+      height: 118px
+      text-align: center
+      padding-top: 15px
+      transition: background 0.35s
+    &__info
+      text-align: center
+      font-size: rem(11)
+      color: #9d9d9d
+      line-height: 1
+      white-space: nowrap
+      overflow: hidden
+      margin-bottom: 13px
+    &__title
+      color: $color-dark
+      text-transform: uppercase
+      font-family: $font-intro
+      text-align: center
+      font-size: rem(16)
+      height: 60px
+      overflow: hidden
+      line-height: 1.2
+      transition: color 0.35s
+    &__img
+      position: relative
+      overflow: hidden
+      height: 170px
+      margin-bottom: 27px
+      img
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+    &__price
+      text-align: center
+      font-size: rem(30)
+      color: $color-dark
+      white-space: nowrap
+      height: 30px
+      // background: pink
+      margin-bottom: 15px
+      &>div
+        display: inline-block
+        line-height: 1
+        position: relative
+        top: -6px
+        strong
+          font-family: $font-intro
+          text-transform: uppercase
+          .icon-rouble
+            font-size: rem(28)
+            margin-left: -5px
+        sup
+          font-size: rem(17)
+          color: #aeb1b4
+          position: relative
+          &::after
+            content: ''
+            position: absolute
+            height: 2px
+            background-color: #fd5a1a
+            top: 10px
+            left: 0
+            right: 5px
+            transform: rotate(-11deg)
+  &__row
+    +clearfix
+    // background: pink
+    margin-left: -15px
+    margin-right: -15px

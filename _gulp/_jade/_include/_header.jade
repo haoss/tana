@@ -40,19 +40,37 @@ header.header
           button(type="submit").header__search__btn
             i.ion-android-search
         .header__fast-search
-          ul
+          ul.fast-search
             li
-              a(href="#!") 1
+              a(href="#!")
+                img(src="./img/fast-search-img1.png", alt="")
+                span.fast-search__title Стержень для быстрой смены лапок 4009
+                span.fast-search__price 699
+                  i.icon.icon-rouble
             li
-              a(href="#!") 2
+              a(href="#!")
+                img(src="./img/fast-search-img2.png", alt="")
+                span.fast-search__title Стержень для быстрой смены лапок 4009
+                span.fast-search__price 522
+                  i.icon.icon-rouble
             li
-              a(href="#!") 3
+              a(href="#!")
+                img(src="./img/fast-search-img3.png", alt="")
+                span.fast-search__title Стержень для быстрой смены лапок 4009
+                span.fast-search__price 129
+                  i.icon.icon-rouble
             li.last
               a(href="#!") Все резуальтаты поиска
       
   .header__menu
     .container
       -var navigation = { 'Главная': '#', 'О компании': '#', 'Оплата и доставка': '#', 'Производители': '#', 'Контакты': '#', 'Спец.предложения': '#'};
+      
+      button#btn-mobile.hamburger(type='button').hamburger--slider.hamburger--header
+        span.hamburger-box
+          span.hamburger-inner
+        strong Меню
+
       
       nav.navigation(role="navigation")
         ul

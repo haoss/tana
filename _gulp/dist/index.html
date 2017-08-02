@@ -61,10 +61,10 @@
                             <button type="submit" class="header__search__btn"><i class="ion-android-search"></i></button>
                         </form>
                         <div class="header__fast-search">
-                            <ul>
-                                <li><a href="#!">1</a></li>
-                                <li><a href="#!">2</a></li>
-                                <li><a href="#!">3</a></li>
+                            <ul class="fast-search">
+                                <li><a href="#!"><img src="./img/fast-search-img1.png" alt=""><span class="fast-search__title">Стержень для быстрой смены лапок 4009</span><span class="fast-search__price">699<i class="icon icon-rouble"></i></span></a></li>
+                                <li><a href="#!"><img src="./img/fast-search-img2.png" alt=""><span class="fast-search__title">Стержень для быстрой смены лапок 4009</span><span class="fast-search__price">522<i class="icon icon-rouble"></i></span></a></li>
+                                <li><a href="#!"><img src="./img/fast-search-img3.png" alt=""><span class="fast-search__title">Стержень для быстрой смены лапок 4009</span><span class="fast-search__price">129<i class="icon icon-rouble"></i></span></a></li>
                                 <li class="last"><a href="#!">Все резуальтаты поиска</a></li>
                             </ul>
                         </div>
@@ -73,6 +73,7 @@
             </div>
             <div class="header__menu">
                 <div class="container">
+                    <button id="btn-mobile" type="button" class="hamburger hamburger--slider hamburger--header"><span class="hamburger-box"><span class="hamburger-inner"></span></span><strong>Меню</strong></button>
                     <nav role="navigation" class="navigation">
                         <ul>
                             <li class="active"><a href="#" title="Главная">Главная</a></li>
@@ -91,18 +92,211 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
+                        <div class="catalog__title">Каталог товаров</div>
+                        <div class="catalog__navigation">
+                            <ul>
+                                <li><a href="#!">Запчасти Отечественныe</a></li>
+                                <li><a href="#!">Запчасти Раскройных Машин</a></li>
+                                <li><a href="#!">Запчасти Специальные</a></li>
+                                <li><a href="#!">Запчасти универсальные</a></li>
+                                <li><a href="#!">Комплектующие к ВТО</a></li>
+                                <li><a href="#!">Оснастка швейных машин</a></li>
+                                <li><a href="#!">Очистители Масло Мел</a></li>
+                                <li><a href="#!">Приспособления Окантователи</a></li>
+                                <li><a href="#!">Этикетпистолеты Маркеры кроя</a></li>
+                            </ul>
+                        </div>
                         <!-- Banner-->
                         <div class="banner"><a href="#!"><img src="./img/banner-sitebar.png" alt="" class="img-responsive"></a></div>
                     </div>
                     <div class="col-md-9">
-                        <!-- Main carousel-->
+                        <!-- Main banner carousel-->
                         <div class="main-carousel">
-                            <div><a href="#!"><img src="./img/banner-top.png" alt=""></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt=""></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt=""></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt=""></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt=""></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt=""></a></div>
+                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                        </div>
+                        <!-- Section head-->
+                        <div class="section__head section__head--small">производители</div>
+                        <!-- Section head-->
+                        <div class="section__head">Специальное предложение</div>
+                        <!-- Catalog-->
+                        <div class="catalog">
+                            <div class="catalog__row">
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные челнки</div>
+                                        <div class="catalog__block__title">Челнок 130.15.024 Cerliani</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-1.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>1 299<i class="icon icon-rouble"></i></strong></div>
+                                                <div><sup>1 699<i class="icon icon-rouble"></i></sup></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные нитки</div>
+                                        <div class="catalog__block__title">Комплексные швейные нитки EURON K 630/3 №15</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-2.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>899<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные стержни</div>
+                                        <div class="catalog__block__title">Стержень для быстрой смены лапок 4003</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-3.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>10 999<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Окантователи</div>
+                                        <div class="catalog__block__title">Окантователь  зиг заг (3слож)</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-1.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>1 699<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные подгибки</div>
+                                        <div class="catalog__block__title">Подгибка КНР-23</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-2.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>699<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные стержни</div>
+                                        <div class="catalog__block__title">Стержень для быстрой смены лапок 4009</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-3.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>10 999<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные челнки</div>
+                                        <div class="catalog__block__title">Челнок 130.15.024 Cerliani</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-1.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>1 299<i class="icon icon-rouble"></i></strong></div>
+                                                <div><sup>1 699<i class="icon icon-rouble"></i></sup></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные нитки</div>
+                                        <div class="catalog__block__title">Комплексные швейные нитки EURON K 630/3 №15</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-2.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>899<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные стержни</div>
+                                        <div class="catalog__block__title">Стержень для быстрой смены лапок 4003</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-3.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>10 999<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Окантователи</div>
+                                        <div class="catalog__block__title">Окантователь  зиг заг (3слож)</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-1.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>1 699<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные подгибки</div>
+                                        <div class="catalog__block__title">Подгибка КНР-23</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-2.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>699<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="catalog__block">
+                                    <form action="#!">
+                                        <div class="catalog__block__line"></div>
+                                        <div class="catalog__block__info">Швейные стержни</div>
+                                        <div class="catalog__block__title">Стержень для быстрой смены лапок 4009</div>
+                                        <div class="catalog__block__img"><img src="./img/catalog-img-3.png" alt=""></div>
+                                        <div class="catalog__block__bottom">
+                                            <div class="catalog__block__price">
+                                                <div><strong>10 999<i class="icon icon-rouble"></i></strong></div>
+                                            </div>
+                                            <button type="button" class="btn btn--border">Купить</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

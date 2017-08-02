@@ -89,11 +89,6 @@ $(document).on('ready', function(){
   $('.header__search__input').on('click', function(e){
     e.stopPropagation();
   });
-  $(document).on('click', function(){
-    setTimeout(function(){
-      $('.header__search').removeClass('is-search');
-    }, 1000);
-  });
 
   // Seo text
   // seoText();
@@ -107,7 +102,22 @@ $(document).on('ready', function(){
     customPaging: function(slider, i) {
       return $('<span>').text(i + 1);
     }
-  })
+  });
+
+  // Mobile menu
+  $('#btn-mobile').on('click', function(e){
+    e.stopPropagation();
+    $(this).toggleClass('is-active');
+    $('.header__menu').toggleClass('is-active');
+  });
+
+  $(document).on('click', function(){
+    setTimeout(function(){
+      $('.header__search').removeClass('is-search');
+      $('#btn-mobile').toggleClass('is-active');
+      $('.header__menu').removeClass('is-active');
+    }, 500);
+  });
 
   // Chrome Smooth Scroll
   try {

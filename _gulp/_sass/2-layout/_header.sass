@@ -26,7 +26,7 @@
     height: 89px
 
   &__menu
-    background-color: $color-dark
+    background-color: #1c1c1f
     height: 40px
     position: relative
 
@@ -197,7 +197,7 @@
   &__fast-search
     position: absolute
     top: 36px
-    left: 0
+    right: 0
     right: 0
     background: $color-white
     z-index: 10
@@ -205,15 +205,58 @@
     opacity: 0
     visibility: hidden
     transition: opacity 0.35s
-    ul
-      padding: 0
-      margin: 0
-      li
-        list-style: none
-        margin: 0
-        a
-          display: block
-          text-decoration: none
-        &.last
-          a
-            border-top: 1px solid #eff3f8
+
+
+.fast-search
+  &__title
+    display: block
+    color: $color-dark
+    text-transform: uppercase
+    font-size: rem(12)
+    font-family: $font-intro
+    line-height: 1
+    margin-bottom: 2px
+  &__price
+    color: $color-blue
+    font-size: rem(23)
+    font-family: $font-intro
+    .icon-rouble
+      font-size: rem(21)
+      vertical-align: middle
+  // padding: 10px 0 0 0
+  padding: 0
+  margin: 0
+  li
+    list-style: none
+    margin: 0
+    a
+      display: block
+      text-decoration: none
+      padding: 15px 55px 10px 102px
+      position: relative
+      min-height: 68px
+      &>img
+        position: absolute
+        left: 20px
+        top: 50%
+        transform: translateY(-50%)
+      &:hover
+        background-color: #eff3f8
+      &::after
+        font-size: rem(14)
+        position: absolute
+        right: 26px
+        top: 50%
+        transform: translateY(-50%)
+        color: $color-blue
+        content: "\f125"
+        font-family: $font-ionicons
+    &.last
+      // margin-top: 10px
+      a
+        height: 52px
+        min-height: inherit
+        line-height: 52px
+        padding: 0 55px 0 30px
+        border-top: 1px solid #eff3f8
+        font-size: rem(14)
