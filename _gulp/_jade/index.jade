@@ -18,7 +18,7 @@ html(lang="ru")
     .content
       .container
         .row
-          .col-md-3
+          .col-sm-3.hidden-sm.hidden-xs
             
             .catalog__title Каталог товаров
             .catalog__navigation
@@ -47,7 +47,7 @@ html(lang="ru")
               a(href="#!")
                 img(src="./img/banner-sitebar.png", alt="").img-responsive
             
-          .col-md-9
+          .col-sm-9
             
             // Main banner carousel
             .main-carousel
@@ -83,6 +83,7 @@ html(lang="ru")
                 .catalog__block
                   form(action="#!")
                     .catalog__block__line
+                    i.icon.icon--action
                     .catalog__block__info Швейные челнки
                     .catalog__block__title Челнок 130.15.024 Cerliani
                     .catalog__block__img
@@ -131,7 +132,7 @@ html(lang="ru")
                     .catalog__block__info Окантователи
                     .catalog__block__title Окантователь  зиг заг (3слож)
                     .catalog__block__img
-                      img(src="./img/catalog-img-1.png", alt="")
+                      img(src="./img/catalog-img-4.png", alt="")
                     .catalog__block__bottom
                       .catalog__block__price
                         div
@@ -145,7 +146,7 @@ html(lang="ru")
                     .catalog__block__info Швейные подгибки
                     .catalog__block__title Подгибка КНР-23
                     .catalog__block__img
-                      img(src="./img/catalog-img-2.png", alt="")
+                      img(src="./img/catalog-img-5.png", alt="")
                     .catalog__block__bottom
                       .catalog__block__price
                         div
@@ -159,101 +160,13 @@ html(lang="ru")
                     .catalog__block__info Швейные стержни
                     .catalog__block__title Стержень для быстрой смены лапок 4009
                     .catalog__block__img
-                      img(src="./img/catalog-img-3.png", alt="")
+                      img(src="./img/catalog-img-6.png", alt="")
                     .catalog__block__bottom
                       .catalog__block__price
                         div
                           strong 10 999
                             i.icon.icon-rouble
                       button(type="button").btn.btn--border Купить
-                      
-                .catalog__block
-                  form(action="#!")
-                    .catalog__block__line
-                    .catalog__block__info Швейные челнки
-                    .catalog__block__title Челнок 130.15.024 Cerliani
-                    .catalog__block__img
-                      img(src="./img/catalog-img-1.png", alt="")
-                    .catalog__block__bottom
-                      .catalog__block__price
-                        div
-                          strong 1 299
-                            i.icon.icon-rouble
-                        div
-                          sup 1 699
-                            i.icon.icon-rouble
-                      button(type="button").btn.btn--border Купить
-                      
-                .catalog__block
-                  form(action="#!")
-                    .catalog__block__line
-                    .catalog__block__info Швейные нитки
-                    .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
-                    .catalog__block__img
-                      img(src="./img/catalog-img-2.png", alt="")
-                    .catalog__block__bottom
-                      .catalog__block__price
-                        div
-                          strong 899
-                            i.icon.icon-rouble
-                      button(type="button").btn.btn--border Купить
-                      
-                .catalog__block
-                  form(action="#!")
-                    .catalog__block__line
-                    .catalog__block__info Швейные стержни
-                    .catalog__block__title Стержень для быстрой смены лапок 4003
-                    .catalog__block__img
-                      img(src="./img/catalog-img-3.png", alt="")
-                    .catalog__block__bottom
-                      .catalog__block__price
-                        div
-                          strong 10 999
-                            i.icon.icon-rouble
-                      button(type="button").btn.btn--border Купить
-                      
-                .catalog__block
-                  form(action="#!")
-                    .catalog__block__line
-                    .catalog__block__info Окантователи
-                    .catalog__block__title Окантователь  зиг заг (3слож)
-                    .catalog__block__img
-                      img(src="./img/catalog-img-1.png", alt="")
-                    .catalog__block__bottom
-                      .catalog__block__price
-                        div
-                          strong 1 699
-                            i.icon.icon-rouble
-                      button(type="button").btn.btn--border Купить
-                      
-                .catalog__block
-                  form(action="#!")
-                    .catalog__block__line
-                    .catalog__block__info Швейные подгибки
-                    .catalog__block__title Подгибка КНР-23
-                    .catalog__block__img
-                      img(src="./img/catalog-img-2.png", alt="")
-                    .catalog__block__bottom
-                      .catalog__block__price
-                        div
-                          strong 699
-                            i.icon.icon-rouble
-                      button(type="button").btn.btn--border Купить
-                      
-                .catalog__block
-                  form(action="#!")
-                    .catalog__block__line
-                    .catalog__block__info Швейные стержни
-                    .catalog__block__title Стержень для быстрой смены лапок 4009
-                    .catalog__block__img
-                      img(src="./img/catalog-img-3.png", alt="")
-                    .catalog__block__bottom
-                      .catalog__block__price
-                        div
-                          strong 10 999
-                            i.icon.icon-rouble
-                      button(type="button").btn.btn--border Купить
-
     
     include ./_include/_footer
     //- div(style="height: 1000px; background-color: #000")

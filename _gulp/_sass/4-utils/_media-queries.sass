@@ -17,7 +17,17 @@
     &__search
       width: 310px
       margin-right: 35px
-      &__input
+
+@media only screen and (max-width: 1199px) and (min-width : 991px)
+  .catalog
+    &__block
+      height: 446px
+      &__title
+        height: 85px
+      &__img
+        max-height: 155px
+        img
+          max-height: 155px
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 991px)
@@ -38,7 +48,16 @@
       li
         &:first-child
           display: none
-
+  .catalog
+    &__block
+      width: 50%
+      margin-bottom: 35px
+      &::after, &::before
+        display: none !important
+      &:nth-child(2n+1)
+        // background-color: pink
+        &::after
+          display: block !important
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -103,18 +122,42 @@
           a
             background-color: $color-blue
             height: 37px
-            line-height: 34px
+            line-height: 37px
         &:first-child
           display: block
         a
           display: block
           text-align: center
+          border: 0
+          height: 37px
+          line-height: 37px
           &:hover
-            border: 0
+
             background-color: $color-lightdark
   .hamburger
     &--header
       display: block
+
+  .catalog
+    &__block
+      height: 446px
+      &__title
+        height: 85px
+      &__img
+        max-height: 155px
+        img
+          max-height: 155px
+
+  .section
+    &__head
+      font-size: rem(24)
+      padding-left: 50px
+      &::before
+        top: 12px
+      &--small
+        font-size: rem(14)
+        &::before
+          top: 6px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
@@ -129,6 +172,18 @@
       min-width: 110px
       &__icon
         display: none
+  .catalog
+    &__block
+      height: auto
+      width: 100%
+      max-width: 320px
+      margin: 0 auto 15px
+      float: none
+      &:nth-child(1n)
+        &::after, &::before
+          display: none !important
+    &__row
+      margin: 0
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

@@ -53,7 +53,7 @@
       // background-color: pink
     .hamburger-inner
       &::before, &::after
-        background-color: #989898
+        background-color: $color-white
         border-radius: 0
         width: 14px
         height: 2px
@@ -61,7 +61,7 @@
         top: 5px !important
       &::after
         top: 10px !important
-      background-color: #989898
+      background-color: $color-white
       border-radius: 0
       width: 14px
       height: 2px
@@ -70,17 +70,17 @@
     &.is-active
       .hamburger-inner
         transform: translate3d(0, 5px, 0) rotate(45deg)
-        background-color: $color-white
+        background-color: #989898
         &::before, &::after
-          background-color: $color-white
+          background-color: #989898
         &::before
           transform: rotate(-45deg) translate3d(-5.71429px, -2px, 0)
         &::after
           transform: translate3d(0, -10px, 0) rotate(-90deg)
       strong
-        color: $color-white
+        color: #989898
     strong
-      color: #989898
+      color: $color-white
       text-transform: uppercase
       font-size: rem(18)
       font-family: $font-intro
@@ -123,19 +123,27 @@
     float: left
     transition: box-shadow 0.35s
     margin-bottom: 20px
-    &:nth-child(odd)
-      background-color: pink
+    &::after, &::before
+      content: ''
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      width: 1px
+      background: #e5e5e5
+      display: none
+    &::before
+      right: inherit
+      left: 0
+    .icon--action
+      position: absolute
+      right: 15px
+      bottom: 116px
+      z-index: 5
+    &:nth-child(3n+2)
+      // background-color: pink
       &::after, &::before
-        content: ''
-        position: absolute
-        right: 0
-        top: 0
-        bottom: 0
-        width: 1px
-        background: #e5e5e5
-      &::before
-        right: inherit
-        left: 0
+        display: block
     &:hover
       box-shadow: 0 0 30px rgba($color-black, 0.15)
       z-index: 5
@@ -191,11 +199,14 @@
       overflow: hidden
       line-height: 1.2
       transition: color 0.35s
+      padding: 0 10px
     &__img
       position: relative
       overflow: hidden
       height: 170px
       margin-bottom: 27px
+
+      // background: pink
       img
         position: absolute
         left: 50%

@@ -88,6 +88,11 @@ $(document).on('ready', function(){
   });
   $('.header__search__input').on('click', function(e){
     e.stopPropagation();
+
+    setTimeout(function(){
+      $('#btn-mobile').toggleClass('is-active');
+      $('.header__menu').removeClass('is-active');
+    }, 500);
   });
 
   // Seo text

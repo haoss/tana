@@ -7,7 +7,6 @@ bower_components
 _sass__copy
 _design
 *.node
-_img
 .gulp
 *.orig
 _gulp_favicon_generator/faviconData.json
