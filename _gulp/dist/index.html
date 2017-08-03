@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="./js/libs/magnific-popup/magnific-popup.css">
         <link rel="stylesheet" href="./js/libs/slick/slick.css">
         <link rel="stylesheet" href="./js/libs/slick/slick-theme.css">
+        <link rel="stylesheet" href="./js/libs/jquery-selectric/selectric.css">
+        <link rel="stylesheet" href="./js/libs/swiper/css/swiper.min.css">
         <link rel="stylesheet" href="./css/main.css">
     </head>
     <body>
@@ -17,13 +19,14 @@
             <div class="loader__block"></div>
         </div>
         <div id="popup-call" class="popup mfp-hide">
+            <div class="popup__close"></div>
             <div class="form">
                 <form action="#!">
                     <fieldset>
-                        <legend>обратный звонок</legend>
+                        <legend class="popup__legend">обратный звонок</legend>
                         <div class="form-group has-feedback has-error">
                             <label class="hidden">Ваше имя</label>
-                            <input type="text" placeholder="Ваше имя" class="form-control">
+                            <input type="text" placeholder="Ваше имя" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
                         </div>
                         <div class="form-group">
                             <label class="hidden">Номер телефона</label>
@@ -31,11 +34,28 @@
                         </div>
                         <div class="form-group">
                             <label class="hidden">Время звонка</label>
-                            <select class="form-control">
-                                <option>Время звонка</option>
+                            <select class="select">
+                                <option disabled selected>Время звонка</option>
+                                <option>00:00 - 1:00</option>
+                                <option>1:00 - 2:00</option>
+                                <option>2:00 - 3:00</option>
+                                <option>3:00 - 4:00</option>
+                                <option>4:00 - 5:00</option>
+                                <option>5:00 - 6:00</option>
+                                <option>6:00 - 7:00</option>
+                                <option>7:00 - 8:00</option>
+                                <option>8:00 - 9:00</option>
+                                <option>9:00 - 10:00</option>
+                                <option>10:00 - 11:00</option>
+                                <option>11:00 - 12:00</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn">заказать звонок</button>
+                        <div class="form-group">
+                            <label for="checkbox" class="form-checkbox">
+                                <input id="checkbox" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label">Согласен на обработку моих личных данных.<br><a href="#!" target="_blank">Политика конфиденциальности</a></span>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn--border w100per">заказать звонок</button>
                     </fieldset>
                 </form>
             </div>
@@ -65,7 +85,7 @@
                                 <li><a href="#!"><img src="./img/fast-search-img1.png" alt=""><span class="fast-search__title">Стержень для быстрой смены лапок 4009</span><span class="fast-search__price">699<i class="icon icon-rouble"></i></span></a></li>
                                 <li><a href="#!"><img src="./img/fast-search-img2.png" alt=""><span class="fast-search__title">Стержень для быстрой смены лапок 4009</span><span class="fast-search__price">522<i class="icon icon-rouble"></i></span></a></li>
                                 <li><a href="#!"><img src="./img/fast-search-img3.png" alt=""><span class="fast-search__title">Стержень для быстрой смены лапок 4009</span><span class="fast-search__price">129<i class="icon icon-rouble"></i></span></a></li>
-                                <li class="last"><a href="#!">Все резуальтаты поиска</a></li>
+                                <li class="last"><a href="#!">Все результаты поиска</a></li>
                             </ul>
                         </div>
                     </div>
@@ -73,6 +93,7 @@
             </div>
             <div class="header__menu">
                 <div class="container">
+                    <div class="header__menu__background"></div>
                     <button id="btn-mobile" type="button" class="hamburger hamburger--slider hamburger--header"><span class="hamburger-box"><span class="hamburger-inner"></span></span><strong>Меню</strong></button>
                     <nav role="navigation" class="navigation">
                         <ul>
@@ -91,7 +112,7 @@
         <div class="content">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3 hidden-sm hidden-xs">
+                    <div class="col-sm-3 hidden-xs">
                         <div class="catalog__title">Каталог товаров</div>
                         <div class="catalog__navigation">
                             <ul>
@@ -121,6 +142,37 @@
                         </div>
                         <!-- Section head-->
                         <div class="section__head section__head--small">производители</div>
+                        <!-- Manufacturer-->
+                        <div class="manufacturer">
+                            <!-- Slider main container-->
+                            <!-- If we need navigation buttons-->
+                            <div class="manufacturer__prev"><i class="ion-arrow-left-b"></i></div>
+                            <div class="manufacturer__next"><i class="ion-arrow-right-b"></i></div>
+                            <div class="manufacturer__wrapper">
+                                <div class="swiper-container">
+                                    <!-- Additional required wrapper-->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides-->
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-1.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-2.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-3.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-4.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-5.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-6.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-7.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-8.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-1.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-2.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-3.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-4.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-5.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-6.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-7.png" alt=""></a></div>
+                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-8.png" alt=""></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Section head-->
                         <div class="section__head">Специальное предложение</div>
                         <!-- Catalog-->
@@ -286,6 +338,9 @@
         <!-- Load Scripts-->
         <script src="./js/libs.js"></script>
         <script src="./js/libs/slick/slick.min.js"></script>
+        <script src="./js/libs/jquery-selectric/jquery.selectric.min.js"></script>
+        <script src="./js/libs/readmore/readmore.min.js"></script>
+        <script src="./js/libs/swiper/js/swiper.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>

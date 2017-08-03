@@ -2,19 +2,43 @@
   .loader__block
 
 #popup-call.popup.mfp-hide
+  .popup__close
   .form
     form(action="#!")
       fieldset
-        legend обратный звонок
+        legend.popup__legend обратный звонок
         .form-group.has-feedback.has-error
           label.hidden Ваше имя
           input(type="text" placeholder="Ваше имя").form-control
+          i.ion-alert-circled.form-control__feedback
         .form-group
           label.hidden Номер телефона
           input(type="text" placeholder="Номер телефона").form-control
         .form-group
           label.hidden Время звонка
-          select.form-control
-            option Время звонка
           
-        button(type="submit").btn заказать звонок
+          select.select
+            option(disabled selected) Время звонка
+            option 00:00 - 1:00
+            option 1:00 - 2:00
+            option 2:00 - 3:00
+            option 3:00 - 4:00
+            option 4:00 - 5:00
+            option 5:00 - 6:00
+            option 6:00 - 7:00
+            option 7:00 - 8:00
+            option 8:00 - 9:00
+            option 9:00 - 10:00
+            option 10:00 - 11:00
+            option 11:00 - 12:00
+            
+        .form-group
+          label.form-checkbox(for="checkbox")
+            input#checkbox(type="checkbox" checked).form-checkbox__input
+            span.form-checkbox__span
+            span.form-checkbox__label Согласен на обработку моих личных данных.
+              br
+              a(href="#!" target="_blank") Политика конфиденциальности
+            
+          
+        button(type="submit").btn.btn--border.w100per заказать звонок

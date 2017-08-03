@@ -17,6 +17,10 @@
     &__search
       width: 310px
       margin-right: 35px
+  .manufacturer
+    &__prev, &__next
+      i
+        margin-top: 0
 
 @media only screen and (max-width: 1199px) and (min-width : 991px)
   .catalog
@@ -85,6 +89,16 @@
           visibility: visible
           opacity: 1
           transform: translateY(0px)
+        .header__menu__background
+          display: block
+          position: fixed
+          left: 0
+          top: 0
+          right: 0
+          bottom: 0
+          background: rgba($color-black,0.4)
+          z-index: 50
+
 
   .footer
     &__info
@@ -96,10 +110,7 @@
           top: 4px
     &__seo
       &__text
-        p
-          // opacity: 0
-          &:first-child
-            // opacity: 1
+        margin-bottom: 10px
 
   .navigation
     // display: block
@@ -114,6 +125,7 @@
     width: 290px
     z-index: 100
     transition: transform 0.35s, opacity 0.35s
+    box-shadow: 0 5px 30px rgba($color-black,0.25)
     ul
       display: block
       li
@@ -172,6 +184,8 @@
       min-width: 110px
       &__icon
         display: none
+    &__fast-search
+      display: none
   .catalog
     &__block
       height: auto

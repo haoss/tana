@@ -27,7 +27,7 @@
         overflow: hidden
         transition: all 0.35s
         position: relative
-        z-index: 50
+        z-index: 5
         &:hover
           background: rgba($color-white, 0.5)
       &.slick-active
@@ -47,6 +47,7 @@
     text-align: center
     display: none
     margin: 0 auto
+    z-index: 100
     .hamburger-box
       width: 14px
       height: 12px
@@ -249,3 +250,167 @@
     // background: pink
     margin-left: -15px
     margin-right: -15px
+
+// Popup
+.popup
+  position: relative
+  background: $color-white
+  padding: 40px 30px 40px 30px
+  width: auto
+  max-width: 420px
+  margin: 20px auto
+  border: 2px solid $color-blue
+  &__close
+    position: absolute
+    right: 16px
+    top: -20px
+    width: 30px
+    height: 40px
+    background: $color-blue
+    color: $color-white
+    font-size: rem(21)
+    cursor: pointer
+    transition: background 0.35s
+    &:hover
+      background: darken($color-blue, 10%)
+    &::after
+      content: "\f404"
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      font-family: $font-ionicons
+  &__legend
+    border: 0
+    width: 100%
+    display: block
+    text-align: center
+    font-family: $font-intro
+    color: $color-dark
+    text-transform: uppercase
+    font-size: rem(24)
+    line-height: 1
+    margin-bottom: 20px
+
+// Selectric
+.selectric
+  border: 0
+  background: $color-gray
+  .label
+    line-height: 30px
+    height: 30px
+    font-size: rem(11)
+    font-family: $font-roboto
+    color: #a9a9a9
+  &-items
+    border-color: $color-blue
+    li
+      padding: 0 12px
+      height: 30px
+      line-height: 30px
+      &.highlighted
+        background: $color-blue
+        color: $color-white
+  .button
+    height: 30px
+    // line-height: 30px
+    width: 30px
+    font-size: 0
+    color: $color-gray
+    &::before, &::after
+      color: $primary-color
+      font-size: rem(11)
+      font-family: $font-ionicons
+      border: 0
+      left: 50%
+      top: 50%
+      position: absolute
+      transform: translate(-50%,-50%)
+      right: inherit
+      bottom: inherit
+      width: inherit
+    &::after
+      content: '\f10d'
+      margin-top: -3px
+    &::before
+      content: "\f104"
+      margin-top: 3px
+
+// Manufacturer
+.manufacturer
+  // min-height: 500px
+  position: relative
+  margin-bottom: 50px
+  &__wrapper
+    overflow: hidden
+  .swiper-container
+    // background: green
+    margin-left: -8px
+    margin-right: -8px
+  .swiper-wrapper
+    // background: yellow
+  .swiper-slide
+    // background: pink
+  &__block
+    display: block
+    text-align: center
+    position: relative
+    img
+      transition: filter 0.35s, opacity 0.35s
+      opacity: 0.4
+      filter: grayscale(1)
+    &:hover
+      img
+        filter: grayscale(0)
+        opacity: 1
+    span
+      display: block
+      position: absolute
+      width: 17px
+      height: 17px
+      right: -8px
+      top: -8px
+      &::before, &::after
+        position: absolute
+        content: ''
+      &::before
+        height: 100%
+        width: 1px
+        background: #cccccc
+        left: 50%
+        margin-left: -1px
+        top: 0
+      &::after
+        height: 1px
+        width: 100%
+        background: #cccccc
+        top: 50%
+        left: 0
+      &+span
+        top: inherit
+        bottom: -8px
+        top: inherit
+  &__prev, &__next
+    position: absolute
+    right: 0
+    top: -34px
+    height: 15px
+    width: 15px
+    background-color: $color-gray
+    cursor: pointer
+    transition: all 0.35s
+    font-size: rem(14)
+    color: #a7a7a7
+    i
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      line-height: 1
+      margin-top: 1px
+    &:hover
+      background-color: $color-blue
+      color: $color-white
+  &__prev
+    right: 18px
+  &__next

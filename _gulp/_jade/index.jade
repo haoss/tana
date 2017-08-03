@@ -18,7 +18,7 @@ html(lang="ru")
     .content
       .container
         .row
-          .col-sm-3.hidden-sm.hidden-xs
+          .col-sm-3.hidden-xs
             
             .catalog__title Каталог товаров
             .catalog__navigation
@@ -69,10 +69,105 @@ html(lang="ru")
               div
                 a(href="#!")
                   img(src="./img/banner-top.png", alt="").img-responsive
-                  
+            
             // Section head
             .section__head.section__head--small производители
             
+            // Manufacturer
+            .manufacturer
+              // Slider main container
+              // If we need navigation buttons
+              .manufacturer__prev
+                i.ion-arrow-left-b
+              .manufacturer__next
+                i.ion-arrow-right-b
+              
+              .manufacturer__wrapper
+                .swiper-container
+                  // Additional required wrapper
+                  .swiper-wrapper
+                    // Slides
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-1.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-2.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-3.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-4.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-5.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-6.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-7.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-8.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-1.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-2.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-3.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-4.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-5.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-6.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-7.png", alt="")
+                    .swiper-slide
+                      a(href="#!").manufacturer__block
+                        span
+                        span
+                        img(src="./img/manufacturer-logo-8.png", alt="")
+                        
             // Section head
             .section__head Специальное предложение
             
@@ -181,5 +276,8 @@ html(lang="ru")
     // Load Scripts
     script(src="./js/libs.js")
     script(src="./js/libs/slick/slick.min.js")
+    script(src="./js/libs/jquery-selectric/jquery.selectric.min.js")
+    script(src="./js/libs/readmore/readmore.min.js")
+    script(src="./js/libs/swiper/js/swiper.min.js")
     script(src="./js/common.js")
     include ./_include/_js-body-bottom
