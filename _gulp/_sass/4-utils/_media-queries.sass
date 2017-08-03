@@ -45,6 +45,24 @@
   .header
     &__search
       width: 37px
+      &__cap
+        display: block
+      &.is-tablet
+        .header__search__input
+          width: 500px
+          left: inherit
+          right: 0
+        .header__search__cap
+          display: none
+        .header__fast-search
+          width: 500px
+          left: inherit
+      &.is-search
+        .header__fast-search
+          display: none
+      &.is-tablet.is-search
+        .header__fast-search
+          display: block
 
   .navigation
     font-size: rem(13)
@@ -62,6 +80,11 @@
         // background-color: pink
         &::after
           display: block !important
+
+  .manufacturer
+    &__prev, &__next
+      i
+        margin-top: 1px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -83,6 +106,17 @@
       margin-left: auto
       margin-right: auto
       float: none
+      &__cap
+        display: none
+      &__input
+        width: calc(100% - 37px) !important
+        left: 0 !important
+      &.is-search
+        .header__fast-search
+          display: block !important
+    &__fast-search
+      width: auto !important
+      left: 0 !important
     &__menu
       &.is-active
         .navigation
@@ -98,7 +132,6 @@
           bottom: 0
           background: rgba($color-black,0.4)
           z-index: 50
-
 
   .footer
     &__info
@@ -198,6 +231,11 @@
           display: none !important
     &__row
       margin: 0
+
+  .manufacturer
+    &__block
+      span
+        display: none
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

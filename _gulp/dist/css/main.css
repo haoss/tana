@@ -3920,17 +3920,17 @@ ol li {
   display: inline-block; }
   .icon--cart {
     background-image: url(../img/sprite.png);
-    background-position: 0px -44px;
+    background-position: 0px -61px;
     width: 44px;
     height: 44px; }
   .icon--cart-hover {
     background-image: url(../img/sprite.png);
-    background-position: 0px 0px;
+    background-position: 0px -17px;
     width: 44px;
     height: 44px; }
   .icon--action {
     background-image: url(../img/sprite.png);
-    background-position: 0px -88px;
+    background-position: 0px -105px;
     width: 28px;
     height: 93px; }
 
@@ -5194,6 +5194,26 @@ label {
           border-color: transparent;
           background-color: #4c4d52; }
 
+.catalog__navigation {
+  font-family: "Intro";
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 40px; }
+  .catalog__navigation ul {
+    margin: 0;
+    padding: 0; }
+    .catalog__navigation ul li {
+      margin: 0;
+      list-style: none; }
+      .catalog__navigation ul li a {
+        color: #2e2f33;
+        text-decoration: none; }
+        .catalog__navigation ul li a:hover {
+          color: #0cbeff; }
+  .catalog__navigation ul ul {
+    display: none;
+    padding-left: 16px; }
+
 /* header */
 .header {
   margin-bottom: 32px; }
@@ -5314,7 +5334,7 @@ label {
         vertical-align: 0px; }
     .header__cart:hover .icon--cart {
       background-image: url(../img/sprite.png);
-      background-position: 0px 0px;
+      background-position: 0px -17px;
       width: 44px;
       height: 44px; }
     .header__cart:hover .header__cart__icon span {
@@ -5349,8 +5369,7 @@ label {
       border-color: #0cbeff;
       background-color: #ffffff; }
     .header__search.is-search .header__fast-search {
-      opacity: 1;
-      visibility: visible; }
+      display: block; }
     .header__search form {
       position: relative; }
       .header__search form::after {
@@ -5388,19 +5407,24 @@ label {
                 transform: translate(-50%, -50%); }
       .header__search__btn:hover {
         background-color: #009ed8; }
+    .header__search__cap {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: none; }
   .header__fast-search {
     position: absolute;
     top: 36px;
     right: 0;
     left: 0;
     background: #ffffff;
-    z-index: 10;
+    z-index: 150;
     border: 1px solid #0cbeff;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: opacity 0.35s;
-    transition: opacity 0.35s;
-    overflow: hidden; }
+    overflow: hidden;
+    display: none; }
 
 .fast-search {
   padding: 0;
@@ -5887,11 +5911,13 @@ label {
     overflow: hidden; }
   .manufacturer .swiper-container {
     margin-left: -8px;
-    margin-right: -8px; }
+    margin-right: -8px;
+    padding: 0 0 1px 0; }
   .manufacturer__block {
     display: block;
     text-align: center;
-    position: relative; }
+    position: relative;
+    height: 60px; }
     .manufacturer__block img {
       -webkit-transition: opacity 0.35s, -webkit-filter 0.35s;
       transition: opacity 0.35s, -webkit-filter 0.35s;
@@ -5899,7 +5925,8 @@ label {
       transition: filter 0.35s, opacity 0.35s, -webkit-filter 0.35s;
       opacity: 0.4;
       -webkit-filter: grayscale(1);
-              filter: grayscale(1); }
+              filter: grayscale(1);
+      max-height: 60px; }
     .manufacturer__block:hover img {
       -webkit-filter: grayscale(0);
               filter: grayscale(0);
@@ -5907,30 +5934,15 @@ label {
     .manufacturer__block span {
       display: block;
       position: absolute;
-      width: 17px;
-      height: 17px;
       right: -8px;
-      top: -8px; }
-      .manufacturer__block span::before, .manufacturer__block span::after {
-        position: absolute;
-        content: ''; }
-      .manufacturer__block span::before {
-        height: 100%;
-        width: 1px;
-        background: #cccccc;
-        left: 50%;
-        margin-left: -1px;
-        top: 0; }
-      .manufacturer__block span::after {
-        height: 1px;
-        width: 100%;
-        background: #cccccc;
-        top: 50%;
-        left: 0; }
+      top: -8px;
+      background-image: url(../img/sprite.png);
+      background-position: 0px 0px;
+      width: 17px;
+      height: 17px; }
       .manufacturer__block span + span {
         top: inherit;
-        bottom: -8px;
-        top: inherit; }
+        bottom: -9px; }
   .manufacturer__prev, .manufacturer__next {
     position: absolute;
     right: 0;
@@ -6316,6 +6328,21 @@ label {
       margin-bottom: 0; }
   .header__search {
     width: 37px; }
+    .header__search__cap {
+      display: block; }
+    .header__search.is-tablet .header__search__input {
+      width: 500px;
+      left: inherit;
+      right: 0; }
+    .header__search.is-tablet .header__search__cap {
+      display: none; }
+    .header__search.is-tablet .header__fast-search {
+      width: 500px;
+      left: inherit; }
+    .header__search.is-search .header__fast-search {
+      display: none; }
+    .header__search.is-tablet.is-search .header__fast-search {
+      display: block; }
   .navigation {
     font-size: 0.8125rem; }
     .navigation ul li:first-child {
@@ -6326,7 +6353,9 @@ label {
     .catalog__block::after, .catalog__block::before {
       display: none !important; }
     .catalog__block:nth-child(2n+1)::after {
-      display: block !important; } }
+      display: block !important; }
+  .manufacturer__prev i, .manufacturer__next i {
+    margin-top: 1px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
@@ -6348,6 +6377,16 @@ label {
     margin-left: auto;
     margin-right: auto;
     float: none; }
+    .header__search__cap {
+      display: none; }
+    .header__search__input {
+      width: calc(100% - 37px) !important;
+      left: 0 !important; }
+    .header__search.is-search .header__fast-search {
+      display: block !important; }
+  .header__fast-search {
+    width: auto !important;
+    left: 0 !important; }
   .header__menu.is-active .navigation {
     visibility: visible;
     opacity: 1;
@@ -6450,7 +6489,9 @@ label {
     .catalog__block:nth-child(1n)::after, .catalog__block:nth-child(1n)::before {
       display: none !important; }
   .catalog__row {
-    margin: 0; } }
+    margin: 0; }
+  .manufacturer__block span {
+    display: none; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 319px) {

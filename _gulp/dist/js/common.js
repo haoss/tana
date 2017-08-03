@@ -95,7 +95,7 @@ $(document).on('ready', function(){
     // e.preventDefault();
     e.stopPropagation();
     $('.header__search').addClass('is-search');
-    console.log(e);
+    // console.log(e);
   });
   $('.header__search__input').on('click', function(e){
     e.stopPropagation();
@@ -104,6 +104,13 @@ $(document).on('ready', function(){
       $('#btn-mobile').removeClass('is-active');
       $('.header__menu').removeClass('is-active');
     }, 500);
+  });
+  $('.header__search__cap').on('click', function(e){
+    e.stopPropagation();
+    $('.header__search').addClass('is-tablet');
+  });
+  $('.header__search__btn').on('click', function(e){
+    e.stopPropagation();
   });
 
   // Seo text
@@ -133,6 +140,7 @@ $(document).on('ready', function(){
       $('.header__search').removeClass('is-search');
       $('#btn-mobile').removeClass('is-active');
       $('.header__menu').removeClass('is-active');
+      $('.header__search').removeClass('is-tablet');
     }, 500);
   });
 
@@ -143,6 +151,7 @@ $(document).on('ready', function(){
     spaceBetween: 0,
     nextButton: '.manufacturer__next',
     prevButton: '.manufacturer__prev',
+    autoplay: 3500,
     loop: true,
     breakpoints: {
       991: {
@@ -152,12 +161,19 @@ $(document).on('ready', function(){
       767: {
         slidesPerView: 2,
         slidesPerColumn: 2,
+      },
+      479: {
+        slidesPerView: 1,
+        slidesPerColumn: 2,
       }
     }
   });
 
   // Custom select
   $('select.select').selectric();
+
+  // Catalog navigation
+  catalogNavigation();
 
   // Chrome Smooth Scroll
   try {
@@ -179,8 +195,16 @@ $(window).on('load', function() {
 });
 
 $(window).on('resize', function(){
+  var width = $(window).width();
+
   // Seo text
   seoText();
+
+  // console.log(width);
+  if (width < 768 && $('.header__search').hasClass('is-tablet') || width > 991 && $('.header__search').hasClass('is-tablet')) {
+    $('.header__search').removeClass('is-tablet');
+  }
+
 });
 
 /*
@@ -260,4 +284,17 @@ function seoText(){
   } else {
       $('.footer__seo__text').readmore('destroy');
   }
+}
+
+function catalogNavigation(){
+  var menu = $('.catalog__navigation');
+  var li = $('.has-folder');
+  var a = $('.has-folder > a');
+  var ul = $('.ul-folder');
+
+  a.on('click', function(e){
+    e.preventDefault();
+    $(this).next(ul).slideToggle();
+    $(this).parent().toggleClass('active')
+  })
 }
