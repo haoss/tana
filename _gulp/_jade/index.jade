@@ -4,6 +4,7 @@ html(lang="ru")
   
   -var active = 'Главная' //активный пункт меню, список в header.jade
   -var pageTitle = 'Главная' + ' - TANA' //title страницы для генерации верстки  
+  -var seo = 'true'
 
   include ./_include/_head
 
@@ -20,203 +21,8 @@ html(lang="ru")
         .row
           .col-sm-3.hidden-xs
             
-            .catalog__title Каталог товаров
-            .catalog__navigation
-              ul
-                li.has-folder
-                  a(href="#!") Запчасти Отечественныe
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Запчасти Раскройных Машин
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Запчасти Специальные
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Запчасти универсальные
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Комплектующие к ВТО
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Оснастка швейных машин
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Очистители Масло Мел
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li.has-folder
-                  a(href="#!") Приспособления Окантователи
-                  ul.ul-folder
-                    li
-                      a(href="#!") Аксессуары
-                    li
-                      a(href="#!") Запчасти к приводам
-                    li
-                      a(href="#!") Инструмент
-                    li
-                      a(href="#!") Моталки настольные
-                    li
-                      a(href="#!") Пуллеры и растинги
-                    li.has-folder
-                      a(href="#!") Ремни приводные
-                      ul.ul-folder
-                        li
-                          a(href="#!") Ремни зубчатые
-                        li
-                          a(href="#!") Ремни кожанные
-                        li
-                          a(href="#!") Ремни кордовые Текстропные
-                        li
-                          a(href="#!") Ремни пластиковые
-                li
-                  a(href="#!") Этикетпистолеты Маркеры кроя
+            // Catalog menu
+            include ./_include/_catalog-menu
             
             // Banner
             .banner
@@ -245,6 +51,12 @@ html(lang="ru")
               div
                 a(href="#!")
                   img(src="./img/banner-top.png", alt="").img-responsive
+            
+            // Catalog menu mobile button
+            .catalog__menu__button
+              a(href="#popup-catalog-menu").catalog__menu__title.open-popup-menu
+                i.ion-ios-list
+                | Каталог товаров
             
             // Section head
             .section__head.section__head--small производители

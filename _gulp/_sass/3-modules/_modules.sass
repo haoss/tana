@@ -1,12 +1,14 @@
 /* modules */
 
-.main-carousel
+.main-carousel, .img-carousel
   overflow: hidden
   .slick-dots
     text-align: left
     position: absolute
     bottom: 16px
     left: 16px
+    width: auto
+    right: 16px
     margin: 0
     padding: 0
     font-size: rem(12)
@@ -19,7 +21,7 @@
         display: inline-block
         height: 15px
         width: 15px
-        background: rgba($color-white, 0.1)
+        background: rgba($color-white, 0.5)
         text-align: center
         line-height: 16px
         color: #252528
@@ -29,13 +31,17 @@
         position: relative
         z-index: 5
         &:hover
-          background: rgba($color-white, 0.5)
+          background: rgba($color-white, 1)
       &.slick-active
         span
           background: $color-blue
           color: $color-white
       &+li
         margin-left: 3px
+
+.img-carousel
+  .slick-dots
+    text-align: center
 
 .hamburger
   &--header
@@ -291,6 +297,17 @@
     font-size: rem(24)
     line-height: 1
     margin-bottom: 20px
+  &--menu
+    width: 290px
+    padding: 30px 20px 30px 20px
+    .catalog__navigation
+      margin-bottom: 0
+    .catalog__menu__title
+      margin-top: 0
+      font-size: rem(20)
+      margin-bottom: 10px
+      i
+        top: 0
 
 // Selectric
 .selectric
@@ -400,3 +417,149 @@
   &__prev
     right: 18px
   &__next
+
+// news
+.news
+  &__block
+    font-size: rem(14)
+    padding-bottom: 30px
+    border-bottom: 1px solid $color-gray
+    margin-bottom: 20px
+    &:last-child
+      border-bottom: 0
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: top
+        &:first-child
+          width: 292px
+          img
+            max-width: 100%
+            display: block
+            height: auto
+    &__text
+      background: $color-white
+      margin-left: -50px
+      margin-top: 19px
+      padding: 7px 0 7px 20px
+      position: relative
+      line-height: 1.6
+      max-height: 124px
+      overflow: hidden
+
+// Breadcrumbs
+.breadcrumbs
+  font-size: rem(11)
+  margin: -20px 0 25px 0
+  padding: 0
+  color: #a3a6aa
+  li
+    margin: 0
+    list-style: none
+    display: inline-block
+    a, span
+      display: inline-block
+    a
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    &+li
+      margin-left: 5px
+      &::before
+        content: '/'
+        display: inline-block
+        margin-right: 7px
+
+// Pagination
+.pagination
+  text-align: center
+  font-family: $font-intro
+  font-size: rem(14)
+  text-transform: uppercase
+  height: 23px
+  background:
+    image: linear-gradient($color-gray, $color-gray)
+    size: 100% 1px
+    repeat: no-repeat
+    position: center
+  &__wrapper
+    display: inline-block
+    background: $color-white
+    padding: 0 15px
+    +clearfix
+    ul
+      margin: 0
+      padding: 0
+      +clearfix
+      li
+        margin: 0 3px
+        float: left
+        list-style: none
+        height: 23px
+        a, span
+          display: inline-block
+          height: 23px
+          line-height: 23px
+          background: $color-gray
+          color: $color-dark
+          text-decoration: none
+          min-width: 23px
+          text-align: center
+          padding: 0 3px
+          overflow: hidden
+        a
+          &:hover
+            background-color: $color-blue
+            color: $color-white
+        &.active
+          a
+            background-color: $color-blue
+            color: $color-white
+        &.pagination__prev, &.pagination__next
+          line-height: 25px
+          a
+            background: none
+            font-size: rem(11)
+            color: #535353
+            &:hover
+              color: $color-blue
+        &.pagination__prev
+          margin-right: 15px
+        &.pagination__next
+          margin-left: 15px
+
+// Document
+.document
+  &__about
+    font-size: rem(14)
+    border-bottom: 1px solid $color-gray
+    margin-bottom: 25px
+    margin-top: -42px
+    &:last-child
+      border-bottom: 0
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: top
+        &:last-child
+          width: 480px
+          img
+            max-width: 100%
+            display: block
+            height: auto
+    &__text
+      background: $color-white
+      margin-right: -168px
+      margin-top: 22px
+      padding: 18px 15px 18px 0px
+      position: relative
+      line-height: 1.6
+      max-height: 274px
+      overflow: hidden
+      p
+        &:last-child
+          margin-bottom: 0

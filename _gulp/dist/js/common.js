@@ -10,24 +10,6 @@ $(document).on('ready', function(){
     });
   };
 
-  // E-mail Ajax Send
-  // Documentation & Example: https://github.com/agragregra/uniMail
-  $("form").submit(function() { //Change
-    var th = $(this);
-    $.ajax({
-      type: "POST",
-      url: "mail.php", //Change
-      data: th.serialize()
-    }).done(function() {
-      alert("Thank you!");
-      setTimeout(function() {
-        // Done Functions
-        th.trigger("reset");
-      }, 1000);
-    });
-    return false;
-  });
-
   // Magnific popup gallery
   $('.gallery').each(function() {
     $(this).magnificPopup({
@@ -86,6 +68,24 @@ $(document).on('ready', function(){
     }
   });
 
+  $('.open-popup-menu').magnificPopup({
+    type: 'inline',
+    midClick: true,
+    showCloseBtn: false,
+    closeOnBgClick: false,
+    callbacks: {
+      beforeOpen: function(){
+        catalogMenuPopup();
+
+        // Catalog navigation
+        catalogNavigation();
+      },
+      afterClose: function(){
+        $('#popup__menu').find('#catalog__menu').remove();
+      }
+    }
+  });
+
   $('.popup__close').on('click', function(){
     $.magnificPopup.close();
   });
@@ -127,6 +127,17 @@ $(document).on('ready', function(){
     }
   });
 
+  // Img banner carousel
+  $('.img-carousel').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: false,
+    customPaging: function(slider, i) {
+      return $('<span>').text(i + 1);
+    }
+  });
+
   // Mobile menu
   $('#btn-mobile').on('click', function(e){
     e.stopPropagation();
@@ -151,7 +162,7 @@ $(document).on('ready', function(){
     spaceBetween: 0,
     nextButton: '.manufacturer__next',
     prevButton: '.manufacturer__prev',
-    autoplay: 3500,
+    // autoplay: 3500,
     loop: true,
     breakpoints: {
       991: {
@@ -169,11 +180,11 @@ $(document).on('ready', function(){
     }
   });
 
-  // Custom select
-  $('select.select').selectric();
-
   // Catalog navigation
   catalogNavigation();
+
+  // Custom select
+  $('select.select').selectric();
 
   // Chrome Smooth Scroll
   try {
@@ -200,7 +211,7 @@ $(window).on('resize', function(){
   // Seo text
   seoText();
 
-  // console.log(width);
+  // Search header block in tablet
   if (width < 768 && $('.header__search').hasClass('is-tablet') || width > 991 && $('.header__search').hasClass('is-tablet')) {
     $('.header__search').removeClass('is-tablet');
   }
@@ -272,6 +283,7 @@ function simpleForm(form, callback) {
   });
 }
 
+// Seo text slide in mobile
 function seoText(){
   var width = $(window).width();
 
@@ -286,6 +298,7 @@ function seoText(){
   }
 }
 
+// Slide catalog navigation
 function catalogNavigation(){
   var menu = $('.catalog__navigation');
   var li = $('.has-folder');
@@ -297,4 +310,9 @@ function catalogNavigation(){
     $(this).next(ul).slideToggle();
     $(this).parent().toggleClass('active')
   })
+}
+
+// Clone catalog menu in popup
+function catalogMenuPopup(){
+  $('#catalog__menu').clone().appendTo('#popup__menu');
 }

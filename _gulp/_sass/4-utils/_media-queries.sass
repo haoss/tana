@@ -21,6 +21,17 @@
     &__prev, &__next
       i
         margin-top: 0
+  .catalog
+    &__menu
+      &__title
+        font-size: rem(18)
+        i
+          top: -1px
+
+  .news
+    &__block
+      &__text
+        max-height: 122px
 
 @media only screen and (max-width: 1199px) and (min-width : 991px)
   .catalog
@@ -80,11 +91,31 @@
         // background-color: pink
         &::after
           display: block !important
+    &__menu
+      &__title
+        font-size: rem(14)
+        margin-top: -5px
+        i
+          top: 2px
 
   .manufacturer
     &__prev, &__next
       i
         margin-top: 1px
+
+  .news
+    &__block
+      &__wrapper
+        &>div
+          &:first-child
+            width: 157px
+          &+div
+            padding-left: 30px
+      &__text
+        padding: 0
+        margin: -3px 0 0 0
+        background: none
+        max-height: 133px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -132,6 +163,7 @@
           bottom: 0
           background: rgba($color-black,0.4)
           z-index: 50
+
 
   .footer
     &__info
@@ -192,6 +224,9 @@
         max-height: 155px
         img
           max-height: 155px
+    &__menu
+      &__button
+        display: block
 
   .section
     &__head
@@ -204,8 +239,21 @@
         &::before
           top: 6px
 
+  .main-carousel
+    margin-bottom: 23px !important
+
+  .news
+    &__block
+      padding-bottom: 20px
+      &__wrapper
+        &>div
+          &+div
+            padding-left: 0px
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
+  .h1, h1
+    font-size: rem(28)
   .header
     &__logo
       margin-top: 9px
@@ -236,6 +284,17 @@
     &__block
       span
         display: none
+  .pagination
+    background: none
+    margin: 0 -15px
+    &__wrapper
+      padding: 0
+      ul
+        li
+          &.pagination__prev
+            margin-right: 10px
+          &.pagination__next
+            margin-left: 10px
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

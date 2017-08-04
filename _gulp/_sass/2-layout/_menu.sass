@@ -52,12 +52,99 @@
       li
         margin: 0
         list-style: none
+        position: relative
+        &.has-folder
+          &::after
+            content: ''
+            width: 26px
+            height: 1px
+            background: #ccc
+            position: absolute
+            right: 0
+            bottom: 0
+          &>a
+            padding-right: 10px
+            &::after
+              content: '\f125'
+              position: absolute
+              right: 0
+              top: 8px
+              color: $color-dark
+              font-size: rem(12)
+              font-family: $font-ionicons
+              // transition: transform 0.35s
+          &.active
+            &>a
+              color: $color-blue
+              &::after
+                color: $color-blue
+                right: 4px
+                transform: rotate(90deg)
+        &.active
+          &>a
+            color: $color-blue
+          &>ul
+            display: block
         a
           color: $color-dark
           text-decoration: none
           &:hover
             color: $color-blue
     ul
+      &>li
+        &>a
+          min-height: 32px
+          display: block
+          padding: 9px 0 6px 0
+    ul
       ul
         display: none
         padding-left: 16px
+        font-size: rem(11)
+        margin-top: 5px
+        li
+          &:last-child
+            padding-bottom: 5px
+          &.has-folder
+            &>a
+              &::after
+                top: 4px
+          a
+            min-height: 24px
+            padding: 5px 0 2px 0
+  &__menu
+    &__title
+      font-size: rem(20)
+      font-family: $font-intro
+      text-transform: uppercase
+      margin-bottom: 20px
+      color: $color-dark
+      padding-left: 30px
+      position: relative
+      i
+        font-size: rem(26)
+        color: $color-blue
+        margin-right: 10px
+        top: 0
+        line-height: 1
+        position: absolute
+        left: 0
+    &__button
+      display: none
+      background: $color-blue
+      text-align: center
+      margin-bottom: 25px
+      .catalog__menu__title
+        display: inline-block
+        color: $color-white
+        font-size: rem(20)
+        text-decoration: none
+        margin-bottom: 0
+        height: 35px
+        padding: 4px 0 4px 25px
+        white-space: nowrap
+        margin-top: 0
+        i
+          color: $color-white
+          font-size: rem(20)
+          top: 8px
