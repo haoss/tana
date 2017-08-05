@@ -1,0 +1,194 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Контакты' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Контакты' + ' - TANA' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+    
+    // Preloader
+    include ./_include/_preloader
+    
+    include ./_include/_header
+    
+    // Content
+    .content
+      .container
+        
+        // Breadcrumbs
+        ul.breadcrumbs.hidden-xs
+          li
+            a(href="#!") Интернет магазин «TANA»
+          li
+            span Заголовок страницы
+        
+        .row
+          .col-sm-3.hidden-xs
+            
+            // Catalog menu
+            include ./_include/_catalog-menu
+
+            // Banner
+            .banner
+              a(href="#!")
+                img(src="./img/banner-sitebar.png", alt="").img-responsive
+            
+          .col-sm-9
+            
+            // Catalog menu mobile button
+            .catalog__menu__button
+              a(href="#popup-catalog-menu").catalog__menu__title.open-popup-menu
+                i.ion-ios-list
+                | Каталог товаров
+            
+            .h1 контакты
+            
+            #map_canvas.contact__map
+              
+            // Google Map
+            script(src='https://maps.googleapis.com/maps/api/js?sensor=false')
+            script.
+              function initialize() {
+              var myLatlng = new google.maps.LatLng(55.757099,37.612800);
+              var map_options = {
+              zoom: 16,
+              mapTypeId: google.maps.MapTypeId.ROADMAP,
+              center: myLatlng,
+              scrollwheel: false,
+              disableDefaultUI: true
+              }
+              var map = new google.maps.Map(document.getElementById('map_canvas'), map_options)
+              var myIcon = new google.maps.MarkerImage('./img/map-pointer.png', null, null, null, new google.maps.Size(104,106));
+              var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              icon: myIcon
+              });
+              /* Remove if you dont want B/W Google Map */
+              /*
+              var styles = [
+              {
+              featureType: "all",
+              stylers: [
+              { saturation: -100 }
+              ]
+              }
+              ];
+              map.setOptions({styles: styles});
+              */
+              }
+              google.maps.event.addDomListener(window, 'load', initialize);
+            // Google Map Ends!
+            
+            .h6 Россия, Москва, улица Кузнецкий Мост, 11, стр. 1
+              br.visible-sm.visible-xs
+              small /gps - 55.757099, 37.612800/
+              
+            .row
+              .col-sm-6
+                table.table
+                  tr
+                    td(valign="top")
+                      p
+                        strong Телефон: 
+                    td(valign="top") 
+                      p 8 (800) 555 50 50
+                        br
+                        | +7 (4932) 50-50-50
+                  tr
+                    td(valign="top")
+                      p
+                        strong Факс:
+                    td(valign="top") 
+                      p +7 (4932 )55-55-55
+                  tr
+                    td(valign="top")
+                      p
+                        strong e-mail:
+                    td(valign="top") 
+                      p
+                        a(href="#!") info@site-name.ru
+              .col-sm-6
+                p
+                  strong Режим работы:
+                table
+                  tr
+                    td(valign="top") 
+                      p Пн - Пт
+                    td(valign="top") 
+                      p 9:00 - 18:00
+                  tr
+                    td(valign="top") 
+                      p Сб - Вс
+                    td(valign="top") 
+                      p 9:00 - 16:00
+            
+            hr
+              
+            .form
+              form(action="#!")
+                fieldset
+                  .h6 Форма для связи
+                  p Остались вопросы, или есть предложения? Обезательно нам напишите!    
+                  
+                  .clear5
+                  
+                  .row
+                    .col-md-6
+                      .form-group.has-feedback.has-error
+                        label.hidden Ваше имя
+                        input(type="text" placeholder="Ваше имя").form-control
+                        i.ion-alert-circled.form-control__feedback
+                          
+                      .form-group.has-feedback
+                        label.hidden Ваше email
+                        input(type="email" placeholder="Ваше email").form-control
+                        i.ion-alert-circled.form-control__feedback
+                      
+                      .table.table--480-block
+                        .table__cell
+                          .form-group
+                            label.hidden Текст с картинки
+                            input(type="text" placeholder="Текст с картинки").form-control.form-control--captcha
+                        .table__cell 
+                          .form__captcha(style="background-image: url('./img/captcha.png')")
+                          
+                      .form-group
+                        label.form-checkbox(for="checkbox")
+                          input#checkbox(type="checkbox" checked).form-checkbox__input
+                          span.form-checkbox__span
+                          span.form-checkbox__label Согласен на обработку моих личных данных.
+                            br
+                            a(href="#!" target="_blank") Политика конфиденциальности
+                        
+                    .col-md-6
+                      .form-group.has-feedback
+                        label.hidden Ваше сообщение
+                        textarea(placeholder="Ваше сообщение").form-control
+                        i.ion-alert-circled.form-control__feedback
+                      
+                      button(type="submit").btn.btn--border.w100per Отправить сообщение
+
+    
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+    
+    //[if gte IE 9]
+      <script src='./js/libs/html5shiv/es5-shim.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+      <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+
+    include ./_include/_footer-js
+    // Load Scripts
+    script(src="./js/libs.js")
+    script(src="./js/libs/slick/slick.min.js")
+    script(src="./js/libs/jquery-selectric/jquery.selectric.min.js")
+    script(src="./js/libs/readmore/readmore.min.js")
+    script(src="./js/libs/swiper/js/swiper.min.js")
+    script(src="./js/libs/bootstrap/bootstrap.min.js")
+    script(src="./js/common.js")
+    include ./_include/_js-body-bottom

@@ -1,11 +1,13 @@
 /* forms */
 
-input
+input, textarea
   &::-webkit-input-placeholder
     color: #a9a9a9
   &::-moz-placeholder
     color: #a9a9a9
   &:-ms-input-placeholder
+    color: #a9a9a9
+  &:-moz-placeholder
     color: #a9a9a9
   &:-moz-placeholder
     color: #a9a9a9
@@ -50,6 +52,9 @@ button, html input[type=button], input[type=reset], input[type=submit]
       top: 4px
       font-size: rem(16)
       color: $color-red
+      display: none
+    &--captcha
+      width: 165px
   &-checkbox
     font-size: rem(11)
     position: relative
@@ -77,16 +82,24 @@ button, html input[type=button], input[type=reset], input[type=submit]
       font-weight: 400
       display: block
 
+  &__captcha
+    height: 30px
+    width: 214px
+    background:
+      position: center center
+      repeat: no-repeat
+
 textarea
   &.form-control, &.form__control
-    height: 150px
+    height: 120px
     resize: none
 
 label
   display: inline-block
   max-width: 100%
   margin-bottom: 5px
-  font-weight: 700
+  font-weight: 400
+  font-family: $font-roboto-bold
 
 .has
   &-success .form-control
@@ -97,9 +110,12 @@ label
     border-color: #8a6d3b
     box-shadow: none !important
 
-  &-error .form-control
-    border-color: $color-red !important
-    box-shadow: none !important
+  &-error
+    .form-control
+      border-color: $color-red !important
+      box-shadow: none !important
+      &__feedback
+        display: block
 
   &-success .control-label
     color: #3c763d

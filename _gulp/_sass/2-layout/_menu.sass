@@ -112,7 +112,7 @@
           a
             min-height: 24px
             padding: 5px 0 2px 0
-  &__menu
+  &__menu, &__filter
     &__title
       font-size: rem(20)
       font-family: $font-intro
@@ -148,3 +148,55 @@
           color: $color-white
           font-size: rem(20)
           top: 8px
+
+// List
+ol.list
+  padding: 0
+  margin: 0 0 25px 0
+  li
+    list-style: none
+    position: relative
+    padding-left: 24px
+    min-height: 17px
+    line-height: 1.55
+    &>span
+      position: absolute
+      width: 17px
+      height: 17px
+      line-height: 17px
+      text-align: center
+      display: block
+      left: 0
+      top: 0
+      color: $color-white
+      background-color: $color-blue
+      font-size: rem(10)
+      top: 3px
+
+ul.list
+  padding: 0
+  margin: 0 0 25px 0
+  li
+    list-style: none
+    position: relative
+    padding-left: 24px
+    min-height: 17px
+    line-height: 1.55
+    &::before
+      position: absolute
+      left: 3px
+      top: -2px
+      content: "\f3fd"
+      color: $color-blue
+      font-size: rem(28)
+      line-height: 1
+      font-family: $font-ionicons
+  &--line
+    li
+      &::before
+        content: ''
+        width: 10px
+        height: 1px
+        background: $color-blue
+        left: 2px
+        top: 10px

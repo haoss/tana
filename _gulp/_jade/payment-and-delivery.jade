@@ -1,0 +1,160 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Оплата и доставка' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Оплата и доставка' + ' - TANA' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+    
+    // Preloader
+    include ./_include/_preloader
+    
+    include ./_include/_header
+    
+    // Content
+    .content
+      .container
+        
+        // Breadcrumbs
+        ul.breadcrumbs.hidden-xs
+          li
+            a(href="#!") Интернет магазин «TANA»
+          li
+            span Заголовок страницы
+        
+        .row
+          .col-sm-3.hidden-xs
+            
+            // Catalog menu
+            include ./_include/_catalog-menu
+
+            // Banner
+            .banner
+              a(href="#!")
+                img(src="./img/banner-sitebar.png", alt="").img-responsive
+            
+          .col-sm-9
+            
+            // Catalog menu mobile button
+            .catalog__menu__button
+              a(href="#popup-catalog-menu").catalog__menu__title.open-popup-menu
+                i.ion-ios-list
+                | Каталог товаров
+            
+            .h1 Оплата и доставка
+            
+            h2.line Способы оплаты товаров и услуг
+            
+            // Tab
+            .tab.tab--payment
+              ul(role='tablist').tab__ul
+                li(role='presentation')
+                  a(href='#tab1', aria-controls='tab1', role='tab', data-toggle='tab') Наличный расчёт
+                li.active(role='presentation')
+                  a(href='#tab2', aria-controls='tab2', role='tab', data-toggle='tab') Банковской картой
+                li(role='presentation')
+                  a(href='#tab3', aria-controls='tab3', role='tab', data-toggle='tab') Кредит
+                li(role='presentation')
+                  a(href='#tab4', aria-controls='tab4', role='tab', data-toggle='tab') Безналичный расчёт
+                  
+              // Tab panes
+              .tab__content
+                #tab1.tab-pane(role='tabpanel') 1
+                #tab2.tab-pane.active(role='tabpanel') 
+                
+                  // Payment information
+                  .payment__info.payment__info--right.hidden-xs
+                    .payment__info__head
+                      i.ion-ios-information
+                      | Оплата производится только в российских рублях.
+                    p 
+                      strong Принимаем карты:
+                      img(src="./img/payment-card.png", alt="").payment__info__img
+                      | Оплата по одному товарному чеку с разных банковских карт не производится.
+                    p Если Вы откажетесь от заказа, возврат переведенных средств производится на Ваш банковский счет в течение 5—30 рабочих дней (срок зависит от Банка, который выдал Вашу банковскую карту).
+                
+                  ul.list
+                    li Безопасно;
+                    li Отсутствие комиссий;
+                    li Не нужно тратить время на поход в банкомат.
+                  
+                  .h6 При доставке
+                  p Платеж будет совершен при помощи мобильного банковского терминала.
+                  
+                  .h6 При самовывозе*
+                  p Вы приезжаете в выбранную Вами точку самовывоза, оплачиваете банковской картой товар на кассе и забираете его. 
+                    br
+                    | *Если Вы забираете товар из пункта интернет-магазина, интернет-гипермаркета или из розничного магазина.
+                  
+                  p 
+                    strong Оплатить банковской картой Вы можете:
+                  ul.list.list--line
+                    li в розничных магазинах,
+                    li при доставке товара/оказании услуг,
+                  p После оплаты Вы получите все необходимые документы.
+                  
+                  .clear
+                    
+                  // Payment information
+                  .payment__info.payment__info--320.visible-xs
+                    .payment__info__head
+                      i.ion-ios-information
+                      | Оплата производится только в российских рублях.
+                    p 
+                      strong Принимаем карты:
+                      img(src="./img/payment-card.png", alt="").payment__info__img
+                      | Оплата по одному товарному чеку с разных банковских карт не производится.
+                    p Если Вы откажетесь от заказа, возврат переведенных средств производится на Ваш банковский счет в течение 5—30 рабочих дней (срок зависит от Банка, который выдал Вашу банковскую карту).
+                  
+                #tab3.tab-pane(role='tabpanel') 3
+                #tab4.tab-pane(role='tabpanel') 4
+            
+            
+            h2.line Доставка
+            p
+              strong Доставка швейного оборудования
+            p Доставка швейного оборудования по городу Иваново, в том числе и до транспортных компаний, терминалы которых находятся в городе, осуществляется бесплатно силами нашей компании. Необходимо учитывать, что доставка от терминала выбранной транспортной компании до конечного пункта назначения оплачивается покупателем.
+            
+            .h6 Доставка запчастей для швейного оборудования
+            p Доставка запчастей для швейного оборудования по городу Иваново осуществляется бесплатно силами нашей компании при заказах на сумму от 3000 рублей.
+            
+            .h6 Перечень рекомендуемых транспортных компаний
+            
+            ul.list
+              li Деловые линии 
+                a(href="#!") (Расчет стоимости доставки)
+              li ПЭК (г.Иваново) 
+                a(href="#!") (Расчет стоимости доставки)
+              li Байкал Сервис 
+                a(href="#!") (Расчет стоимости доставки)
+                  
+            ol.list
+              li Деловые линии 
+                a(href="#!") (Расчет стоимости доставки)
+              li ПЭК (г.Иваново) 
+                a(href="#!") (Расчет стоимости доставки)
+              li Байкал Сервис 
+                a(href="#!") (Расчет стоимости доставки)
+    
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+    
+    //[if gte IE 9]
+      <script src='./js/libs/html5shiv/es5-shim.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+      <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+
+    include ./_include/_footer-js
+    // Load Scripts
+    script(src="./js/libs.js")
+    script(src="./js/libs/slick/slick.min.js")
+    script(src="./js/libs/jquery-selectric/jquery.selectric.min.js")
+    script(src="./js/libs/readmore/readmore.min.js")
+    script(src="./js/libs/swiper/js/swiper.min.js")
+    script(src="./js/libs/bootstrap/bootstrap.min.js")
+    script(src="./js/common.js")
+    include ./_include/_js-body-bottom

@@ -94,12 +94,17 @@
       margin-left: 7px
       // position: absolute
 
+.tab-pane
+  display: none
+  &.active
+    display: block
+
 // Section
 .section__head
   font-size: rem(28)
   font-family: $font-intro
   text-transform: uppercase
-  color: $color-blue
+  color: $color-dark
   margin-bottom: 20px
   padding-left: 54px
   position: relative
@@ -110,16 +115,22 @@
     top: 14px
     height: 1px
     width: 40px
-    background-color: $color-blue
+    background-color: $color-dark
     content: ''
   &--small
     font-size: rem(14)
     padding-left: 50px
     &::before
       top: 6px
+  &--blue
+    color: $color-blue
+    &::before
+      background-color: $color-blue
 
 // Catalog
 .catalog
+  margin-bottom: 25px
+  +clearfix
   &__block
     position: relative
     background: transparent
@@ -256,6 +267,83 @@
     // background: pink
     margin-left: -15px
     margin-right: -15px
+  &__category
+    font-size: rem(12)
+    text-transform: uppercase
+    text-decoration: none
+    font-family: $font-intro
+    padding-bottom: 12px
+    ul
+      display: block
+      padding: 0
+      margin-top: 0
+      margin-bottom: 0
+      li
+        margin: 0
+        list-style: none
+        &.active
+          &>a, &>span
+            background: $color-blue
+            border-color: $color-blue
+            color: $color-white
+            text-decoration: none
+        &>a, &>span
+          display: flex
+          justify-content: center
+          align-items: center
+          height: 80px
+          border: 4px solid $color-gray
+          text-align: center
+          color: $primary-color
+          background-color: $color-white
+          margin-bottom: 15px
+          line-height: 1.2
+          padding: 0 10px
+        &>a
+          &:hover
+            background: $color-blue
+            border-color: $color-blue
+            color: $color-white
+            text-decoration: none
+  &__sorting
+    border-top: 1px solid $color-gray
+    border-bottom: 1px solid $color-gray
+    margin-bottom: 25px
+    font-size: rem(12)
+    +clearfix
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: middle
+    &__block
+      white-space: nowrap
+      label
+        margin-bottom: 0
+        margin-right: 10px
+        font-family: $font-roboto-bold
+      &>*
+        display: inline-block
+        vertical-align: middle
+      &--right
+        float: right
+    .selectric
+      .label
+        color: $primary-color
+        font-family: $font-roboto-bold
+  &__buttons
+    display: table
+    width: 100%
+    margin-bottom: 25px
+    &>div
+      display: table-cell
+      vertical-align: middle
+      width: 50%
+      &+div
+        padding-left: 1px
+    .catalog__menu__button, .catalog__filter__button
+      margin-bottom: 0
 
 // Popup
 .popup
@@ -297,12 +385,12 @@
     font-size: rem(24)
     line-height: 1
     margin-bottom: 20px
-  &--menu
+  &--menu, &--filter
     width: 290px
     padding: 30px 20px 30px 20px
     .catalog__navigation
       margin-bottom: 0
-    .catalog__menu__title
+    .catalog__menu__title, .catalog__filter__title
       margin-top: 0
       font-size: rem(20)
       margin-bottom: 10px
@@ -319,6 +407,7 @@
     font-size: rem(11)
     font-family: $font-roboto
     color: #a9a9a9
+    margin-right: 25px
   &-items
     border-color: $color-blue
     li
@@ -352,6 +441,11 @@
     &::before
       content: "\f104"
       margin-top: 3px
+  &-select
+    &--sort-by1
+      width: 175px
+    &--sort-by2
+      width: 55px
 
 // Manufacturer
 .manufacturer
@@ -452,7 +546,7 @@
 // Breadcrumbs
 .breadcrumbs
   font-size: rem(11)
-  margin: -20px 0 25px 0
+  margin: -25px 0 25px 0
   padding: 0
   color: #a3a6aa
   li
@@ -534,7 +628,6 @@
 .document
   &__about
     font-size: rem(14)
-    border-bottom: 1px solid $color-gray
     margin-bottom: 25px
     margin-top: -42px
     &:last-child
@@ -563,3 +656,348 @@
       p
         &:last-child
           margin-bottom: 0
+
+// Tab
+.tab
+  margin-bottom: 20px
+  &__ul
+    margin: 0 0 20px 0
+    padding: 0 10px
+    border-bottom: 1px solid $color-gray
+    white-space: nowrap
+    +clearfix
+    li
+      list-style: none
+      margin: 0
+      float: left
+      a
+        height: 29px
+        line-height: 29px
+        display: block
+        padding: 0 20px
+        color: $color-dark
+        background-color: transparent
+        text-decoration: none
+        &:hover
+          text-decoration: none
+      &.active
+        a
+          color: $color-black
+          background-color: $color-gray
+
+// Payment
+.payment
+  &__info
+    &--320
+      margin-top: 10px
+    width: 262px
+    margin-bottom: 25px
+    border: 5px solid $color-gray
+    font-size: rem(11)
+    padding: 0 12px 20px 17px
+    p
+      line-height: 1.4
+      &:last-child
+        margin-bottom: 0
+    &__head
+      border-bottom: 5px solid $color-gray
+      min-height: 55px
+      margin: 0 -12px 18px -17px
+      position: relative
+      padding: 9px 10px 9px 43px
+      font-size: rem(12)
+      line-height: 1.3
+      i
+        position: absolute
+        left: 16px
+        top: 11px
+        color: $color-blue
+        font-size: rem(20)
+    &__img
+      max-width: 100%
+      height: auto
+      display: block
+      margin: 12px 0
+    &--right
+      float: right
+      margin-left: 30px
+
+// Contacts
+.contact
+  &__map
+    position: relative
+    margin-bottom: 30px
+    padding-bottom: 330px
+    border: 5px solid $color-gray
+    background-color: $color-gray
+    iframe
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+
+// table
+div.table
+  display: table
+  &>div
+    display: table-cell
+    vertical-align: top
+    &+div
+      padding-left: 30px
+
+// Table
+table.table
+  margin-bottom: 15px
+  td
+    padding: 5px 0
+    p
+      &:last-child
+        margin-bottom: 0
+    &+td
+      padding-left: 15px
+
+// Filter
+.filter
+  font-family: $font-roboto-bold
+  font-weight: 600
+  font-size: rem(12)
+  text-transform: uppercase
+  color: $primary-color
+  max-width: 262px
+  margin: 0 auto 40px
+  position: relative
+  z-index: 40
+
+  &__block
+    margin-bottom: 20px
+    border-bottom: 1px solid $color-gray
+    padding-bottom: 30px
+    font-family: $font-intro
+    &--slider
+      padding-left: 13px
+      padding-right: 13px
+      .filter__head
+        margin-left: -13px
+        margin-right: -13px
+    &--category
+      margin-bottom: 10px
+
+  &__head
+    background: #f9fafa
+    color: $primary-color
+    padding: 0 13px
+    line-height: 40px
+    height: 40px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    margin-bottom: 10px
+    font-size: rem(14)
+    &--category
+      background: none
+      padding-top: 0
+      padding-bottom: 0
+      color: $color-dark
+      height: auto
+      line-height: inherit
+      margin-bottom: 5px
+
+  &__row
+    input[type=checkbox]
+      display: none
+      &:checked
+        &~.checkbox
+          &::after
+            color: $color-blue
+            content: "\f373"
+        &~.label
+          color: $color-blue
+        &~.sup
+          // color: $color-dark
+      &:disabled
+        &~.checkbox
+          &::after
+            content: "\f372"
+        &~.label
+          color: #a8abaf
+          // text-decoration: line-through
+        &~.sup
+          color: #a8abaf
+
+    font-weight: 400
+    display: block
+    cursor: pointer
+    padding: 5px 55px 5px 30px
+    position: relative
+    margin: 0
+    line-height: 1.3
+    font-family: $font-intro
+    .checkbox
+      height: 12px
+      width: 12px
+      position: absolute
+      display: block
+      margin: 0
+      left: 4px
+      top: 5px
+      color: #a8abaf
+      &::after
+        font-family: $font-ionicons
+        content: "\f372"
+        position: absolute
+        font-size: rem(17)
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        color: #a0a0a0
+        font-weight: 400
+    .sup
+      position: absolute
+      width: auto
+      text-align: right
+      right: 0
+      top: 6px
+      color: #a8abaf
+    &:hover
+      .label
+        color: $color-dark
+    &.unactive
+      cursor: default
+    &--nosup
+      .sup
+        opacity: 0
+    &--color
+      .sup
+        border: 1px solid #f0f0f0
+        height: 14px !important
+        width: 14px !important
+        border-radius: 2px
+        overflow: hidden
+        right: 21px
+
+  &__body
+    padding: 0
+    background: $color-white
+    button
+      &+button
+        margin-top: 15px
+
+  &__button
+    display: block
+    width: 100%
+    text-align: left
+    position: relative
+    color: $primary-color
+    background: #f9fafa
+    text-transform: uppercase
+    height: 40px
+    line-height: 38px
+    border: 0
+    padding-left: 15px
+    font-family: $font-roboto-bold
+    font-weight: 600
+    font-size: rem(14)
+    cursor: pointer
+    margin: 0
+    i
+      position: absolute
+      right: 10px
+      font-size: rem(14)
+      top: 50%
+      transform: translateY(-50%) rotate(180deg)
+      transform-origin: 50% 50%
+      transition: transform 0.35s
+
+  &.is-active
+    .filter__button
+      i
+        transform: translateY(-50%) rotate(0deg)
+
+  &__cost
+    font-size: rem(12)
+    font-weight: 600
+    color: $primary-color
+    font-family: $font-roboto-bold
+    text-transform: uppercase
+    .table-cell
+      vertical-align: middle
+      &+.table-cell
+        padding-left: 2px
+    input
+      width: 44px
+      background: #f0f6f9
+      text-align: center
+      font-weight: 600
+      color: $primary-color
+      padding: 0
+      font-family: $font-roboto-bold
+      font-size: rem(12)
+      height: 30px
+      line-height: 28px
+
+  &__slider
+    padding-bottom: 35px
+    padding-top: 10px
+
+  &__more
+    // position: absolute
+    width: 100%
+    text-align: center
+    border-top: 1px solid #eaeaea
+    text-transform: none
+    font-weight: 400
+    margin-top: -20px
+    margin-bottom: 25px
+    a
+      text-decoration: none
+
+  &__category
+    margin-bottom: 25px
+
+.ui-widget.ui-widget-content
+  border: 0
+  height: 3px
+  border-radius: 0
+  background: #e6e6e6
+.ui-slider-horizontal .ui-slider-range
+  background: $color-dark
+.ui-slider .ui-slider-handle
+  width: 0
+  height: 0
+  border: 0
+  background: none
+  border-top: 10px solid transparent
+  border-bottom: 10px solid transparent
+  border-left: 10px solid $color-dark
+  top: -8px
+  cursor: pointer
+  z-index: 10
+  &:focus
+    outline: none
+  &+.ui-slider-handle
+    border-left: 0
+    border-right: 10px solid $color-dark
+
+.price-range-min, .price-range-max
+  font-size: rem(10)
+  color: #a9a9a9
+  position: absolute
+  left: -11px
+  top: 9px
+  font-family: $font-roboto-bold
+  width: 30px
+  z-index: 10
+  background-color: $color-white
+  display: block
+
+.price-range-max
+  left: -20px
+  text-align: right
+
+.range__zero
+  font-size: rem(10)
+  color: #a9a9a9
+  position: absolute
+  margin-top: 9px
+  z-index: 5

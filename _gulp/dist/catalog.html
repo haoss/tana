@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Главная - TANA</title>
+        <title>Каталог товаров - TANA</title>
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -128,7 +128,7 @@
                     <button id="btn-mobile" type="button" class="hamburger hamburger--slider hamburger--header"><span class="hamburger-box"><span class="hamburger-inner"></span></span><strong>Меню</strong></button>
                     <nav role="navigation" class="navigation">
                         <ul>
-                            <li class="active"><a href="#" title="Главная">Главная</a></li>
+                            <li><a href="#" title="Главная">Главная</a></li>
                             <li><a href="#" title="О компании">О компании</a></li>
                             <li><a href="#" title="Оплата и доставка">Оплата и доставка</a></li>
                             <li><a href="#" title="Производители">Производители</a></li>
@@ -289,58 +289,116 @@
                                 </ul>
                             </div>
                         </div>
-                        <!-- Banner-->
-                        <div class="banner"><a href="#!"><img src="./img/banner-sitebar.png" alt="" class="img-responsive"></a></div>
+                        <!-- Filter-->
+                        <div id="catalog__filter" class="catalog__filter">
+                            <div class="catalog__filter__title"> <i class="ion-android-settings"></i>фильтры</div>
+                            <div id="filters" class="filter">
+                                <form action="#!" method="get">
+                                    <div class="filter__body">
+                                        <div class="filter__block">
+                                            <label for="manufacturer__0" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__0"><span class="checkbox"></span><span class="label">BROTHER</span><span class="sup">(120)</span>
+                                            </label>
+                                            <label for="manufacturer__1" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__1"><span class="checkbox"></span><span class="label">JUKI </span><span class="sup">(55)</span>
+                                            </label>
+                                            <label for="manufacturer__2" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__2"><span class="checkbox"></span><span class="label">PEGASUS </span><span class="sup">(21)</span>
+                                            </label>
+                                            <label for="manufacturer__3" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__3"><span class="checkbox"></span><span class="label">PODOLSK </span><span class="sup">(50)</span>
+                                            </label>
+                                            <label for="manufacturer__4" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__4"><span class="checkbox"></span><span class="label">REACHE </span><span class="sup">(80)</span>
+                                            </label>
+                                            <label for="manufacturer__5" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__5"><span class="checkbox"></span><span class="label">SUISEI </span><span class="sup">(22)</span>
+                                            </label>
+                                            <label for="manufacturer__6" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__6"><span class="checkbox"></span><span class="label">SUSSEI </span><span class="sup">(500)</span>
+                                            </label>
+                                            <label for="manufacturer__7" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" disabled id="manufacturer__7"><span class="checkbox"></span><span class="label">TEXTIMA </span><span class="sup">(0)</span>
+                                            </label>
+                                            <label for="manufacturer__8" class="filter__row">
+                                                <input type="checkbox" name="f_manufacturer[]" disabled id="manufacturer__8"><span class="checkbox"></span><span class="label">YAMATO </span><span class="sup">(0)</span>
+                                            </label>
+                                        </div>
+                                        <div class="filter__block filter__block--slider">
+                                            <div class="filter__slider">
+                                                <div class="range__zero">0</div>
+                                                <div id="filter__range"></div>
+                                            </div>
+                                            <div class="filter__cost table">
+                                                <div class="table-cell"> <span>от</span></div>
+                                                <div class="table-cell">
+                                                    <input id="priceMin" type="text" value="5000" class="form-control">
+                                                </div>
+                                                <div class="table-cell"><span>до</span></div>
+                                                <div class="table-cell">
+                                                    <input id="priceMax" type="text" value="15000" class="form-control">
+                                                </div>
+                                                <div class="table-cell"><span>руб</span></div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn--border btn--block">Сбросить фильтр</button>
+                                        <button type="button" id="filter__hide" class="btn btn--unborder btn--block visible-xs">Скрыть фильтр</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-9">
-                        <!-- Main banner carousel-->
-                        <div class="main-carousel">
-                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
-                            <div><a href="#!"><img src="./img/banner-top.png" alt="" class="img-responsive"></a></div>
+                        <div class="catalog__buttons">
+                            <div>
+                                <!-- Catalog menu mobile button-->
+                                <div class="catalog__menu__button"><a href="#popup-catalog-menu" class="catalog__menu__title open-popup-menu"><i class="ion-ios-list"></i>Каталог</a></div>
+                            </div>
+                            <div>
+                                <!-- Catalog filter mobile button-->
+                                <div class="catalog__filter__button"><a href="#popup-catalog-filter" class="catalog__menu__title open-popup-filter"><i class="ion-android-settings"></i>Фильтр</a></div>
+                            </div>
                         </div>
-                        <!-- Catalog menu mobile button-->
-                        <div class="catalog__menu__button"><a href="#popup-catalog-menu" class="catalog__menu__title open-popup-menu"><i class="ion-ios-list"></i>Каталог товаров</a></div>
-                        <!-- Section head-->
-                        <div class="section__head section__head--small">производители</div>
-                        <!-- Manufacturer-->
-                        <div class="manufacturer">
-                            <!-- Slider main container-->
-                            <!-- If we need navigation buttons-->
-                            <div class="manufacturer__prev"><i class="ion-arrow-left-b"></i></div>
-                            <div class="manufacturer__next"><i class="ion-arrow-right-b"></i></div>
-                            <div class="manufacturer__wrapper">
-                                <div class="swiper-container">
-                                    <!-- Additional required wrapper-->
-                                    <div class="swiper-wrapper">
-                                        <!-- Slides-->
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-1.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-2.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-3.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-4.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-5.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-6.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-7.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-8.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-1.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-2.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-3.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-4.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-5.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-6.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-7.png" alt=""></a></div>
-                                        <div class="swiper-slide"><a href="#!" class="manufacturer__block"><span></span><span></span><img src="./img/manufacturer-logo-8.png" alt=""></a></div>
+                        <div class="h1">ЗАПЧАСТИ РАСКРОЙНЫХ МАШИН</div>
+                        <!-- Catalog-->
+                        <div class="catalog">
+                            <!-- Catalog category-->
+                            <div class="catalog__category">
+                                <ul class="row">
+                                    <li class="col-sm-4 col-xs-6 col-xxs-12"><a href="#!">ремни зубчатые</a></li>
+                                    <li class="col-sm-4 col-xs-6 col-xxs-12"><a href="#!">ремни кожанные</a></li>
+                                    <li class="col-sm-4 col-xs-6 col-xxs-12"><a href="#!">ремни кордовые текстропные</a></li>
+                                    <li class="col-sm-4 col-xs-6 col-xxs-12 active"><a href="#!">ремни пластиковые</a></li>
+                                </ul>
+                            </div>
+                            <!-- Catalog sorting-->
+                            <div class="catalog__sorting">
+                                <div class="catalog__sorting__wrapper">
+                                    <div>
+                                        <div class="catalog__sorting__block">
+                                            <label class="hidden-xxs">Сортировать:</label>
+                                            <select class="select select--sort-by1">
+                                                <option selected>По умолчанию</option>
+                                                <option>По увеличению цены</option>
+                                                <option>По уменьшению цены</option>
+                                                <option>Сначала новые</option>
+                                                <option>Сначала старые</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="catalog__sorting__block catalog__sorting__block--right">
+                                            <label class="hidden-xxs">Выводить по:</label>
+                                            <select class="select select--sort-by2">
+                                                <option selected>18</option>
+                                                <option>36</option>
+                                                <option>72</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Section head-->
-                        <div class="section__head section__head--blue">Специальное предложение</div>
-                        <!-- Catalog-->
-                        <div class="catalog">
+                            <!-- Catalog row-->
                             <div class="catalog__row">
                                 <div class="catalog__block">
                                     <form action="#!">
@@ -429,6 +487,21 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Pagination-->
+                        <div class="pagination">
+                            <div class="pagination__wrapper">
+                                <ul>
+                                    <li class="pagination__prev"><a href="#!">Вперед</a></li>
+                                    <li><a href="#!">1</a></li>
+                                    <li><a href="#!">2</a></li>
+                                    <li><a href="#!">3</a></li>
+                                    <li><a href="#!">4</a></li>
+                                    <li class="active"><a href="#!">5</a></li>
+                                    <li><a href="#!">6</a></li>
+                                    <li class="pagination__next"><a href="#!">Назад</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -505,6 +578,8 @@
         <script src="./js/libs/jquery-selectric/jquery.selectric.min.js"></script>
         <script src="./js/libs/readmore/readmore.min.js"></script>
         <script src="./js/libs/swiper/js/swiper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>

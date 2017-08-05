@@ -37,13 +37,21 @@ body
 
 //  Typography
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
-  color: $primary-color
+  color: $color-dark
   font-weight: 400
   text-decoration: none
   margin: 0 0 15px 0
   font-family: $font-intro
   text-transform: uppercase
   display: block
+  small
+    font-size: rem(12)
+    display: inline-block
+    margin-left: 10px
+    color: #959595
+    font-weight: 400
+    font-family: $font-roboto
+    text-transform: none
 
 .h1, h1
   font-size: rem(33)
@@ -55,11 +63,33 @@ body
 .h2, h2
   font-size: rem(28)
   line-height: 1.14
-  margin-bottom: 25px
+  margin-bottom: 20px
+  &.line
+    padding-left: 54px
+    position: relative
+    &::before
+      position: absolute
+      left: 0
+      top: 15px
+      height: 1px
+      width: 40px
+      background-color: $color-dark
+      content: ''
 
 .h3, h3
   font-size: rem(22)
   line-height: 1.38
+  &.line
+    padding-left: 50px
+    position: relative
+    &::before
+      position: absolute
+      left: 0
+      top: 14px
+      height: 1px
+      width: 40px
+      background-color: $color-dark
+      content: ''
 
 .h4, h4
   font-size: rem(20)
@@ -78,6 +108,8 @@ body
 p
   margin: 0 0 10px 0
   line-height: 1.7
+  &+h2, &+.h2, &+h3, &+.h3, &+h4, &+.h4, &+h5, &+.h5, &+h6, &+.h6
+    margin-top: 20px
 
 em, i, .em, .i
   font-style: italic
@@ -87,27 +119,23 @@ strong, b, .strong, .b
   font-family: $font-roboto-bold
 
 hr
-  border: solid #ddd
+  border: solid $color-gray
   border-width: 1px 0 0
   clear: both
-  margin: 10px 0 30px
+  margin: 10px 0 25px
   height: 0
 
 // Links
-a, .link
+a
   color: $link-color
-  text-decoration: underline
+  text-decoration: none
   outline: none
   transition: color 0.35s, background-color 0.35s, border-color 0.35s
 
   &:hover, &:focus, &:active
     color: $link-color
-    text-decoration: none
+    text-decoration: underline
     outline: none
-
-a.link
-  &:hover, &:focus, &:active
-    text-decoration: none
 
 .container
   margin: 0 auto
