@@ -1259,3 +1259,105 @@ table.table
           display: block
           line-height: 1
           margin-top: 3px
+  &__about
+    margin-bottom: 25px
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: top
+        &:first-child
+          padding-right: 30px
+        &:last-child
+          width: 1px
+  &__text
+    margin-bottom: 10px
+    p
+      &:last-child
+        margin-bottom: 0
+    &+[data-readmore-toggle]
+      display: inline-block !important
+      width: auto !important
+      font-size: rem(12)
+
+// Cart
+.cart
+  &__table
+    font-size: rem(16)
+    width: 100%
+    font-family: $font-intro
+    thead
+      th
+        font-size: rem(10)
+        text-transform: uppercase
+        color: #909192
+        border-bottom: 1px solid $color-gray
+        font-weight: 400
+        padding: 5px 0
+        text-align: left
+        &+th
+          padding-left: 15px
+        &.th
+          &--2
+            text-align: left
+            padding-left: 45px
+    tbody
+      td
+        padding: 5px 0
+        vertical-align: middle
+        &+td
+          padding-left: 15px
+  &__img
+    width: 82px
+    img
+      max-width: 100%
+      height: auto
+      display: block
+      width: 67px
+  &__title
+    small
+      display: block
+      line-height: 1
+      color: #9d9d9d
+      font-size: rem(11)
+      font-family: $font-roboto
+      margin-bottom: 10px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      width: 100%
+      height: 11px
+    strong
+      display: block
+      line-height: 1
+      text-transform: uppercase
+      font-family: $font-intro
+    a
+      color: $color-dark
+      text-decoration: none
+      &:hover
+        color: $color-blue
+  &__price, &__price-total
+    color: #707070
+    white-space: nowrap
+    strong
+      font-family: $font-intro
+      display: block
+      line-height: 1
+      i
+        font-size: rem(15)
+        position: relative
+        left: -2px
+  &__price-total
+    color: $color-blue
+  &__number
+    .selectric-wrapper
+      width: 82px
+      .label
+        font-family: $font-intro
+        font-size: rem(16)
+        color: $color-dark
+        line-height: 32px
+  &__small
+    display: block

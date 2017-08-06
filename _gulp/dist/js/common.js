@@ -235,7 +235,14 @@ $(document).on('ready', function(){
         }
       }
     ]
-  })
+  });
+
+  // Manufacturer text
+  $('.manufacturer__text').readmore({
+    collapsedHeight: 65,
+    moreLink: '<a href="#!">Читать далее...</a>',
+    lessLink: '<a href="#!">Свернуть</a>'
+  });
 
   // Chrome Smooth Scroll
   try {
