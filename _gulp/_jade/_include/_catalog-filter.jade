@@ -1,0 +1,77 @@
+#catalog__filter.catalog__filter
+  .catalog__filter__title 
+    i.ion-android-settings
+    | фильтры
+    
+  .filter#filters
+    form(action="#!" method="get")
+      .filter__body
+        .filter__block
+          //- .filter__head Основной материал
+          label.filter__row(for="manufacturer__0")
+            input(type="checkbox" name="f_manufacturer[]")#manufacturer__0
+            span.checkbox
+            span.label BROTHER
+            span.sup (120)
+          label.filter__row(for="manufacturer__1")
+            input(type="checkbox" name="f_manufacturer[]" checked)#manufacturer__1
+            span.checkbox
+            span.label JUKI 
+            span.sup (55)
+          label.filter__row(for="manufacturer__2")
+            input(type="checkbox" name="f_manufacturer[]")#manufacturer__2
+            span.checkbox
+            span.label PEGASUS 
+            span.sup (21)
+          label.filter__row(for="manufacturer__3")
+            input(type="checkbox" name="f_manufacturer[]")#manufacturer__3
+            span.checkbox
+            span.label PODOLSK 
+            span.sup (50)
+          label.filter__row(for="manufacturer__4")
+            input(type="checkbox" name="f_manufacturer[]")#manufacturer__4
+            span.checkbox
+            span.label REACHE 
+            span.sup (80)
+          label.filter__row(for="manufacturer__5")
+            input(type="checkbox" name="f_manufacturer[]" checked)#manufacturer__5
+            span.checkbox
+            span.label SUISEI 
+            span.sup (22)
+          label.filter__row(for="manufacturer__6")
+            input(type="checkbox" name="f_manufacturer[]")#manufacturer__6
+            span.checkbox
+            span.label SUSSEI 
+            span.sup (500)
+          label.filter__row(for="manufacturer__7")
+            input(type="checkbox" name="f_manufacturer[]" disabled)#manufacturer__7
+            span.checkbox
+            span.label TEXTIMA 
+            span.sup (0)
+          label.filter__row(for="manufacturer__8")
+            input(type="checkbox" name="f_manufacturer[]" disabled)#manufacturer__8
+            span.checkbox
+            span.label YAMATO 
+            span.sup (0)
+      
+        .filter__block.filter__block--slider
+          //- .filter__head цена изделия
+          .filter__slider
+            .range__zero-min 0
+            .range__zero-max 12000
+            #filter__range
+          .filter__cost.table
+            .table-cell
+              input#priceMin(type='text', value='1500').form-control
+            .table-cell
+              span -
+            .table-cell
+              input#priceMax(type='text', value='8700').form-control
+            .table-cell
+              i.icon-rouble
+            .table-cell
+              button(type="submit").btn.btn--ok ОК
+        
+        .text-center
+          button(type="button").btn.btn--link.btn--reset-filter Сбросить фильтр
+  

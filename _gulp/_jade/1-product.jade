@@ -1,0 +1,229 @@
+doctype
+
+html(lang="ru")
+  
+  -var active = 'Товар' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Товар' + ' - TANA' //title страницы для генерации верстки  
+
+  include ./_include/_head
+
+  body
+    
+    // Preloader
+    include ./_include/_preloader
+    
+    include ./_include/_header
+    
+    // Content
+    .content
+      .container
+        
+        // Breadcrumbs
+        ul.breadcrumbs.hidden-xs
+          li
+            a(href="#!") Интернет магазин «TANA»
+          li
+            span Заголовок страницы
+            
+        .row
+          .col-sm-3.hidden-xs
+            
+            // Catalog menu
+            include ./_include/_catalog-menu
+            
+            // Banner
+            .banner
+              a(href="#!")
+                img(src="./img/banner-sitebar.png", alt="").img-responsive
+            
+          .col-sm-9
+            
+            .catalog__buttons
+              div
+                // Catalog menu mobile button
+                .catalog__menu__button
+                  a(href="#popup-catalog-menu").catalog__menu__title.open-popup-menu
+                    i.ion-ios-list
+                    | Каталог
+              div
+                // Catalog filter mobile button
+                .catalog__filter__button
+                  a(href="#popup-catalog-filter").catalog__menu__title.open-popup-filter
+                    i.ion-android-settings
+                    | Фильтр
+            
+            .h1 ЛАПКА 118-76067 JUKI MO-2500
+            
+            // Product
+            .product
+              .product__wrapper
+                div
+                  .product__gallery
+                    a(href="./img/product-gallery-big.png" title="Описание 1").image-popup
+                      img(src="./img/product-gallery.png", alt="").img-responsive
+                div
+                  .product__info
+                    table.table
+                      tr
+                        td ПРОИЗВОДИТЕЛЬ:
+                        td 
+                          strong JUKI
+                      tr
+                        td МОДЕЛЬ:
+                        td 
+                          strong MO-2500 
+                      tr
+                        td АРТИКУЛ:
+                        td 
+                          strong 65767465454
+                      tr
+                        td НАЛИЧИЕ:
+                        td 
+                          strong ЕСТЬ В НАЛИЧИИ
+                    
+                    .clear
+                    
+                    .product__price
+                      .product__price__wrapper
+                        div
+                          .product__price__body
+                            small цена
+                            strong 899
+                              i.icon-rouble
+                        div
+                          button(type="submit").btn купить
+                    
+                    .visible-lg
+                      p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                      p Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. 
+            
+              .hidden-lg
+                p Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. 
+                p Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. 
+            
+            // Section head
+            .section__head Ранее просматривали
+            
+            // Viewed
+            .viewed
+              .viewed__carousel
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+                .viewed__block
+                  .catalog__block.catalog__block--viewed
+                    form(action="#!")
+                      .catalog__block__line
+                      .catalog__block__info Швейные нитки
+                      .catalog__block__title Комплексные швейные нитки EURON K 630/3 №15
+                      .catalog__block__img
+                        img(src="./img/catalog-img-2.png", alt="")
+                      .catalog__block__bottom
+                        .catalog__block__price
+                          div
+                            strong 899
+                              i.icon.icon-rouble
+                        button(type="button").btn.btn--border Купить
+            
+    
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+    
+    //[if gte IE 9]
+      <script src='./js/libs/html5shiv/es5-shim.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv.min.js'>
+      <script src='./js/libs/html5shiv/html5shiv-printshiv.min.js'>
+      <script src='./js/libs/html5shiv/respond.min.js'><![endif]
+
+    include ./_include/_footer-js
+    // Load Scripts
+    script(src="./js/libs.js")
+    script(src="./js/libs/slick/slick.min.js")
+    script(src="./js/libs/jquery-selectric/jquery.selectric.min.js")
+    script(src="./js/libs/readmore/readmore.min.js")
+    script(src="./js/libs/swiper/js/swiper.min.js")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js')
+    script(src="./js/common.js")
+    include ./_include/_js-body-bottom

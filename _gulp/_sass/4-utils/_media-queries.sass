@@ -51,6 +51,27 @@
   .form
     &__captcha
       width: 138px
+  .filter
+    &__cost
+      input
+        width: 50px
+  .product
+    &__gallery
+      width: 375px
+    &__wrapper
+      margin-bottom: 20px
+    &__price
+      padding-bottom: 20px
+      &__wrapper
+        display: block
+        &>div
+          display: block
+          padding-top: 10px
+          .btn
+            width: 100%
+          &:last-child
+            width: inherit
+
 
 @media only screen and (max-width: 1199px) and (min-width : 991px)
   .catalog
@@ -155,6 +176,35 @@
       li
         a
           padding: 0 10px
+  .filter
+    &__cost
+      input
+        width: 45px
+      .table-cell
+        &+.table-cell
+          padding-left: 5px
+  .product
+    &__wrapper
+      display: block
+      &>div
+        display: block
+        &:first-child
+          width: auto
+        &+div
+          padding-left: 0
+          padding-top: 25px
+    &__gallery
+      width: 100%
+    &__price
+      margin-top: 0
+      width: 100%
+      max-width: 295px
+      margin-bottom: 20px
+  .manufacturer
+    &-list
+      &__block
+        img
+          max-width: 80%
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -266,7 +316,8 @@
         li
           &>a, &>span
             height: 60px
-
+    &__buttons
+      display: table
   .section
     &__head
       font-size: rem(24)
@@ -306,6 +357,21 @@
   .form
     &__captcha
       width: 216px
+  .search
+    &__result
+      padding-bottom: 62px
+      margin-bottom: 30px
+      &__btn
+        position: absolute
+        bottom: 11px
+        left: 11px
+        width: calc(100% - 22px)
+  .manufacturer
+    &-list
+      &__block
+        width: 50%
+        img
+          max-width: inherit
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
@@ -389,6 +455,12 @@
     display: block
   .hidden-xxs
     display: none !important
+  .manufacturer
+    &-list
+      &__block
+        width: 100%
+        img
+          max-width: inherit
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

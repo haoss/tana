@@ -142,6 +142,11 @@
         <!-- Content-->
         <div class="content">
             <div class="container">
+                <!-- Breadcrumbs-->
+                <ul class="breadcrumbs hidden-xs">
+                    <li><a href="#!">Интернет магазин «TANA»</a></li>
+                    <li><span>Заголовок страницы</span></li>
+                </ul>
                 <div class="row">
                     <div class="col-sm-3 hidden-xs">
                         <!-- Catalog menu-->
@@ -300,7 +305,7 @@
                                                 <input type="checkbox" name="f_manufacturer[]" id="manufacturer__0"><span class="checkbox"></span><span class="label">BROTHER</span><span class="sup">(120)</span>
                                             </label>
                                             <label for="manufacturer__1" class="filter__row">
-                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__1"><span class="checkbox"></span><span class="label">JUKI </span><span class="sup">(55)</span>
+                                                <input type="checkbox" name="f_manufacturer[]" checked id="manufacturer__1"><span class="checkbox"></span><span class="label">JUKI </span><span class="sup">(55)</span>
                                             </label>
                                             <label for="manufacturer__2" class="filter__row">
                                                 <input type="checkbox" name="f_manufacturer[]" id="manufacturer__2"><span class="checkbox"></span><span class="label">PEGASUS </span><span class="sup">(21)</span>
@@ -312,7 +317,7 @@
                                                 <input type="checkbox" name="f_manufacturer[]" id="manufacturer__4"><span class="checkbox"></span><span class="label">REACHE </span><span class="sup">(80)</span>
                                             </label>
                                             <label for="manufacturer__5" class="filter__row">
-                                                <input type="checkbox" name="f_manufacturer[]" id="manufacturer__5"><span class="checkbox"></span><span class="label">SUISEI </span><span class="sup">(22)</span>
+                                                <input type="checkbox" name="f_manufacturer[]" checked id="manufacturer__5"><span class="checkbox"></span><span class="label">SUISEI </span><span class="sup">(22)</span>
                                             </label>
                                             <label for="manufacturer__6" class="filter__row">
                                                 <input type="checkbox" name="f_manufacturer[]" id="manufacturer__6"><span class="checkbox"></span><span class="label">SUSSEI </span><span class="sup">(500)</span>
@@ -326,23 +331,27 @@
                                         </div>
                                         <div class="filter__block filter__block--slider">
                                             <div class="filter__slider">
-                                                <div class="range__zero">0</div>
+                                                <div class="range__zero-min">0</div>
+                                                <div class="range__zero-max">12000</div>
                                                 <div id="filter__range"></div>
                                             </div>
                                             <div class="filter__cost table">
-                                                <div class="table-cell"> <span>от</span></div>
                                                 <div class="table-cell">
-                                                    <input id="priceMin" type="text" value="5000" class="form-control">
+                                                    <input id="priceMin" type="text" value="1500" class="form-control">
                                                 </div>
-                                                <div class="table-cell"><span>до</span></div>
+                                                <div class="table-cell"><span>-</span></div>
                                                 <div class="table-cell">
-                                                    <input id="priceMax" type="text" value="15000" class="form-control">
+                                                    <input id="priceMax" type="text" value="8700" class="form-control">
                                                 </div>
-                                                <div class="table-cell"><span>руб</span></div>
+                                                <div class="table-cell"><i class="icon-rouble"></i></div>
+                                                <div class="table-cell">
+                                                    <button type="submit" class="btn btn--ok">ОК</button>
+                                                </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn--border btn--block">Сбросить фильтр</button>
-                                        <button type="button" id="filter__hide" class="btn btn--unborder btn--block visible-xs">Скрыть фильтр</button>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn--link btn--reset-filter">Сбросить фильтр</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

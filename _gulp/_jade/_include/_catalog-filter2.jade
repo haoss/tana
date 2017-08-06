@@ -1,0 +1,76 @@
+#catalog__filter.catalog__filter
+  .catalog__filter__title 
+    i.ion-android-settings
+    | фильтры
+    
+  #filters.filter.filter--wo-sup
+    form(action="#!" method="get")
+      .filter__body
+        .filter__block
+          //- .filter__head Основной материал
+          label.filter__row(for="category__0")
+            input(type="checkbox" name="f_category[]")#category__0
+            span.checkbox
+            span.label Запчасти Отечественныe
+          label.filter__row(for="category__1")
+            input(type="checkbox" name="f_category[]" checked)#category__1
+            span.checkbox
+            span.label Запчасти Раскройных Машин
+            span.sup (55)
+          label.filter__row(for="category__2")
+            input(type="checkbox" name="f_category[]")#category__2
+            span.checkbox
+            span.label Запчасти Специальные 
+            span.sup (21)
+          label.filter__row(for="category__3")
+            input(type="checkbox" name="f_category[]")#category__3
+            span.checkbox
+            span.label Запчасти универсальные 
+            span.sup (50)
+          label.filter__row(for="category__4")
+            input(type="checkbox" name="f_category[]")#category__4
+            span.checkbox
+            span.label Комплектующие к ВТО 
+            span.sup (80)
+          label.filter__row(for="category__5")
+            input(type="checkbox" name="f_category[]" checked)#category__5
+            span.checkbox
+            span.label Оснастка швейных машин 
+            span.sup (22)
+          label.filter__row(for="category__6")
+            input(type="checkbox" name="f_category[]")#category__6
+            span.checkbox
+            span.label Очистители Масло Мел 
+            span.sup (500)
+          label.filter__row(for="category__7")
+            input(type="checkbox" name="f_category[]" disabled)#category__7
+            span.checkbox
+            span.label Приспособления Окантователи 
+            span.sup (0)
+          label.filter__row(for="category__8")
+            input(type="checkbox" name="f_category[]" disabled)#category__8
+            span.checkbox
+            span.label Этикетпистолеты Маркеры кроя 
+            span.sup (0)
+      
+        .filter__block.filter__block--slider
+          //- .filter__head цена изделия
+          .filter__slider
+            .range__zero-min 0
+            .range__zero-max 12000
+            #filter__range
+          .filter__cost.table
+            .table-cell
+              input#priceMin(type='text', value='1500').form-control
+            .table-cell
+              span -
+            .table-cell
+              input#priceMax(type='text', value='8700').form-control
+            .table-cell
+              i.icon-rouble
+            .table-cell
+              button(type="submit").btn.btn--ok ОК
+        
+        .text-center
+          button(type="button").btn.btn--link.btn--reset-filter Сбросить фильтр
+  

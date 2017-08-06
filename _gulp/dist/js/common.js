@@ -3,6 +3,13 @@
 // Document ready
 $(document).on('ready', function(){
 
+  // Catalog navigation
+  catalogNavigation();
+  catalogFilter();
+  catalogFilterChange();
+  // Seo text
+  seoText();
+
   // SVG Fallback
   if(!Modernizr.svg) {
     $("img[src*='svg']").attr("src", function() {
@@ -40,7 +47,7 @@ $(document).on('ready', function(){
   $('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
-    mainClass: 'mfp-img-mobile',
+    mainClass: 'mfp-img--custom',
     image: {
     	verticalFit: true
     }
@@ -94,6 +101,8 @@ $(document).on('ready', function(){
     callbacks: {
       beforeOpen: function(){
         catalogFilterPopup();
+        catalogFilter();
+        catalogFilterChange();
       },
       afterClose: function(){
         $('#popup__filter').find('#catalog__filter').remove();
@@ -127,9 +136,6 @@ $(document).on('ready', function(){
   $('.header__search__btn').on('click', function(e){
     e.stopPropagation();
   });
-
-  // Seo text
-  seoText();
 
   // Main banner carousel
   $('.main-carousel').slick({
@@ -195,9 +201,6 @@ $(document).on('ready', function(){
     }
   });
 
-  // Catalog navigation
-  catalogNavigation();
-
   // Custom select
   $('select.select').selectric();
 
@@ -206,66 +209,33 @@ $(document).on('ready', function(){
     $(this).prepend('<span>' + ($(this).index() + 1) + '</span>');
   });
 
-  // Jquery UI slider
-  $("#filter__range").slider({
-  	min: 0,
-  	max: 9999,
-  	values: [1500,8700],
-  	range: true,
-  	stop: function(event, ui) {
-      $("input#priceMin").val($("#filter__range").slider("values",0));
-      $("input#priceMax").val($("#filter__range").slider("values",1));
-
-      $('.price-range-min.value').html($("#filter__range").slider("values",0));
-      $('.price-range-max.value').html($("#filter__range").slider("values",1));
-    },
-    slide: function(event, ui){
-      $("input#priceMin").val($("#filter__range").slider("values",0));
-      $("input#priceMax").val($("#filter__range").slider("values",1));
-
-      $('.price-range-min.value').html($("#filter__range").slider("values",0));
-      $('.price-range-max.value').html($("#filter__range").slider("values",1));
-    }
-  });
-
-  $("input#priceMin").on('change', function(){
-  	var value1=$("input#priceMin").val();
-  	var value2=$("input#priceMax").val();
-    if(parseInt(value1) > parseInt(value2)){
-  		value1 = value2;
-  		$("input#priceMin").val(value1);
-      $('.price-range-min.value').html(value1);
-  	}
-  	$("#filter__range").slider("values", 0, value1);
-    $('.price-range-min.value').html(value1);
-  });
-
-  $("input#priceMax").on('change', function(){
-  	var value1=$("input#priceMin").val();
-  	var value2=$("input#priceMax").val();
-  	if (value2 > 20000) { value2 = 20000; $("input#priceMax").val(35000)}
-  	if(parseInt(value1) > parseInt(value2)){
-  		value2 = value1;
-  		$("input#priceMax").val(value2);
-      $('.price-range-max.value').html(value2);
-  	}
-  	$("#filter__range").slider("values",1,value2);
-    $('.price-range-max.value').html(value2);
-  });
-
-  $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#filter__range').slider('values', 0 ) + '</span>');
-  $('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#filter__range').slider('values', 1 ) + '</span>');
-
-  // фильтрация ввода в поля
-  $('.filter__block input').on('keypress', function(event){
-    var key, keyChar;
-    if(!event) var event = window.event;
-    if (event.keyCode) key = event.keyCode;
-    else if(event.which) key = event.which;
-    if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
-    keyChar=String.fromCharCode(key);
-    if(!/\d/.test(keyChar))	return false;
-  });
+  // Views carousel
+  $('.viewed__carousel').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: '<div class="viewed__prev"><i class="ion-arrow-left-b"></i></div>',
+    nextArrow: '<div class="viewed__next"><i class="ion-arrow-right-b"></i></div>',
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 479,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false
+        }
+      }
+    ]
+  })
 
   // Chrome Smooth Scroll
   try {
@@ -396,6 +366,76 @@ function catalogNavigation(){
 // Clone catalog menu in popup
 function catalogMenuPopup(){
   $('#catalog__menu').clone().appendTo('#popup__menu');
+}
+
+function catalogFilter(){
+
+  if ($("#filter__range").length <= 0) return;
+
+  // Jquery UI slider
+  $("#filter__range").slider({
+  	min: 0,
+  	max: 12000,
+  	values: [1500,8700],
+  	range: true,
+  	stop: function(event, ui) {
+      $("input#priceMin").val($("#filter__range").slider("values",0));
+      $("input#priceMax").val($("#filter__range").slider("values",1));
+
+      $('.price-range-min.value').html($("#filter__range").slider("values",0));
+      $('.price-range-max.value').html($("#filter__range").slider("values",1));
+    },
+    slide: function(event, ui){
+      $("input#priceMin").val($("#filter__range").slider("values",0));
+      $("input#priceMax").val($("#filter__range").slider("values",1));
+
+      $('.price-range-min.value').html($("#filter__range").slider("values",0));
+      $('.price-range-max.value').html($("#filter__range").slider("values",1));
+    }
+  });
+}
+
+function catalogFilterChange(){
+  if ($("#filter__range").length <= 0) return;
+
+  $("input#priceMin").on('change', function(){
+  	var value1=$("input#priceMin").val();
+  	var value2=$("input#priceMax").val();
+    if(parseInt(value1) > parseInt(value2)){
+  		value1 = value2;
+  		$("input#priceMin").val(value1);
+      $('.price-range-min.value').html(value1);
+  	}
+  	$("#filter__range").slider("values", 0, value1);
+    $('.price-range-min.value').html(value1);
+  });
+
+  $("input#priceMax").on('change', function(){
+  	var value1=$("input#priceMin").val();
+  	var value2=$("input#priceMax").val();
+  	if (value2 > 12000) { value2 = 12000; $("input#priceMax").val(8700)}
+  	if(parseInt(value1) > parseInt(value2)){
+  		value2 = value1;
+  		$("input#priceMax").val(value2);
+      $('.price-range-max.value').html(value2);
+  	}
+  	$("#filter__range").slider("values",1,value2);
+    $('.price-range-max.value').html(value2);
+  });
+
+  $('.ui-slider-handle:eq(0)').append('<span class="price-range-min value">' + $('#filter__range').slider('values', 0 ) + '</span>');
+  $('.ui-slider-handle:eq(1)').append('<span class="price-range-max value">' + $('#filter__range').slider('values', 1 ) + '</span>');
+
+  // фильтрация ввода в поля
+  $('.filter__block input').on('keypress', function(event){
+    var key, keyChar;
+    if(!event) var event = window.event;
+    if (event.keyCode) key = event.keyCode;
+    else if(event.which) key = event.which;
+    if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
+    keyChar=String.fromCharCode(key);
+    if(!/\d/.test(keyChar))	return false;
+  });
 }
 
 // Clone catalog filter in popup
