@@ -50,8 +50,8 @@ html(lang="ru")
                     th.th--2(colspan="4").visible-xs Наименование
                     th.th--3.hidden-xs цена
                     th.th--4.hidden-xs 
-                      span.hidden-xs.hidden-sm КОличество
-                      span.visible-xs.visible-sm КОл-во
+                      span.hidden-xs.hidden-sm Количество
+                      span.visible-xs.visible-sm Кол-во
                     th.th--5.hidden-xs сумма
                     th.th--6.hidden-xs &nbsp;
                 tbody
@@ -170,7 +170,7 @@ html(lang="ru")
                   tr
                     td.hidden-xs &nbsp;
                     td.hidden-xs &nbsp;
-                    td(colspan="4").cart__total
+                    td(colspan="4").cart__table__total
                       b итого:
                       strong 1 250 380
                         i.icon-rouble
@@ -183,17 +183,17 @@ html(lang="ru")
                 div
                   a(href="#!").btn.btn--border.btn--shop продолжить покупки
                   br.visible-xs
-                  button(type="submit").btn оформить
+                  //- button(type="submit").btn оформить
+                  a(href="#!").btn оформить
             
             // Order form
             .order-form
               form(action="#!")
                 .order-form__wrapper
-                  
                   .row
                     .col-md-4
                       fieldset
-                        legend ваши данные
+                        legend.form-legend ваши данные
                         
                         .form-group.has-feedback
                           label.hidden Ваше имя
@@ -222,13 +222,12 @@ html(lang="ru")
                             span.form-checkbox__label Согласен на обработку моих личных данных.
                               br
                               a(href="#!" target="_blank") Политика конфиденциальности
-                        
                     .col-md-4
                       fieldset
-                        legend способ оплаты
+                        legend.form-legend способ оплаты
                         
                         .form-group
-                          label.form-checkbox(for="checkbox-payment1")
+                          label.form-checkbox.form-checkbox--row(for="checkbox-payment1")
                             input#checkbox-payment1(type="checkbox" checked).form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label 
@@ -237,8 +236,8 @@ html(lang="ru")
                               small Курьеру. При самовывозе.
                         
                         .form-group
-                          label.form-checkbox(for="checkbox-payment2")
-                            input#checkbox-payment2(type="checkbox" checked).form-checkbox__input
+                          label.form-checkbox.form-checkbox--row(for="checkbox-payment2")
+                            input#checkbox-payment2(type="checkbox").form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label 
                               strong Картой
@@ -246,20 +245,19 @@ html(lang="ru")
                               small Курьеру. При самовывозе.
                         
                         .form-group
-                          label.form-checkbox(for="checkbox-payment3")
-                            input#checkbox-payment3(type="checkbox" checked).form-checkbox__input
+                          label.form-checkbox.form-checkbox--row(for="checkbox-payment3")
+                            input#checkbox-payment3(type="checkbox").form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label 
                               strong Безналичным платежом
                               br
                               small Для физических и юридических лиц.
-                        
                     .col-md-4
                       fieldset
-                        legend способ доставки
+                        legend.form-legend способ доставки
                         
                         .form-group
-                          label.form-checkbox(for="checkbox-delivery1")
+                          label.form-checkbox.form-checkbox--row(for="checkbox-delivery1")
                             input#checkbox-delivery1(type="checkbox" checked).form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label 
@@ -268,8 +266,8 @@ html(lang="ru")
                               small г. Москва, ул. Первая делова, д.2, оф.3 
                               
                         .form-group
-                          label.form-checkbox(for="checkbox-delivery2")
-                            input#checkbox-delivery2(type="checkbox" checked).form-checkbox__input
+                          label.form-checkbox.form-checkbox--row(for="checkbox-delivery2")
+                            input#checkbox-delivery2(type="checkbox").form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label 
                               strong Доставка
@@ -277,8 +275,8 @@ html(lang="ru")
                               small Курьеру. На сайте. При самовывозе.
                         
                         .form-group
-                          label.form-checkbox(for="checkbox-delivery3")
-                            input#checkbox-delivery3(type="checkbox" checked).form-checkbox__input
+                          label.form-checkbox.form-checkbox--row(for="checkbox-delivery3")
+                            input#checkbox-delivery3(type="checkbox").form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label 
                               strong За МКАД
@@ -306,6 +304,17 @@ html(lang="ru")
                               label.hidden Кв
                               input(type="text" placeholder="Кв").form-control
                               i.ion-alert-circled.form-control__feedback
+    
+                .order-form__title Итого
+                .order-form__total
+                  .order-form__total__wrapper
+                    div Товаров: 1 230
+                    div Доставка: не требуется, самовывоз
+                    div К оплате: 
+                      strong 1 966 555 
+                        i.icon-rouble
+                
+                button(type="submit").btn.btn--order Оформить заказ
     
     include ./_include/_footer
     //- div(style="height: 1000px; background-color: #000")

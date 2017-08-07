@@ -1283,6 +1283,7 @@ table.table
 
 // Cart
 .cart
+  margin-bottom: 25px
   &__table
     font-size: rem(16)
     width: 100%
@@ -1378,7 +1379,7 @@ table.table
     color: $color-dark
     &:hover
       color: $color-blue
-  &__total
+  &__table__total
     font-size: rem(24)
     padding-right: 25px
     b
@@ -1405,3 +1406,36 @@ table.table
 
 .visible-xxs-inline-block
   display: none !important
+
+.order-form
+  &__wrapper
+    padding-top: 30px
+  &__title
+    font-size: rem(25)
+    text-transform: uppercase
+    font-family: $font-intro
+    margin-bottom: 10px
+  &__total
+    background-color: $color-gray
+    padding: 10px 20px
+    margin-bottom: 20px
+    font-size: rem(14)
+    text-transform: uppercase
+    font-family: $font-intro
+    strong
+      font-size: rem(25)
+      color: $color-blue
+      display: inline-block
+      margin-top: -9px
+      font-weight: bold
+      .icon-rouble
+        margin-left: -10px
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: middle
+        padding: 12px 0
+        &:last-child
+          text-align: right

@@ -78,6 +78,20 @@ button, html input[type=button], input[type=reset], input[type=submit]
         font-size: rem(13)
         &::before
           content: "\f372"
+    &--row
+      font-size: rem(14)
+      padding-left: 28px
+      .form-checkbox__span
+        font-size: rem(18)
+        top: -2px
+      .form-checkbox__label
+        small
+          font-size: rem(11)
+      .form-checkbox__input
+        &:checked
+          &~.form-checkbox__label
+            strong
+              color: $color-blue
     &__label
       font-weight: 400
       display: block
@@ -93,6 +107,16 @@ button, html input[type=button], input[type=reset], input[type=submit]
     background:
       position: center center
       repeat: no-repeat
+
+  &-legend
+    text-align: left
+    text-transform: uppercase
+    border: 0
+    font-size: 16px
+    color: $color-dark
+    font-family: $font-intro
+    display: block
+    margin-bottom: 25px
 
 textarea
   &.form-control, &.form__control
