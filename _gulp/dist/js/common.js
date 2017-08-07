@@ -244,6 +244,11 @@ $(document).on('ready', function(){
     lessLink: '<a href="#!">Свернуть</a>'
   });
 
+  // Ordering form
+  $('.btn--ordering-form').on('click', function(){
+    $('#order-form').slideToggle();
+  });
+
   // Chrome Smooth Scroll
   try {
     $.browserSelector();

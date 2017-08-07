@@ -184,18 +184,18 @@ html(lang="ru")
                   a(href="#!").btn.btn--border.btn--shop продолжить покупки
                   br.visible-xs
                   //- button(type="submit").btn оформить
-                  a(href="#!").btn оформить
+                  a(href="#!").btn.btn--ordering-form оформить
             
             // Order form
-            .order-form
+            #order-form.order-form
               form(action="#!")
                 .order-form__wrapper
                   .row
-                    .col-md-4
+                    .col-sm-4
                       fieldset
                         legend.form-legend ваши данные
                         
-                        .form-group.has-feedback
+                        .form-group.has-feedback.has-error
                           label.hidden Ваше имя
                           input(type="text" placeholder="Ваше имя").form-control
                           i.ion-alert-circled.form-control__feedback
@@ -216,13 +216,13 @@ html(lang="ru")
                           i.ion-alert-circled.form-control__feedback
                             
                         .form-group
-                          label.form-checkbox(for="checkbox3")
+                          label.form-checkbox(for="checkbox3").nowrap
                             input#checkbox3(type="checkbox" checked).form-checkbox__input
                             span.form-checkbox__span
                             span.form-checkbox__label Согласен на обработку моих личных данных.
                               br
                               a(href="#!" target="_blank") Политика конфиденциальности
-                    .col-md-4
+                    .col-sm-4
                       fieldset
                         legend.form-legend способ оплаты
                         
@@ -252,7 +252,7 @@ html(lang="ru")
                               strong Безналичным платежом
                               br
                               small Для физических и юридических лиц.
-                    .col-md-4
+                    .col-sm-4
                       fieldset
                         legend.form-legend способ доставки
                         
@@ -294,12 +294,12 @@ html(lang="ru")
                           i.ion-alert-circled.form-control__feedback
                         
                         .row
-                          .col-md-6
+                          .col-xs-6
                             .form-group.has-feedback
                               label.hidden Дом
                               input(type="text" placeholder="Дом").form-control
                               i.ion-alert-circled.form-control__feedback
-                          .col-md-6
+                          .col-xs-6
                             .form-group.has-feedback
                               label.hidden Кв
                               input(type="text" placeholder="Кв").form-control
@@ -309,8 +309,11 @@ html(lang="ru")
                 .order-form__total
                   .order-form__total__wrapper
                     div Товаров: 1 230
-                    div Доставка: не требуется, самовывоз
-                    div К оплате: 
+                    div Доставка: не требуется, самовывоз 
+                      .visible-xs.visible-sm К оплате: 
+                        strong 1 966 555 
+                          i.icon-rouble
+                    div.hidden-xs.hidden-sm К оплате: 
                       strong 1 966 555 
                         i.icon-rouble
                 

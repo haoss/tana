@@ -74,6 +74,9 @@
   .cart
     &__title
       width: 240px
+  .order-form
+    &__total
+      font-size: rem(12)
 
 @media only screen and (max-width: 1199px) and (min-width : 991px)
   .catalog
@@ -231,6 +234,15 @@
     &--shop
       width: 200px !important
       margin-right: 23px !important
+  .order-form
+    &__total
+      &__wrapper
+        &>div
+          vertical-align: top
+          &:nth-child(2)
+            text-align: right
+            &>div
+              padding-top: 10px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -417,6 +429,16 @@
       .btn--shop
         margin-right: 0 !important
         margin-bottom: 15px
+  .order-form
+    &__wrapper
+      max-width: 300px
+      margin-left: auto
+      margin-right: auto
+      fieldset
+        margin-bottom: 10px
+  .form-legend
+    font-size: rem(20)
+    margin-bottom: 15px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
@@ -521,6 +543,18 @@
 
   .visible-xxs-inline-block
     display: inline-block !important
+
+  .order-form__total__wrapper
+    display: block
+    &>div
+      display: block
+      padding: 0 0 10px 0
+      text-align: center
+      &:nth-child(2)
+        text-align: center
+        padding-bottom: 0
+      &:last-child
+        padding-bottom: 0
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

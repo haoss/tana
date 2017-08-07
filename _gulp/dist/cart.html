@@ -387,19 +387,19 @@
                             </table>
                             <div class="cart__button">
                                 <div><a href="#!" class="btn btn--border btn--trash"><span class="hidden-xxs">очистить</span><span class="visible-xxs-inline-block"><i class="ion-trash-a"></i></span></a></div>
-                                <div><a href="#!" class="btn btn--border btn--shop">продолжить покупки</a><br class="visible-xs"><a href="#!" class="btn">оформить</a>
+                                <div><a href="#!" class="btn btn--border btn--shop">продолжить покупки</a><br class="visible-xs"><a href="#!" class="btn btn--ordering-form">оформить</a>
                                 </div>
                             </div>
                         </div>
                         <!-- Order form-->
-                        <div class="order-form">
+                        <div id="order-form" class="order-form">
                             <form action="#!">
                                 <div class="order-form__wrapper">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-sm-4">
                                             <fieldset>
                                                 <legend class="form-legend">ваши данные</legend>
-                                                <div class="form-group has-feedback">
+                                                <div class="form-group has-feedback has-error">
                                                     <label class="hidden">Ваше имя</label>
                                                     <input type="text" placeholder="Ваше имя" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
                                                 </div>
@@ -416,13 +416,13 @@
                                                     <textarea placeholder="Ваше сообщение" class="form-control"></textarea><i class="ion-alert-circled form-control__feedback"></i>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="checkbox3" class="form-checkbox">
+                                                    <label for="checkbox3" class="form-checkbox nowrap">
                                                         <input id="checkbox3" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label">Согласен на обработку моих личных данных.<br><a href="#!" target="_blank">Политика конфиденциальности</a></span>
                                                     </label>
                                                 </div>
                                             </fieldset>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-sm-4">
                                             <fieldset>
                                                 <legend class="form-legend">способ оплаты</legend>
                                                 <div class="form-group">
@@ -442,7 +442,7 @@
                                                 </div>
                                             </fieldset>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-sm-4">
                                             <fieldset>
                                                 <legend class="form-legend">способ доставки</legend>
                                                 <div class="form-group">
@@ -469,13 +469,13 @@
                                                     <input type="text" placeholder="Улица" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-xs-6">
                                                         <div class="form-group has-feedback">
                                                             <label class="hidden">Дом</label>
                                                             <input type="text" placeholder="Дом" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-xs-6">
                                                         <div class="form-group has-feedback">
                                                             <label class="hidden">Кв</label>
                                                             <input type="text" placeholder="Кв" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
@@ -490,8 +490,10 @@
                                 <div class="order-form__total">
                                     <div class="order-form__total__wrapper">
                                         <div>Товаров: 1 230</div>
-                                        <div>Доставка: не требуется, самовывоз</div>
-                                        <div>К оплате: <strong>1 966 555 <i class="icon-rouble"></i></strong></div>
+                                        <div>Доставка: не требуется, самовывоз 
+                                            <div class="visible-xs visible-sm">К оплате: <strong>1 966 555 <i class="icon-rouble"></i></strong></div>
+                                        </div>
+                                        <div class="hidden-xs hidden-sm">К оплате: <strong>1 966 555 <i class="icon-rouble"></i></strong></div>
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn--order">Оформить заказ</button>
