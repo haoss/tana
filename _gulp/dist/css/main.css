@@ -5100,6 +5100,11 @@ ol li {
               box-shadow: none; }
   .btn--reset-filter {
     margin-top: -15px; }
+  .btn--shop {
+    width: 234px; }
+
+a.btn:hover {
+  text-decoration: none; }
 
 /* forms */
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
@@ -5190,6 +5195,10 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     font-weight: 400;
     display: block;
     font-family: "RobotoRegular"; }
+    .form-checkbox__label a {
+      text-decoration: underline; }
+      .form-checkbox__label a:hover {
+        text-decoration: none; }
 
 .form__captcha {
   height: 30px;
@@ -7159,6 +7168,21 @@ table.table {
     .cart__total strong i {
       font-size: 1.375rem; }
 
+.cart__button {
+  margin-top: 15px;
+  display: table;
+  width: 100%; }
+  .cart__button > div {
+    display: table-cell;
+    vertical-align: top; }
+    .cart__button > div:last-child {
+      text-align: right; }
+  .cart__button .btn--shop {
+    margin-right: 28px; }
+
+.visible-xxs-inline-block {
+  display: none !important; }
+
 /* clear */
 .clear, .clear1, .clear2, .clear3, .clear4, .clear5, .clear6, .clear7, .clear8, .clear9, .clear10, .clear11, .clear12, .clear13, .clear14, .clear15, .clear16, .clear17, .clear18, .clear19, .clear20, .clear21, .clear22, .clear23, .clear24, .clear25, .clear26, .clear27, .clear28, .clear29, .clear30, .clear31, .clear32, .clear33, .clear34, .clear35, .clear36, .clear37, .clear38, .clear39, .clear40, .clear41, .clear42, .clear43, .clear44, .clear45, .clear46, .clear47, .clear48, .clear49, .clear50, .clear51, .clear52, .clear53, .clear54, .clear55, .clear56, .clear57, .clear58, .clear59, .clear60, .clear61, .clear62, .clear63, .clear64, .clear65, .clear66, .clear67, .clear68, .clear69, .clear70, .clear71, .clear72, .clear73, .clear74, .clear75, .clear76, .clear77, .clear78, .clear79, .clear80, .clear81, .clear82, .clear83, .clear84, .clear85, .clear86, .clear87, .clear88, .clear89, .clear90, .clear91, .clear92, .clear93, .clear94, .clear95, .clear96, .clear97, .clear98, .clear99, .clear100, .clear-hr {
   background: none !important;
@@ -7648,7 +7672,12 @@ table.table {
   .cart__table thead th.th--2 {
     padding-left: 10px; }
   .cart__table tbody td + td {
-    padding-left: 10px; } }
+    padding-left: 10px; }
+  .cart__button .btn {
+    min-width: 140px; }
+  .btn--shop {
+    width: 200px !important;
+    margin-right: 23px !important; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 767px) {
@@ -7798,7 +7827,16 @@ table.table {
     .manufacturer-list__block img {
       max-width: inherit; }
   .manufacturer__about__wrapper > div:first-child {
-    padding-right: 0; } }
+    padding-right: 0; }
+  .cart tr.tr--mobile td {
+    padding-bottom: 0 !important; }
+  .cart tr.tr--mobile + tr td {
+    padding-top: 0 !important; }
+  .cart__price-total {
+    width: 50%; }
+  .cart__button .btn--shop {
+    margin-right: 0 !important;
+    margin-bottom: 15px; } }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 479px) {
@@ -7882,7 +7920,19 @@ table.table {
   .manufacturer-list__block {
     width: 100%; }
     .manufacturer-list__block img {
-      max-width: inherit; } }
+      max-width: inherit; }
+  .cart__total {
+    padding-right: 10px; }
+  .btn--trash {
+    width: 30px !important;
+    min-width: inherit !important;
+    padding: 0;
+    font-size: 1.125rem;
+    color: #fd5a1a; }
+  .btn--shop {
+    width: 234px !important; }
+  .visible-xxs-inline-block {
+    display: inline-block !important; } }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 319px) {

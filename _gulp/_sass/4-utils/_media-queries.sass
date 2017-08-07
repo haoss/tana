@@ -224,6 +224,13 @@
         td
           &+td
             padding-left: 10px
+    &__button
+      .btn
+        min-width: 140px
+  .btn
+    &--shop
+      width: 200px !important
+      margin-right: 23px !important
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)
@@ -396,6 +403,20 @@
         &>div
           &:first-child
             padding-right: 0
+  .cart
+    tr
+      &.tr--mobile
+        td
+          padding-bottom: 0 !important
+        &+tr
+          td
+            padding-top: 0 !important
+    &__price-total
+      width: 50%
+    &__button
+      .btn--shop
+        margin-right: 0 !important
+        margin-bottom: 15px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 479px)
@@ -485,6 +506,21 @@
         width: 100%
         img
           max-width: inherit
+  .cart
+    &__total
+      padding-right: 10px
+  .btn
+    &--trash
+      width: 30px !important
+      min-width: inherit !important
+      padding: 0
+      font-size: rem(18)
+      color: $color-red
+    &--shop
+      width: 234px !important
+
+  .visible-xxs-inline-block
+    display: inline-block !important
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 319px)

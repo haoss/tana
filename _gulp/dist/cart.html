@@ -16,13 +16,12 @@
         <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-touch-icon-144x144.png">
         <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-touch-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon-180x180.png">
-        <link rel="icon" type="image/png" href="./favicons/favicons-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="./favicons/android-chrome-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="./favicons/favicons-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/png" href="./favicons/favicons-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
         <link rel="manifest" href="./favicons/manifest.json">
         <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#5bbad5">
-        <link rel="shortcut icon" href="./favicons/favicons.ico">
+        <link rel="shortcut icon" href="./favicons/favicon.ico">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="./favicons/mstile-144x144.png">
         <meta name="msapplication-config" content="./favicons/browserconfig.xml">
@@ -298,8 +297,6 @@
                         <div class="banner"><a href="#!"><img src="./img/banner-sitebar.png" alt="" class="img-responsive"></a></div>
                     </div>
                     <div class="col-sm-9">
-                        <!-- Catalog menu mobile button-->
-                        <div class="catalog__menu__button"><a href="#popup-catalog-menu" class="catalog__menu__title open-popup-menu"><i class="ion-ios-list"></i>Каталог товаров</a></div>
                         <div class="h1">Корзина</div>
                         <!-- Cart-->
                         <div class="cart">
@@ -307,17 +304,22 @@
                                 <thead>
                                     <tr>
                                         <th class="th--1">фото</th>
-                                        <th class="th--2">Наименование</th>
-                                        <th class="th--3">цена</th>
-                                        <th class="th--4"> <span class="hidden-xs hidden-sm">КОличество</span><span class="visible-xs visible-sm">КОл-во</span></th>
-                                        <th class="th--5">сумма</th>
-                                        <th class="th--6">&nbsp;</th>
+                                        <th class="th--2 hidden-xs">Наименование</th>
+                                        <th colspan="4" class="th--2 visible-xs">Наименование</th>
+                                        <th class="th--3 hidden-xs">цена</th>
+                                        <th class="th--4 hidden-xs"> <span class="hidden-xs hidden-sm">КОличество</span><span class="visible-xs visible-sm">КОл-во</span></th>
+                                        <th class="th--5 hidden-xs">сумма</th>
+                                        <th class="th--6 hidden-xs">&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr class="tr--mobile visible-xs">
                                         <td class="cart__img"><a href="#!"><img src="./img/catalog-img-1.png" alt=""></a></td>
-                                        <td class="cart__title"><small class="cart__small">Швейные челнки</small><a href="#!"><strong>Челнок 130.15.024 Cerliani</strong></a></td>
+                                        <td colspan="4" class="cart__title"><small class="cart__small">Швейные челнки</small><a href="#!"><strong>Челнок 130.15.024 Cerliani</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart__img hidden-xs"><a href="#!"><img src="./img/catalog-img-1.png" alt=""></a></td>
+                                        <td class="cart__title hidden-xs"><small class="cart__small">Швейные челнки</small><a href="#!"><strong>Челнок 130.15.024 Cerliani</strong></a></td>
                                         <td class="cart__price"><small class="cart__small">&nbsp;</small><strong>1 299<i class="icon-rouble"></i></strong></td>
                                         <td class="cart__number"><small class="cart__small">&nbsp;</small>
                                             <select class="select">
@@ -332,9 +334,13 @@
                                         <td class="cart__price-total"><small class="cart__small">&nbsp;</small><strong>12 990<i class="icon-rouble"></i></strong></td>
                                         <td class="last"><small class="cart__small">&nbsp;</small><a href="#!" class="cart__delete"><i class="ion-backspace"></i></a></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="tr--mobile visible-xs">
                                         <td class="cart__img"><a href="#!"><img src="./img/catalog-img-2.png" alt=""></a></td>
-                                        <td class="cart__title"><small class="cart__small">Швейные нитки</small><a href="#!"><strong>Комплексные швейные нитки EURON K 630/3 №15</strong></a></td>
+                                        <td colspan="4" class="cart__title"><small class="cart__small">Швейные нитки</small><a href="#!"><strong>Комплексные швейные нитки EURON K 630/3 №15</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart__img hidden-xs"><a href="#!"><img src="./img/catalog-img-2.png" alt=""></a></td>
+                                        <td class="cart__title hidden-xs"><small class="cart__small">Швейные нитки</small><a href="#!"><strong>Комплексные швейные нитки EURON K 630/3 №15</strong></a></td>
                                         <td class="cart__price"><small class="cart__small">&nbsp;</small><strong>1 299<i class="icon-rouble"></i></strong></td>
                                         <td class="cart__number"><small class="cart__small">&nbsp;</small>
                                             <select class="select">
@@ -349,9 +355,13 @@
                                         <td class="cart__price-total"><small class="cart__small">&nbsp;</small><strong>432 000<i class="icon-rouble"></i></strong></td>
                                         <td class="last"><small class="cart__small">&nbsp;</small><a href="#!" class="cart__delete"><i class="ion-backspace"></i></a></td>
                                     </tr>
-                                    <tr>
+                                    <tr class="tr--mobile visible-xs">
                                         <td class="cart__img"><a href="#!"><img src="./img/catalog-img-3.png" alt=""></a></td>
-                                        <td class="cart__title"><small class="cart__small">Швейные стержни</small><a href="#!"><strong>Стержень для быстрой смены лапок 4009</strong></a></td>
+                                        <td colspan="4" class="cart__title"><small class="cart__small">Швейные стержни</small><a href="#!"><strong>Стержень для быстрой смены лапок 4009</strong></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cart__img hidden-xs"><a href="#!"><img src="./img/catalog-img-3.png" alt=""></a></td>
+                                        <td class="cart__title hidden-xs"><small class="cart__small">Швейные стержни</small><a href="#!"><strong>Стержень для быстрой смены лапок 4009</strong></a></td>
                                         <td class="cart__price"><small class="cart__small">&nbsp;</small><strong>850<i class="icon-rouble"></i></strong></td>
                                         <td class="cart__number"><small class="cart__small">&nbsp;</small>
                                             <select class="select">
@@ -369,12 +379,115 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td>&nbsp;</td>
-                                        <td>&nbsp;</td>
+                                        <td class="hidden-xs">&nbsp;</td>
+                                        <td class="hidden-xs">&nbsp;</td>
                                         <td colspan="4" class="cart__total"><b>итого:</b><strong>1 250 380<i class="icon-rouble"></i></strong></td>
                                     </tr>
                                 </tfoot>
                             </table>
+                            <div class="cart__button">
+                                <div><a href="#!" class="btn btn--border btn--trash"><span class="hidden-xxs">очистить</span><span class="visible-xxs-inline-block"><i class="ion-trash-a"></i></span></a></div>
+                                <div><a href="#!" class="btn btn--border btn--shop">продолжить покупки</a><br class="visible-xs">
+                                    <button type="submit" class="btn">оформить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Order form-->
+                        <div class="order-form">
+                            <form action="#!">
+                                <div class="order-form__wrapper">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <fieldset>
+                                                <legend>ваши данные</legend>
+                                                <div class="form-group has-feedback">
+                                                    <label class="hidden">Ваше имя</label>
+                                                    <input type="text" placeholder="Ваше имя" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <label class="hidden">Телефон</label>
+                                                    <input type="text" placeholder="Телефон" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <label class="hidden">Ваше email</label>
+                                                    <input type="email" placeholder="Ваше email" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <label class="hidden">Ваше сообщение</label>
+                                                    <textarea placeholder="Ваше сообщение" class="form-control"></textarea><i class="ion-alert-circled form-control__feedback"></i>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="checkbox3" class="form-checkbox">
+                                                        <input id="checkbox3" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label">Согласен на обработку моих личных данных.<br><a href="#!" target="_blank">Политика конфиденциальности</a></span>
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <fieldset>
+                                                <legend>способ оплаты</legend>
+                                                <div class="form-group">
+                                                    <label for="checkbox-payment1" class="form-checkbox">
+                                                        <input id="checkbox-payment1" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Наличными</strong><br><small>Курьеру. При самовывозе.</small></span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="checkbox-payment2" class="form-checkbox">
+                                                        <input id="checkbox-payment2" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Картой</strong><br><small>Курьеру. При самовывозе.</small></span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="checkbox-payment3" class="form-checkbox">
+                                                        <input id="checkbox-payment3" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Безналичным платежом</strong><br><small>Для физических и юридических лиц.</small></span>
+                                                    </label>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <fieldset>
+                                                <legend>способ доставки</legend>
+                                                <div class="form-group">
+                                                    <label for="checkbox-delivery1" class="form-checkbox">
+                                                        <input id="checkbox-delivery1" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Самовывоз</strong><br><small>г. Москва, ул. Первая делова, д.2, оф.3 </small></span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="checkbox-delivery2" class="form-checkbox">
+                                                        <input id="checkbox-delivery2" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Доставка</strong><br><small>Курьеру. На сайте. При самовывозе.</small></span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="checkbox-delivery3" class="form-checkbox">
+                                                        <input id="checkbox-delivery3" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>За МКАД</strong><br><small>От 100 000 руб.</small></span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <label class="hidden">Город</label>
+                                                    <input type="text" placeholder="Город" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <label class="hidden">Улица</label>
+                                                    <input type="text" placeholder="Улица" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group has-feedback">
+                                                            <label class="hidden">Дом</label>
+                                                            <input type="text" placeholder="Дом" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group has-feedback">
+                                                            <label class="hidden">Кв</label>
+                                                            <input type="text" placeholder="Кв" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
