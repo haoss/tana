@@ -54,7 +54,9 @@ html(lang="ru")
                     th.th--1 фото
                     th.th--2 Наименование
                     th.th--3 цена
-                    th.th--4 КОличество
+                    th.th--4 
+                      span.hidden-xs.hidden-sm КОличество
+                      span.visible-xs.visible-sm КОл-во
                     th.th--5 сумма
                     th.th--6 &nbsp;
                 tbody
@@ -83,9 +85,9 @@ html(lang="ru")
                       small.cart__small &nbsp;
                       strong 12 990
                         i.icon-rouble
-                    td.cart__delete
+                    td.last
                       small.cart__small &nbsp;
-                      a(href="#!")
+                      a(href="#!").cart__delete
                         i.ion-backspace
                   tr
                     td.cart__img
@@ -112,9 +114,9 @@ html(lang="ru")
                       small.cart__small &nbsp;
                       strong 432 000
                         i.icon-rouble
-                    td.cart__delete
+                    td.last
                       small.cart__small &nbsp;
-                      a(href="#!")
+                      a(href="#!").cart__delete
                         i.ion-backspace
                   tr
                     td.cart__img
@@ -141,10 +143,19 @@ html(lang="ru")
                       small.cart__small &nbsp;
                       strong 849 000
                         i.icon-rouble
-                    td.cart__delete
+                    td.last
                       small.cart__small &nbsp;
-                      a(href="#!")
+                      a(href="#!").cart__delete
                         i.ion-backspace
+                tfoot
+                  tr
+                    td &nbsp;
+                    td &nbsp;
+                    td(colspan="4").cart__total
+                      b итого:
+                      strong 1 250 380
+                        i.icon-rouble
+      
     
     include ./_include/_footer
     //- div(style="height: 1000px; background-color: #000")

@@ -71,7 +71,9 @@
             width: 100%
           &:last-child
             width: inherit
-
+  .cart
+    &__title
+      width: 240px
 
 @media only screen and (max-width: 1199px) and (min-width : 991px)
   .catalog
@@ -205,6 +207,23 @@
       &__block
         img
           max-width: 80%
+  .cart
+    &__title
+      font-size: rem(14)
+    &__number
+      .selectric-wrapper
+        width: 70px
+    &__table
+      thead
+        th
+          &+th
+            padding-left: 10px
+          &.th--2
+            padding-left: 10px
+      tbody
+        td
+          &+td
+            padding-left: 10px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 767px)

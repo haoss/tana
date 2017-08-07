@@ -1304,18 +1304,30 @@ table.table
             padding-left: 45px
     tbody
       td
-        padding: 5px 0
+        padding: 20px 0 5px 0
         vertical-align: middle
         &+td
           padding-left: 15px
+        &.last
+          width: 1px
+      tr:last-child
+        td
+          padding-bottom: 30px
+    tfoot
+      td
+        background: $color-gray
+        text-align: right
+        height: 36px
   &__img
     width: 82px
+    text-align: center
     img
       max-width: 100%
       height: auto
-      display: block
+      // display: block
       width: 67px
   &__title
+    width: 350px
     small
       display: block
       line-height: 1
@@ -1352,6 +1364,7 @@ table.table
   &__price-total
     color: $color-blue
   &__number
+    width: 1px
     .selectric-wrapper
       width: 82px
       .label
@@ -1361,3 +1374,20 @@ table.table
         line-height: 32px
   &__small
     display: block
+  &__delete
+    color: $color-dark
+    &:hover
+      color: $color-blue
+  &__total
+    font-size: rem(24)
+    padding-right: 25px
+    b
+      font-size: rem(14)
+      font-family: $font-intro
+    strong
+      font-family: $font-intro
+      color: $color-blue
+      display: inline-block
+      margin-left: 10px
+      i
+        font-size: rem(22)
