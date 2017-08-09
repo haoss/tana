@@ -1261,25 +1261,44 @@ table.table
           margin-top: 3px
   &__about
     margin-bottom: 25px
-    &__wrapper
-      display: table
-      width: 100%
+    +clearfix
+    &__img
+      float: right
+      width: 180px
+    &__text
+      margin-bottom: 10px
+      height: 70px
+      overflow: hidden
+      position: relative
+      pointer-events: none
+      &.is-active
+        &::after
+          display: none
       &>div
-        display: table-cell
-        vertical-align: top
-        &:first-child
-          padding-right: 30px
-        &:last-child
-          width: 1px
-  &__text
-    margin-bottom: 10px
-    p
-      &:last-child
-        margin-bottom: 0
-    &+[data-readmore-toggle]
-      display: inline-block !important
-      width: auto !important
-      font-size: rem(12)
+        float: left
+        width: 100%
+        position: relative
+        padding-right: 20px
+      &::after
+        font-size: rem(12)
+        pointer-events: all
+        content: "Читать далее..."
+        color: $color-blue
+        cursor: pointer
+        box-sizing: content-box
+        float: right
+        position: absolute
+        right: 20px
+        top: 49px
+        width: 195px
+        text-align: right
+        background-size: 100% 100%
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+        &:hover
+          text-decoration: underline
+        p
+          &:last-child
+            margin-bottom: 0
 
 // Cart
 .cart
@@ -1404,6 +1423,44 @@ table.table
         text-align: right
     .btn--shop
       margin-right: 28px
+  &__count
+    width: 82px
+    position: relative
+    .form-control
+      font-family: $font-intro
+      font-size: rem(16)
+      padding-right: 27px
+      color: $primary-color
+    &__div
+      position: absolute
+      top: 0
+      right: 0
+      width: 34px
+      height: 15px
+      cursor: pointer
+      line-height: 1
+      overflow: hidden
+      &:hover
+        &::after
+          color: $color-blue
+      &::after
+        position: absolute
+        content: '\f10d'
+        font-family: $font-ionicons
+        font-size: rem(11)
+        color: $primary-color
+        left: 50%
+        transform: translateX(-50%)
+        bottom: -2px
+        line-height: 1
+      &--down
+        top: inherit
+        bottom: 0
+        &::after
+          content: "\f104"
+          top: -2px
+          bottom: inherit
+
 
 .visible-xxs-inline-block
   display: none !important

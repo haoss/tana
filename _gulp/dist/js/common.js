@@ -237,11 +237,10 @@ $(document).on('ready', function(){
     ]
   });
 
-  // Manufacturer text
-  $('.manufacturer__text').readmore({
-    collapsedHeight: 65,
-    moreLink: '<a href="#!">Читать далее...</a>',
-    lessLink: '<a href="#!">Свернуть</a>'
+  $('.manufacturer__about__text').on('click', function() {
+      $(this).addClass('is-active');
+      $(this).css({height: '100%', overflow: 'visible'});
+      $('.manufacturer__about__text div').css({float: 'none', margin: '0'});
   });
 
   // Ordering form
@@ -254,6 +253,9 @@ $(document).on('ready', function(){
 
   // Delivery form
   deliveryForm();
+
+  // Cart count
+  cartCount();
 
   // Chrome Smooth Scroll
   try {
@@ -492,4 +494,26 @@ function deliveryForm(){
   });
 
   // console.log(radios);
+}
+
+function cartCount(){
+  var counts = $('.cart .cart__count');
+
+  counts.each(function(index, value){
+    var _this = $(this);
+    var countUp = _this.find('.cart__count__div--up');
+    var countDown = _this.find('.cart__count__div--down');
+
+    var input = _this.find('input.form-control');
+    var val = parseInt(input.val());
+
+    countUp.on('click', function(){
+      input.val(++val)
+    });
+    countDown.on('click', function(){
+      input.val(--val)
+    });
+  });
+
+  // console.log(counts);
 }

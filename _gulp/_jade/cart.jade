@@ -77,13 +77,11 @@ html(lang="ru")
                         i.icon-rouble
                     td.cart__number
                       small.cart__small &nbsp;
-                      select.select
-                        option(selected) 10
-                        option 20
-                        option 30
-                        option 40
-                        option 50
-                        option 60
+                      .cart__count
+                        div.cart__count__div.cart__count__div--up
+                        div.cart__count__div.cart__count__div--down
+                        input(type="text" value="10").form-control
+                        
                     td.cart__price-total
                       small.cart__small &nbsp;
                       strong 12 990
@@ -114,13 +112,10 @@ html(lang="ru")
                         i.icon-rouble
                     td.cart__number
                       small.cart__small &nbsp;
-                      select.select
-                        option(selected) 72
-                        option 20
-                        option 30
-                        option 40
-                        option 50
-                        option 60
+                      .cart__count
+                        div.cart__count__div.cart__count__div--up
+                        div.cart__count__div.cart__count__div--down
+                        input(type="text" value="72").form-control
                     td.cart__price-total
                       small.cart__small &nbsp;
                       strong 432 000
@@ -151,13 +146,10 @@ html(lang="ru")
                         i.icon-rouble
                     td.cart__number
                       small.cart__small &nbsp;
-                      select.select
-                        option(selected) 999
-                        option 20
-                        option 30
-                        option 40
-                        option 50
-                        option 60
+                      .cart__count
+                        div.cart__count__div.cart__count__div--up
+                        div.cart__count__div.cart__count__div--down
+                        input(type="text" value="999").form-control
                     td.cart__price-total
                       small.cart__small &nbsp;
                       strong 849 000
@@ -187,7 +179,7 @@ html(lang="ru")
                   a(href="#!").btn.btn--ordering-form оформить
             
             // Order form
-            #order-form.order-form(style="display: block")
+            #order-form.order-form
               form(action="#!")
                 .order-form__wrapper
                   .row
