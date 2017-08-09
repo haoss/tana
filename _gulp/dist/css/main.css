@@ -5179,18 +5179,18 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   .form-control--captcha, .form__control--captcha {
     width: 165px; }
 
-.form-checkbox {
+.form-checkbox, .form-radio {
   font-size: 0.6875rem;
   position: relative;
   padding-left: 20px;
   font-weight: 400;
   display: block;
   margin-bottom: 0; }
-  .form-checkbox__input {
+  .form-checkbox__input, .form-radio__input {
     display: none; }
-    .form-checkbox__input:checked + .form-checkbox__span::before {
+    .form-checkbox__input:checked + .form-checkbox__span::before, .form-checkbox__input:checked + .form-radio__span::before, .form-radio__input:checked + .form-checkbox__span::before, .form-radio__input:checked + .form-radio__span::before {
       content: "\f373"; }
-    .form-checkbox__input + .form-checkbox__span {
+    .form-checkbox__input + .form-checkbox__span, .form-checkbox__input + .form-radio__span, .form-radio__input + .form-checkbox__span, .form-radio__input + .form-radio__span {
       display: block;
       position: absolute;
       left: 0;
@@ -5198,25 +5198,25 @@ button, html input[type=button], input[type=reset], input[type=submit] {
       color: #0cbeff;
       font-family: "Ionicons";
       font-size: 0.8125rem; }
-      .form-checkbox__input + .form-checkbox__span::before {
+      .form-checkbox__input + .form-checkbox__span::before, .form-checkbox__input + .form-radio__span::before, .form-radio__input + .form-checkbox__span::before, .form-radio__input + .form-radio__span::before {
         content: "\f372"; }
-  .form-checkbox--row {
+  .form-checkbox--row, .form-radio--row {
     font-size: 0.875rem;
     padding-left: 28px; }
-    .form-checkbox--row .form-checkbox__span {
+    .form-checkbox--row .form-checkbox__span, .form-checkbox--row .form-radio__span, .form-radio--row .form-checkbox__span, .form-radio--row .form-radio__span {
       font-size: 1.125rem;
       top: -2px; }
-    .form-checkbox--row .form-checkbox__label small {
+    .form-checkbox--row .form-checkbox__label small, .form-checkbox--row .form-radio__label small, .form-radio--row .form-checkbox__label small, .form-radio--row .form-radio__label small {
       font-size: 0.6875rem; }
-    .form-checkbox--row .form-checkbox__input:checked ~ .form-checkbox__label strong {
+    .form-checkbox--row .form-checkbox__input:checked ~ .form-checkbox__label strong, .form-checkbox--row .form-checkbox__input:checked ~ .form-radio__label strong, .form-checkbox--row .form-radio__input:checked ~ .form-checkbox__label strong, .form-checkbox--row .form-radio__input:checked ~ .form-radio__label strong, .form-radio--row .form-checkbox__input:checked ~ .form-checkbox__label strong, .form-radio--row .form-checkbox__input:checked ~ .form-radio__label strong, .form-radio--row .form-radio__input:checked ~ .form-checkbox__label strong, .form-radio--row .form-radio__input:checked ~ .form-radio__label strong {
       color: #0cbeff; }
-  .form-checkbox__label {
+  .form-checkbox__label, .form-radio__label {
     font-weight: 400;
     display: block;
     font-family: "RobotoRegular"; }
-    .form-checkbox__label a {
+    .form-checkbox__label a, .form-radio__label a {
       text-decoration: underline; }
-      .form-checkbox__label a:hover {
+      .form-checkbox__label a:hover, .form-radio__label a:hover {
         text-decoration: none; }
 
 .form__captcha {
@@ -5311,10 +5311,12 @@ label {
           border-color: #ffffff;
           background-color: #0cbeff; }
       .navigation ul > li.active > a {
+        border-color: #ffffff;
+        background-color: #0cbeff; }
+      .navigation ul > li.li-special > a {
         background-color: #4c4d52; }
-        .navigation ul > li.active > a:hover {
-          border-color: transparent;
-          background-color: #4c4d52; }
+        .navigation ul > li.li-special > a:hover {
+          background-color: #0cbeff; }
 
 .catalog__navigation {
   font-family: "Intro";
@@ -5490,7 +5492,7 @@ ul.list {
   .header__bottom {
     height: 89px; }
   .header__menu {
-    background-color: #1c1c1f;
+    background-color: #2e2f33;
     height: 40px;
     position: relative; }
     .header__menu__background {
@@ -7151,7 +7153,8 @@ table.table {
         color: #0cbeff; }
   .cart__price, .cart__price-total {
     color: #707070;
-    white-space: nowrap; }
+    white-space: nowrap;
+    width: 1px; }
     .cart__price strong, .cart__price-total strong {
       font-family: "Intro";
       display: block;

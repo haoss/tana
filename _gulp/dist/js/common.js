@@ -249,6 +249,12 @@ $(document).on('ready', function(){
     $('#order-form').slideToggle();
   });
 
+  // Header li active
+  headerMenuActive();
+
+  // Delivery form
+  deliveryForm();
+
   // Chrome Smooth Scroll
   try {
     $.browserSelector();
@@ -453,4 +459,37 @@ function catalogFilterChange(){
 // Clone catalog filter in popup
 function catalogFilterPopup(){
   $('#catalog__filter').clone().appendTo('#popup__filter');
+}
+
+function headerMenuActive(){
+  var aHeader = $('.header__menu .navigation').find('a');
+
+  aHeader.each(function(index, value){
+    if ($(this).attr('title') == 'Спец.предложения') {
+      $(this).parent().addClass('li-special');
+    }
+  });
+}
+
+function deliveryForm(){
+  var radios = $('.order-form__wrapper input[name="radio-delivery"]');
+  var deliveryForm = $('#delivery-form');
+
+  deliveryForm.hide();
+
+  radios.each(function(index, value){
+    var _this = $(this);
+
+    _this.on('change', function(){
+      if (_this.prop('checked') && _this.attr('id') == 'radio-delivery1') {
+        deliveryForm.show();
+      } else {
+        deliveryForm.hide();
+      }
+    })
+
+    // console.log();
+  });
+
+  // console.log(radios);
 }

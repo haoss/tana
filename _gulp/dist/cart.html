@@ -392,7 +392,7 @@
                             </div>
                         </div>
                         <!-- Order form-->
-                        <div id="order-form" class="order-form">
+                        <div id="order-form" style="display: block" class="order-form">
                             <form action="#!">
                                 <div class="order-form__wrapper">
                                     <div class="row">
@@ -426,18 +426,18 @@
                                             <fieldset>
                                                 <legend class="form-legend">способ оплаты</legend>
                                                 <div class="form-group">
-                                                    <label for="checkbox-payment1" class="form-checkbox form-checkbox--row">
-                                                        <input id="checkbox-payment1" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Наличными</strong><br><small>Курьеру. При самовывозе.</small></span>
+                                                    <label for="radio-payment1" class="form-radio form-radio--row">
+                                                        <input id="radio-payment1" type="radio" name="radio-payment" checked class="form-radio__input"><span class="form-radio__span"></span><span class="form-radio__label"> <strong>Наличными</strong><br><small>Курьеру. При самовывозе.</small></span>
                                                     </label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="checkbox-payment2" class="form-checkbox form-checkbox--row">
-                                                        <input id="checkbox-payment2" type="checkbox" class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Картой</strong><br><small>Курьеру. При самовывозе.</small></span>
+                                                    <label for="radio-payment2" class="form-radio form-radio--row">
+                                                        <input id="radio-payment2" type="radio" name="radio-payment" class="form-radio__input"><span class="form-radio__span"></span><span class="form-radio__label"> <strong>Картой</strong><br><small>Курьеру. При самовывозе.</small></span>
                                                     </label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="checkbox-payment3" class="form-checkbox form-checkbox--row">
-                                                        <input id="checkbox-payment3" type="checkbox" class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Безналичным платежом</strong><br><small>Для физических и юридических лиц.</small></span>
+                                                    <label for="radio-payment3" class="form-radio form-radio--row">
+                                                        <input id="radio-payment3" type="radio" name="radio-payment" class="form-radio__input"><span class="form-radio__span"></span><span class="form-radio__label"> <strong>Безналичным платежом</strong><br><small>Для физических и юридических лиц.</small></span>
                                                     </label>
                                                 </div>
                                             </fieldset>
@@ -446,39 +446,41 @@
                                             <fieldset>
                                                 <legend class="form-legend">способ доставки</legend>
                                                 <div class="form-group">
-                                                    <label for="checkbox-delivery1" class="form-checkbox form-checkbox--row">
-                                                        <input id="checkbox-delivery1" type="checkbox" checked class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Самовывоз</strong><br><small>г. Москва, ул. Первая делова, д.2, оф.3 </small></span>
+                                                    <label for="radio-delivery1" class="form-radio form-radio--row">
+                                                        <input id="radio-delivery1" type="radio" name="radio-delivery" checked class="form-radio__input"><span class="form-radio__span"></span><span class="form-radio__label"> <strong>Самовывоз</strong><br><small>г. Москва, ул. Первая делова, д.2, оф.3 </small></span>
                                                     </label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="checkbox-delivery2" class="form-checkbox form-checkbox--row">
-                                                        <input id="checkbox-delivery2" type="checkbox" class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>Доставка</strong><br><small>Курьеру. На сайте. При самовывозе.</small></span>
+                                                    <label for="radio-delivery2" class="form-radio form-radio--row">
+                                                        <input id="radio-delivery2" type="radio" name="radio-delivery" class="form-radio__input"><span class="form-radio__span"></span><span class="form-radio__label"> <strong>Доставка</strong><br><small>Курьеру. На сайте. При самовывозе.</small></span>
                                                     </label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="checkbox-delivery3" class="form-checkbox form-checkbox--row">
-                                                        <input id="checkbox-delivery3" type="checkbox" class="form-checkbox__input"><span class="form-checkbox__span"></span><span class="form-checkbox__label"> <strong>За МКАД</strong><br><small>От 100 000 руб.</small></span>
+                                                    <label for="radio-delivery3" class="form-radio form-radio--row">
+                                                        <input id="radio-delivery3" type="radio" name="radio-delivery" class="form-radio__input"><span class="form-radio__span"></span><span class="form-radio__label"> <strong>За МКАД</strong><br><small>От 100 000 руб.</small></span>
                                                     </label>
                                                 </div>
-                                                <div class="form-group has-feedback">
-                                                    <label class="hidden">Город</label>
-                                                    <input type="text" placeholder="Город" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
-                                                </div>
-                                                <div class="form-group has-feedback">
-                                                    <label class="hidden">Улица</label>
-                                                    <input type="text" placeholder="Улица" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-xs-6">
-                                                        <div class="form-group has-feedback">
-                                                            <label class="hidden">Дом</label>
-                                                            <input type="text" placeholder="Дом" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
-                                                        </div>
+                                                <div id="delivery-form" class="delivery-form">
+                                                    <div class="form-group has-feedback">
+                                                        <label class="hidden">Город</label>
+                                                        <input type="text" placeholder="Город" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
                                                     </div>
-                                                    <div class="col-xs-6">
-                                                        <div class="form-group has-feedback">
-                                                            <label class="hidden">Кв</label>
-                                                            <input type="text" placeholder="Кв" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                    <div class="form-group has-feedback">
+                                                        <label class="hidden">Улица</label>
+                                                        <input type="text" placeholder="Улица" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group has-feedback">
+                                                                <label class="hidden">Дом</label>
+                                                                <input type="text" placeholder="Дом" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group has-feedback">
+                                                                <label class="hidden">Кв</label>
+                                                                <input type="text" placeholder="Кв" class="form-control"><i class="ion-alert-circled form-control__feedback"></i>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

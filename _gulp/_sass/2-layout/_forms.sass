@@ -55,7 +55,7 @@ button, html input[type=button], input[type=reset], input[type=submit]
       display: none
     &--captcha
       width: 165px
-  &-checkbox
+  &-checkbox, &-radio
     font-size: rem(11)
     position: relative
     padding-left: 20px
@@ -65,10 +65,10 @@ button, html input[type=button], input[type=reset], input[type=submit]
     &__input
       display: none
       &:checked
-        &+.form-checkbox__span
+        &+.form-checkbox__span, &+.form-radio__span
           &::before
             content: "\f373"
-      &+.form-checkbox__span
+      &+.form-checkbox__span, &+.form-radio__span
         display: block
         position: absolute
         left: 0
@@ -81,15 +81,15 @@ button, html input[type=button], input[type=reset], input[type=submit]
     &--row
       font-size: rem(14)
       padding-left: 28px
-      .form-checkbox__span
+      .form-checkbox__span, .form-radio__span
         font-size: rem(18)
         top: -2px
-      .form-checkbox__label
+      .form-checkbox__label, .form-radio__label
         small
           font-size: rem(11)
-      .form-checkbox__input
+      .form-checkbox__input, .form-radio__input
         &:checked
-          &~.form-checkbox__label
+          &~.form-checkbox__label, &~.form-radio__label
             strong
               color: $color-blue
     &__label

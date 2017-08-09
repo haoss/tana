@@ -187,7 +187,7 @@ html(lang="ru")
                   a(href="#!").btn.btn--ordering-form оформить
             
             // Order form
-            #order-form.order-form
+            #order-form.order-form(style="display: block")
               form(action="#!")
                 .order-form__wrapper
                   .row
@@ -227,28 +227,28 @@ html(lang="ru")
                         legend.form-legend способ оплаты
                         
                         .form-group
-                          label.form-checkbox.form-checkbox--row(for="checkbox-payment1")
-                            input#checkbox-payment1(type="checkbox" checked).form-checkbox__input
-                            span.form-checkbox__span
-                            span.form-checkbox__label 
+                          label.form-radio.form-radio--row(for="radio-payment1")
+                            input#radio-payment1(type="radio" name="radio-payment" checked).form-radio__input
+                            span.form-radio__span
+                            span.form-radio__label 
                               strong Наличными
                               br
                               small Курьеру. При самовывозе.
                         
                         .form-group
-                          label.form-checkbox.form-checkbox--row(for="checkbox-payment2")
-                            input#checkbox-payment2(type="checkbox").form-checkbox__input
-                            span.form-checkbox__span
-                            span.form-checkbox__label 
+                          label.form-radio.form-radio--row(for="radio-payment2")
+                            input#radio-payment2(type="radio" name="radio-payment").form-radio__input
+                            span.form-radio__span
+                            span.form-radio__label 
                               strong Картой
                               br
                               small Курьеру. При самовывозе.
                         
                         .form-group
-                          label.form-checkbox.form-checkbox--row(for="checkbox-payment3")
-                            input#checkbox-payment3(type="checkbox").form-checkbox__input
-                            span.form-checkbox__span
-                            span.form-checkbox__label 
+                          label.form-radio.form-radio--row(for="radio-payment3")
+                            input#radio-payment3(type="radio" name="radio-payment").form-radio__input
+                            span.form-radio__span
+                            span.form-radio__label 
                               strong Безналичным платежом
                               br
                               small Для физических и юридических лиц.
@@ -257,53 +257,54 @@ html(lang="ru")
                         legend.form-legend способ доставки
                         
                         .form-group
-                          label.form-checkbox.form-checkbox--row(for="checkbox-delivery1")
-                            input#checkbox-delivery1(type="checkbox" checked).form-checkbox__input
-                            span.form-checkbox__span
-                            span.form-checkbox__label 
+                          label.form-radio.form-radio--row(for="radio-delivery1")
+                            input#radio-delivery1(type="radio" name="radio-delivery" checked).form-radio__input
+                            span.form-radio__span
+                            span.form-radio__label 
                               strong Самовывоз
                               br
                               small г. Москва, ул. Первая делова, д.2, оф.3 
                               
                         .form-group
-                          label.form-checkbox.form-checkbox--row(for="checkbox-delivery2")
-                            input#checkbox-delivery2(type="checkbox").form-checkbox__input
-                            span.form-checkbox__span
-                            span.form-checkbox__label 
+                          label.form-radio.form-radio--row(for="radio-delivery2")
+                            input#radio-delivery2(type="radio" name="radio-delivery").form-radio__input
+                            span.form-radio__span
+                            span.form-radio__label 
                               strong Доставка
                               br
                               small Курьеру. На сайте. При самовывозе.
                         
                         .form-group
-                          label.form-checkbox.form-checkbox--row(for="checkbox-delivery3")
-                            input#checkbox-delivery3(type="checkbox").form-checkbox__input
-                            span.form-checkbox__span
-                            span.form-checkbox__label 
+                          label.form-radio.form-radio--row(for="radio-delivery3")
+                            input#radio-delivery3(type="radio" name="radio-delivery").form-radio__input
+                            span.form-radio__span
+                            span.form-radio__label 
                               strong За МКАД
                               br
                               small От 100 000 руб.
                         
-                        .form-group.has-feedback
-                          label.hidden Город
-                          input(type="text" placeholder="Город").form-control
-                          i.ion-alert-circled.form-control__feedback
-                        
-                        .form-group.has-feedback
-                          label.hidden Улица
-                          input(type="text" placeholder="Улица").form-control
-                          i.ion-alert-circled.form-control__feedback
-                        
-                        .row
-                          .col-xs-6
-                            .form-group.has-feedback
-                              label.hidden Дом
-                              input(type="text" placeholder="Дом").form-control
-                              i.ion-alert-circled.form-control__feedback
-                          .col-xs-6
-                            .form-group.has-feedback
-                              label.hidden Кв
-                              input(type="text" placeholder="Кв").form-control
-                              i.ion-alert-circled.form-control__feedback
+                        #delivery-form.delivery-form
+                          .form-group.has-feedback
+                            label.hidden Город
+                            input(type="text" placeholder="Город").form-control
+                            i.ion-alert-circled.form-control__feedback
+                          
+                          .form-group.has-feedback
+                            label.hidden Улица
+                            input(type="text" placeholder="Улица").form-control
+                            i.ion-alert-circled.form-control__feedback
+                          
+                          .row
+                            .col-xs-6
+                              .form-group.has-feedback
+                                label.hidden Дом
+                                input(type="text" placeholder="Дом").form-control
+                                i.ion-alert-circled.form-control__feedback
+                            .col-xs-6
+                              .form-group.has-feedback
+                                label.hidden Кв
+                                input(type="text" placeholder="Кв").form-control
+                                i.ion-alert-circled.form-control__feedback
     
                 .order-form__title Итого
                 .order-form__total

@@ -37,3 +37,23 @@ head
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css')
   link(rel='stylesheet', href='./css/main.css')
   
+  mixin pagination
+    .pagination
+      .pagination__wrapper
+        ul
+          li.pagination__prev
+            a(href="#!") Назад
+          li
+            a(href="#!") 1
+          li
+            a(href="#!") 2
+          li
+            a(href="#!") 3
+          li
+            a(href="#!") 4
+          li.active
+            a(href="#!") 5
+          li
+            a(href="#!") 6
+          li.pagination__next
+            a(href="#!") Вперед
