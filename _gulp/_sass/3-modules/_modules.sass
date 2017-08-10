@@ -579,10 +579,16 @@
 // news
 .news
   &__block
+    &>a
+      &:hover
+        text-decoration: none
     font-size: rem(14)
     padding-bottom: 30px
     border-bottom: 1px solid $color-gray
     margin-bottom: 20px
+    &:hover
+      .img-thumbnails, .img--thumbnails
+        border-color: $color-blue
     &:last-child
       border-bottom: 0
     &__wrapper
@@ -597,6 +603,7 @@
             max-width: 100%
             display: block
             height: auto
+            transition: border 0.35s
     &__text
       background: $color-white
       margin-left: -50px
