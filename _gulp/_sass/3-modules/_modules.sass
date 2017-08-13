@@ -1,0 +1,1510 @@
+/* modules */
+
+.main-carousel, .img-carousel
+  overflow: hidden
+  .slick-dots
+    text-align: left
+    position: absolute
+    bottom: 16px
+    left: 16px
+    width: auto
+    right: 16px
+    margin: 0
+    padding: 0
+    font-size: rem(12)
+    li
+      margin: 0
+      list-style: none
+      width: auto
+      height: auto
+      span
+        display: inline-block
+        height: 15px
+        width: 15px
+        background: rgba($color-white, 0.5)
+        text-align: center
+        line-height: 16px
+        color: #252528
+        font-family: $font-intro
+        overflow: hidden
+        transition: all 0.35s
+        position: relative
+        z-index: 5
+        &:hover
+          background: rgba($color-white, 1)
+      &.slick-active
+        span
+          background: $color-blue
+          color: $color-white
+      &+li
+        margin-left: 3px
+
+.img-carousel
+  .slick-dots
+    text-align: center
+
+.hamburger
+  &--header
+    opacity: 1 !important
+    padding: 0 15px
+    height: 40px
+    width: 120px
+    position: relative
+    text-align: center
+    display: none
+    margin: 0 auto
+    z-index: 100
+    .hamburger-box
+      width: 14px
+      height: 12px
+      // background-color: pink
+    .hamburger-inner
+      &::before, &::after
+        background-color: $color-white
+        border-radius: 0
+        width: 14px
+        height: 2px
+      &::before
+        top: 5px !important
+      &::after
+        top: 10px !important
+      background-color: $color-white
+      border-radius: 0
+      width: 14px
+      height: 2px
+      margin-top: 0
+      top: 0 !important
+    &.is-active
+      .hamburger-inner
+        transform: translate3d(0, 5px, 0) rotate(45deg)
+        background-color: #989898
+        &::before, &::after
+          background-color: #989898
+        &::before
+          transform: rotate(-45deg) translate3d(-5.71429px, -2px, 0)
+        &::after
+          transform: translate3d(0, -10px, 0) rotate(-90deg)
+      strong
+        color: #989898
+    strong
+      color: $color-white
+      text-transform: uppercase
+      font-size: rem(18)
+      font-family: $font-intro
+      margin-left: 7px
+      // position: absolute
+
+.tab-pane
+  display: none
+  &.active
+    display: block
+
+// Section
+.section__head
+  font-size: rem(28)
+  font-family: $font-intro
+  text-transform: uppercase
+  color: $color-dark
+  margin-bottom: 20px
+  padding-left: 54px
+  position: relative
+  line-height: 1
+  &::before
+    position: absolute
+    left: 0
+    top: 14px
+    height: 1px
+    width: 40px
+    background-color: $color-dark
+    content: ''
+  &--small
+    font-size: rem(14)
+    padding-left: 50px
+    &::before
+      top: 6px
+  &--blue
+    color: $color-blue
+    &::before
+      background-color: $color-blue
+
+.slick-slide
+  &:focus
+    outline: none
+
+// Catalog
+.catalog
+  margin-bottom: 25px
+  +clearfix
+  &__block
+    position: relative
+    background: transparent
+    padding: 30px 7px 7px 7px
+    width: 33.3%
+    box-shadow: 0 0 0 rgba($color-black, 0.15)
+    height: 435px
+    float: left
+    transition: box-shadow 0.35s
+    margin-bottom: 20px
+    &::after, &::before
+      content: ''
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      width: 1px
+      background: #e5e5e5
+      display: none
+    &::before
+      right: inherit
+      left: 0
+    .icon--action
+      position: absolute
+      right: 15px
+      bottom: 116px
+      z-index: 5
+    &:nth-child(3n+2)
+      // background-color: pink
+      &::after, &::before
+        display: block
+    &--viewed
+      width: 100% !important
+      padding-top: 15px
+      margin-bottom: 0
+      height: auto !important
+      padding-bottom: 0 !important
+      .catalog__block__bottom
+        height: auto !important
+        padding-bottom: 15px
+      &:hover
+        box-shadow: none !important
+        .catalog__block__line
+          display: none
+      &::after
+        display: block
+    &:hover
+      box-shadow: 0 0 30px rgba($color-black, 0.15)
+      z-index: 5
+      border-color: transparent
+      background: $color-white
+      .catalog__block__line
+        opacity: 1
+      .catalog__block__bottom
+        background: #eff3f8
+      .catalog__block__title
+        color: $color-blue
+    &__line
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      height: 5px
+      background-color: $color-blue
+      opacity: 0
+      transition: opacity 0.35s
+      &::after
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: 5px
+        content: ''
+        width: 0
+        height: 0
+        border-left: 6px solid transparent
+        border-right: 6px solid transparent
+        border-top: 6px solid $color-blue
+    &__bottom
+      background: transparent
+      height: 118px
+      text-align: center
+      padding-top: 15px
+      transition: background 0.35s
+    &__info
+      text-align: center
+      font-size: rem(11)
+      color: #9d9d9d
+      line-height: 1
+      white-space: nowrap
+      overflow: hidden
+      margin-bottom: 13px
+    &__title
+      color: $color-dark
+      text-transform: uppercase
+      font-family: $font-intro
+      text-align: center
+      font-size: rem(16)
+      height: 60px
+      overflow: hidden
+      line-height: 1.2
+      transition: color 0.35s
+      padding: 0 10px
+    &__img
+      position: relative
+      overflow: hidden
+      height: 170px
+      margin-bottom: 27px
+
+      // background: pink
+      img
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+    &__price
+      text-align: center
+      font-size: rem(30)
+      color: $color-dark
+      white-space: nowrap
+      height: 30px
+      // background: pink
+      margin-bottom: 15px
+      &>div
+        display: inline-block
+        line-height: 1
+        position: relative
+        top: -6px
+        strong
+          font-family: $font-intro
+          text-transform: uppercase
+          .icon-rouble
+            font-size: rem(28)
+            margin-left: -5px
+        sup
+          font-size: rem(17)
+          color: #aeb1b4
+          position: relative
+          &::after
+            content: ''
+            position: absolute
+            height: 2px
+            background-color: #fd5a1a
+            top: 10px
+            left: 0
+            right: 5px
+            transform: rotate(-11deg)
+  &__row
+    +clearfix
+    // background: pink
+    margin-left: -15px
+    margin-right: -15px
+  &__category
+    font-size: rem(12)
+    text-transform: uppercase
+    text-decoration: none
+    font-family: $font-intro
+    padding-bottom: 12px
+    ul
+      display: block
+      padding: 0
+      margin-top: 0
+      margin-bottom: 0
+      li
+        margin: 0
+        list-style: none
+        &.active
+          &>a, &>span
+            background: $color-blue
+            border-color: $color-blue
+            color: $color-white
+            text-decoration: none
+        &>a, &>span
+          display: flex
+          justify-content: center
+          align-items: center
+          height: 80px
+          border: 4px solid $color-gray
+          text-align: center
+          color: $primary-color
+          background-color: $color-white
+          margin-bottom: 15px
+          line-height: 1.2
+          padding: 0 10px
+        &>a
+          &:hover
+            background: $color-blue
+            border-color: $color-blue
+            color: $color-white
+            text-decoration: none
+  &__sorting
+    border-top: 1px solid $color-gray
+    border-bottom: 1px solid $color-gray
+    margin-bottom: 25px
+    font-size: rem(12)
+    +clearfix
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: middle
+    &__block
+      white-space: nowrap
+      label
+        margin-bottom: 0
+        margin-right: 10px
+        font-family: $font-roboto-bold
+      &>*
+        display: inline-block
+        vertical-align: middle
+      &--right
+        float: right
+    .selectric
+      .label
+        color: $primary-color
+        font-family: $font-roboto-bold
+  &__buttons
+    display: none
+    width: 100%
+    margin-bottom: 25px
+    &>div
+      display: table-cell
+      vertical-align: middle
+      width: 50%
+      &+div
+        padding-left: 1px
+    .catalog__menu__button, .catalog__filter__button
+      margin-bottom: 0
+
+// Popup
+.popup
+  position: relative
+  background: $color-white
+  padding: 40px 30px 40px 30px
+  width: auto
+  max-width: 420px
+  margin: 20px auto
+  border: 2px solid $color-blue
+  &__close
+    position: absolute
+    right: 16px
+    top: -20px
+    width: 30px
+    height: 40px
+    background: $color-blue
+    color: $color-white
+    font-size: rem(27)
+    cursor: pointer
+    transition: background 0.35s
+    &:hover
+      background: darken($color-blue, 10%)
+    &::after
+      content: "\f404"
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      font-family: $font-ionicons
+  &__legend
+    border: 0
+    width: 100%
+    display: block
+    text-align: center
+    font-family: $font-intro
+    color: $color-dark
+    text-transform: uppercase
+    font-size: rem(24)
+    line-height: 1
+    margin-bottom: 20px
+  &--menu, &--filter
+    width: 290px
+    padding: 30px 20px 30px 20px
+    .catalog__navigation, .filter
+      margin-bottom: 0
+    .catalog__menu__title, .catalog__filter__title
+      margin-top: 0
+      font-size: rem(20)
+      margin-bottom: 10px
+      i
+        top: 0
+  .filter
+    &__cost
+      input
+        width: 68px
+      .table-cell + .table-cell
+        padding-left: 10px
+    .ui-slider-horizontal .ui-slider-range
+      background: transparent !important
+
+      &:last-child
+        background: $color-blue !important
+        height: 4px
+        margin-top: -1px
+  &--gallery
+    max-width: inherit
+    padding: 0
+    margin-bottom: 0
+
+.mfp-img--custom
+  .mfp-img
+    border: 2px solid $color-blue
+    margin: 40px 0 40px
+    padding: 0
+  .mfp-close
+    opacity: 1
+    position: absolute
+    right: 16px
+    top: 20px
+    width: 30px
+    height: 40px
+    background: $color-blue
+    color: $color-white
+    cursor: pointer
+    transition: background 0.35s
+    font-size: 0
+    &:hover
+      background: darken($color-blue, 10%)
+    &::after
+      content: "\f404"
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      font-family: $font-ionicons
+      font-size: rem(27)
+
+// Selectric
+.selectric
+  border: 0
+  background: $color-gray
+  .label
+    line-height: 30px
+    height: 30px
+    font-size: rem(11)
+    font-family: $font-roboto
+    color: #a9a9a9
+    margin-right: 25px
+  &-items
+    border-color: $color-blue
+    li
+      padding: 0 12px
+      height: 30px
+      line-height: 30px
+      &.highlighted
+        background: $color-blue
+        color: $color-white
+  .button
+    height: 30px
+    // line-height: 30px
+    width: 30px
+    font-size: 0
+    color: $color-gray
+    &::before, &::after
+      color: $primary-color
+      font-size: rem(11)
+      font-family: $font-ionicons
+      border: 0
+      left: 50%
+      top: 50%
+      position: absolute
+      transform: translate(-50%,-50%)
+      right: inherit
+      bottom: inherit
+      width: inherit
+    &::after
+      content: '\f10d'
+      margin-top: -3px
+    &::before
+      content: "\f104"
+      margin-top: 3px
+  &-select
+    &--sort-by1
+      width: 175px
+    &--sort-by2
+      width: 55px
+
+// Manufacturer
+.manufacturer
+  // min-height: 500px
+  position: relative
+  margin-bottom: 50px
+  &__wrapper
+    overflow: hidden
+  .swiper-container
+    // background: green
+    margin-left: -8px
+    margin-right: -8px
+    padding: 0 0 1px 0
+  .swiper-wrapper
+    // background: yellow
+  .swiper-slide
+    // background: pink
+  &__block
+    display: block
+    text-align: center
+    position: relative
+    height: 60px
+    img
+      transition: filter 0.35s, opacity 0.35s
+      opacity: 0.4
+      filter: grayscale(1)
+      max-height: 60px
+    &:hover
+      img
+        filter: grayscale(0)
+        opacity: 1
+    span
+      display: block
+      position: absolute
+      right: -8px
+      top: -8px
+      @include sprite($img-crest)
+      &+span
+        top: inherit
+        bottom: -9px
+
+  &__prev, &__next
+    position: absolute
+    right: 0
+    top: -34px
+    height: 15px
+    width: 15px
+    background-color: $color-gray
+    cursor: pointer
+    transition: all 0.35s
+    font-size: rem(14)
+    color: #a7a7a7
+    i
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      line-height: 1
+      margin-top: 1px
+    &:hover
+      background-color: $color-blue
+      color: $color-white
+  &__prev
+    right: 18px
+  &__next
+
+// news
+.news
+  &__block
+    &>a
+      &:hover
+        text-decoration: none
+    font-size: rem(14)
+    padding-bottom: 30px
+    border-bottom: 1px solid $color-gray
+    margin-bottom: 20px
+    &:hover
+      .img-thumbnails, .img--thumbnails
+        border-color: $color-blue
+    &:last-child
+      border-bottom: 0
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: top
+        &:first-child
+          width: 292px
+          img
+            max-width: 100%
+            display: block
+            height: auto
+            transition: border 0.35s
+    &__text
+      background: $color-white
+      margin-left: -50px
+      margin-top: 19px
+      padding: 7px 0 7px 20px
+      position: relative
+      line-height: 1.6
+      max-height: 124px
+      overflow: hidden
+
+// Breadcrumbs
+.breadcrumbs
+  font-size: rem(11)
+  margin: -25px 0 25px 0
+  padding: 0
+  color: #a3a6aa
+  li
+    margin: 0
+    list-style: none
+    display: inline-block
+    a, span
+      display: inline-block
+    a
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+    &+li
+      margin-left: 5px
+      &::before
+        content: '/'
+        display: inline-block
+        margin-right: 7px
+
+// Pagination
+.pagination
+  text-align: center
+  font-family: $font-intro
+  font-size: rem(14)
+  text-transform: uppercase
+  height: 23px
+  background:
+    image: linear-gradient($color-gray, $color-gray)
+    size: 100% 1px
+    repeat: no-repeat
+    position: center
+  &__wrapper
+    display: inline-block
+    background: $color-white
+    padding: 0 15px
+    +clearfix
+    ul
+      margin: 0
+      padding: 0
+      +clearfix
+      li
+        margin: 0 3px
+        float: left
+        list-style: none
+        height: 23px
+        a, span
+          display: inline-block
+          height: 23px
+          line-height: 23px
+          background: $color-gray
+          color: $color-dark
+          text-decoration: none
+          min-width: 23px
+          text-align: center
+          padding: 0 3px
+          overflow: hidden
+        a
+          &:hover
+            background-color: $color-blue
+            color: $color-white
+        &.active
+          a
+            background-color: $color-blue
+            color: $color-white
+        &.pagination__prev, &.pagination__next
+          line-height: 25px
+          a
+            background: none
+            font-size: rem(11)
+            color: #535353
+            &:hover
+              color: $color-blue
+        &.pagination__prev
+          margin-right: 15px
+        &.pagination__next
+          margin-left: 15px
+
+// Document
+.document
+  &__about
+    font-size: rem(14)
+    margin-bottom: 25px
+    margin-top: -42px
+    &:last-child
+      border-bottom: 0
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: top
+        &:last-child
+          width: 480px
+          img
+            max-width: 100%
+            display: block
+            height: auto
+    &__text
+      background: $color-white
+      margin-right: -168px
+      margin-top: 22px
+      padding: 18px 15px 18px 0px
+      position: relative
+      line-height: 1.6
+      max-height: 274px
+      overflow: hidden
+      p
+        &:last-child
+          margin-bottom: 0
+
+// Tab
+.tab
+  margin-bottom: 20px
+  &__ul
+    margin: 0 0 20px 0
+    padding: 0 10px
+    border-bottom: 1px solid $color-gray
+    white-space: nowrap
+    +clearfix
+    li
+      list-style: none
+      margin: 0
+      float: left
+      a
+        height: 29px
+        line-height: 29px
+        display: block
+        padding: 0 20px
+        color: $color-dark
+        background-color: transparent
+        text-decoration: none
+        &:hover
+          text-decoration: none
+      &.active
+        a
+          color: $color-black
+          background-color: $color-gray
+
+// Payment
+.payment
+  &__info
+    &--320
+      margin-top: 10px
+    width: 262px
+    margin-bottom: 25px
+    border: 5px solid $color-gray
+    font-size: rem(11)
+    padding: 0 12px 20px 17px
+    p
+      line-height: 1.4
+      &:last-child
+        margin-bottom: 0
+    &__head
+      border-bottom: 5px solid $color-gray
+      min-height: 55px
+      margin: 0 -12px 18px -17px
+      position: relative
+      padding: 9px 10px 9px 43px
+      font-size: rem(12)
+      line-height: 1.3
+      i
+        position: absolute
+        left: 16px
+        top: 11px
+        color: $color-blue
+        font-size: rem(20)
+    &__img
+      max-width: 100%
+      height: auto
+      display: block
+      margin: 12px 0
+    &--right
+      float: right
+      margin-left: 30px
+
+// Contacts
+.contact
+  &__map
+    position: relative
+    margin-bottom: 30px
+    padding-bottom: 330px
+    border: 5px solid $color-gray
+    background-color: $color-gray
+    iframe
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+
+// table
+div.table
+  display: table
+  &>div
+    display: table-cell
+    vertical-align: top
+    &+div
+      padding-left: 30px
+
+// Table
+table.table
+  margin-bottom: 15px
+  td
+    padding: 5px 0
+    p
+      &:last-child
+        margin-bottom: 0
+    &+td
+      padding-left: 15px
+
+// Filter
+.filter
+  font-family: $font-roboto-bold
+  font-weight: 600
+  font-size: rem(12)
+  text-transform: uppercase
+  color: $primary-color
+  max-width: 262px
+  margin: 0 auto 40px
+  position: relative
+  z-index: 40
+
+  &--wo-sup
+    .filter__row
+      padding-right: 0
+      font-size: rem(11)
+      .sup
+        display: none
+      .label
+        top: 1px
+        position: relative
+
+  &__block
+    margin-bottom: 20px
+    border-bottom: 1px solid $color-gray
+    padding-bottom: 30px
+    font-family: $font-intro
+    &--slider
+      padding-left: 0px
+      padding-right: 0px
+    &--category
+      margin-bottom: 10px
+
+  &__row
+    input[type=checkbox]
+      display: none
+      &:checked
+        &~.checkbox
+          &::after
+            color: $color-blue
+            content: "\f373"
+        &~.label
+          color: $color-blue
+        &~.sup
+          // color: $color-dark
+      &:disabled
+        &~.checkbox
+          &::after
+            content: "\f372"
+        &~.label
+          color: #a8abaf
+          // text-decoration: line-through
+        &~.sup
+          color: #a8abaf
+
+    font-weight: 400
+    display: block
+    cursor: pointer
+    padding: 5px 55px 5px 30px
+    position: relative
+    margin: 0
+    line-height: 1.3
+    font-family: $font-intro
+    .checkbox
+      height: 12px
+      width: 12px
+      position: absolute
+      display: block
+      margin: 0
+      left: 4px
+      top: 5px
+      color: #a8abaf
+      &::after
+        font-family: $font-ionicons
+        content: "\f372"
+        position: absolute
+        font-size: rem(17)
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        color: #a0a0a0
+        font-weight: 400
+    .sup
+      position: absolute
+      width: auto
+      text-align: right
+      right: 0
+      top: 5px
+      color: #a8abaf
+    &:hover
+      .label
+        color: $color-dark
+    &.unactive
+      cursor: default
+    &--nosup
+      .sup
+        opacity: 0
+    &--color
+      .sup
+        border: 1px solid #f0f0f0
+        height: 14px !important
+        width: 14px !important
+        border-radius: 2px
+        overflow: hidden
+        right: 21px
+
+  &__body
+    padding: 0
+    background: $color-white
+    button
+      &+button
+        margin-top: 15px
+
+  &__button
+    display: block
+    width: 100%
+    text-align: left
+    position: relative
+    color: $primary-color
+    background: #f9fafa
+    text-transform: uppercase
+    height: 40px
+    line-height: 38px
+    border: 0
+    padding-left: 15px
+    font-family: $font-roboto-bold
+    font-weight: 600
+    font-size: rem(14)
+    cursor: pointer
+    margin: 0
+    i
+      position: absolute
+      right: 10px
+      font-size: rem(14)
+      top: 50%
+      transform: translateY(-50%) rotate(180deg)
+      transform-origin: 50% 50%
+      transition: transform 0.35s
+
+  &.is-active
+    .filter__button
+      i
+        transform: translateY(-50%) rotate(0deg)
+
+  &__cost
+    font-size: rem(12)
+    font-weight: 600
+    color: $primary-color
+    font-family: $font-roboto-bold
+    text-transform: uppercase
+    .table-cell
+      vertical-align: middle
+      &+.table-cell
+        padding-left: 10px
+    input
+      width: 68px
+      background: #f0f6f9
+      text-align: center
+      font-weight: 600
+      color: $primary-color
+      padding: 0
+      font-family: $font-roboto-bold
+      font-size: rem(12)
+      height: 30px
+      line-height: 28px
+    .icon-rouble
+      font-size: rem(18)
+      position: relative
+      top: 2px
+      &::before
+        margin: 0
+        width: auto
+
+  &__slider
+    padding-bottom: 28px
+    padding-top: 25px
+
+  &__more
+    // position: absolute
+    width: 100%
+    text-align: center
+    border-top: 1px solid #eaeaea
+    text-transform: none
+    font-weight: 400
+    margin-top: -20px
+    margin-bottom: 25px
+    a
+      text-decoration: none
+
+  &__category
+    margin-bottom: 25px
+
+.ui-widget.ui-widget-content
+  border: 0
+  height: 2px
+  border-radius: 0
+  background: #e6e6e6
+.ui-slider-horizontal .ui-slider-range
+  background: $color-blue
+  height: 4px
+  margin-top: -1px
+.ui-slider .ui-slider-handle
+  height: 18px
+  width: 18px
+  border-radius: 50%
+  background: $color-white
+  border: 2px solid $color-blue
+  top: -8px
+  cursor: pointer
+  z-index: 10
+  &:focus
+    outline: none
+
+.price-range-min, .price-range-max
+  font-size: rem(10)
+  color: $color-blue
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  top: -21px
+  font-family: $font-roboto-bold
+  // width: 30px
+  z-index: 10
+  background-color: $color-white
+  display: block
+
+.price-range-max
+  text-align: right
+
+.range__zero-min, .range__zero-max
+  font-size: rem(10)
+  color: #a9a9a9
+  position: absolute
+  margin-top: 8px
+  z-index: 5
+  font-family: $font-roboto-bold
+.range__zero-max
+  right: 0
+
+// Search result
+.search
+  &__result
+    padding: 11px
+    border: 1px solid $color-gray
+    margin-bottom: 35px
+    position: relative
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: middle
+        &:first-child, &:last-child
+          width: 1px
+    form
+      +clearfix
+    &__input
+      width: 100%
+      border: 1px solid transparent
+      background: #eff3f8
+      height: 37px
+      padding: 0 15px
+      font-size: rem(12)
+      font-family: $font-roboto-bold
+      color: $primary-color
+      transition: border 0.35s
+    &__btn
+      width: 160px
+      height: 37px
+      background-color: $color-blue
+      border: 0
+      position: relative
+      color: $color-white
+      font-size: rem(12)
+      font-family: $font-intro
+      box-shadow: 0 0 0 rgba($color-blue,0.45)
+      transition: color 0.3s, background-color 0.35s, border-color 0.35s, box-shadow 0.35s
+      line-height: 32px
+      &:hover, &:focus, &:active
+        outline: none
+        box-shadow: 0 5px 15px rgba($color-blue,0.45)
+    &__cap
+      position: absolute
+      z-index: 10
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      // background: pink
+      display: none
+    &__label
+      margin: 0 20px 0 0
+      white-space: nowrap
+      font-size: rem(12)
+      font-family: $font-intro
+
+// Viewed
+.viewed
+  &__prev, &__next
+    position: absolute
+    right: 0
+    top: -40px
+    height: 15px
+    width: 15px
+    background-color: $color-gray
+    cursor: pointer
+    transition: all 0.35s
+    font-size: rem(14)
+    color: #a7a7a7
+    i
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      line-height: 1
+      margin-top: 0px
+    &:hover
+      background-color: $color-blue
+      color: $color-white
+  &__prev
+    right: 18px
+
+// Product
+.product
+  margin-bottom: 35px
+  &__wrapper
+    display: table
+    width: 100%
+    &>div
+      display: table-cell
+      vertical-align: top
+      &:first-child
+        width: 1px
+      &+div
+        padding-left: 30px
+  &__gallery
+    width: 457px
+    &>a
+      display: block
+      position: relative
+      &::after
+        @include sprite($zoom-button)
+        position: absolute
+        content: ''
+        right: 18px
+        bottom: 16px
+        z-index: 5
+      border: 6px solid $color-gray
+      transition: border 0.35s
+      &:hover
+        border-color: $color-blue
+      img
+        margin: 0 auto
+  &__info
+    font-size: rem(13)
+    .table
+      font-size: rem(14)
+      td
+        padding-top: 0
+  &__price
+    margin-bottom: 30px
+    margin-top: 10px
+    background: $color-gray
+    padding: 10px
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: middle
+        &:last-child
+          width: 1px
+    &__body
+      white-space: nowrap
+      font-size: rem(16)
+      text-transform: uppercase
+      color: $color-dark
+      font-family: $font-intro
+      &>*
+        display: inline-block
+      strong
+        line-height: 1
+        font-size: rem(30)
+        margin-left: 10px
+        font-family: $font-intro
+        .icon-rouble
+          font-size: rem(26)
+
+// manufacturer list
+.manufacturer
+  &-list
+    margin-top: 25px
+    position: relative
+    overflow: hidden
+    border-top: 1px solid #eff3f8
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      height: 1px
+      background: #eff3f8
+    &__block
+      height: 118px
+      width: 33.3%
+      float: left
+      text-align: center
+      border-top: 1px solid #eff3f8
+      border-bottom: 1px solid #eff3f8
+      margin-top: -1px
+      font-size: rem(16)
+      position: relative
+      &:hover
+        figcaption
+          strong
+            color: $color-blue
+      &>a
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+      img
+        margin: 14px auto 10px
+      figcaption
+        strong
+          text-transform: uppercase
+          font-family: $font-intro
+          display: block
+          line-height: 1
+          transition: color 0.35s
+        small
+          font-size: rem(11)
+          color: #919191
+          display: block
+          line-height: 1
+          margin-top: 3px
+  &__about
+    margin-bottom: 25px
+    +clearfix
+    &__img
+      float: right
+      width: 180px
+    &__text
+      margin-bottom: 10px
+      height: 70px
+      overflow: hidden
+      position: relative
+      pointer-events: none
+      &.is-active
+        &::after
+          display: none
+      &>div
+        float: left
+        width: 100%
+        position: relative
+        padding-right: 20px
+      &::after
+        font-size: rem(12)
+        pointer-events: all
+        content: "Читать далее..."
+        color: $color-blue
+        cursor: pointer
+        box-sizing: content-box
+        float: right
+        position: absolute
+        right: 20px
+        top: 49px
+        width: 195px
+        text-align: right
+        background-size: 100% 100%
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white)
+        &:hover
+          text-decoration: underline
+        p
+          &:last-child
+            margin-bottom: 0
+
+// Cart
+.cart
+  margin-bottom: 25px
+  &__table
+    font-size: rem(16)
+    width: 100%
+    font-family: $font-intro
+    thead
+      th
+        font-size: rem(10)
+        text-transform: uppercase
+        color: #909192
+        border-bottom: 1px solid $color-gray
+        font-weight: 400
+        padding: 5px 0
+        text-align: left
+        &+th
+          padding-left: 15px
+        &.th
+          &--2
+            text-align: left
+            padding-left: 45px
+    tbody
+      td
+        padding: 20px 0 5px 0
+        vertical-align: middle
+        &+td
+          padding-left: 15px
+        &.last
+          width: 1px
+      tr:last-child
+        td
+          padding-bottom: 30px
+    tfoot
+      td
+        background: $color-gray
+        text-align: right
+        height: 36px
+  &__img
+    width: 82px
+    text-align: center
+    img
+      max-width: 100%
+      height: auto
+      // display: block
+      width: 67px
+  &__title
+    width: 350px
+    small
+      display: block
+      line-height: 1
+      color: #9d9d9d
+      font-size: rem(11)
+      font-family: $font-roboto
+      margin-bottom: 10px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      width: 100%
+      height: 11px
+    strong
+      display: block
+      line-height: 1
+      text-transform: uppercase
+      font-family: $font-intro
+    a
+      color: $color-dark
+      text-decoration: none
+      &:hover
+        color: $color-blue
+  &__price, &__price-total
+    color: #707070
+    white-space: nowrap
+    width: 1px
+    strong
+      font-family: $font-intro
+      display: block
+      line-height: 1
+      i
+        font-size: rem(15)
+        position: relative
+        left: -2px
+  &__price-total
+    color: $color-blue
+  &__number
+    width: 1px
+    .selectric-wrapper
+      width: 82px
+      .label
+        font-family: $font-intro
+        font-size: rem(16)
+        color: $color-dark
+        line-height: 32px
+  &__small
+    display: block
+  &__delete
+    color: $color-dark
+    &:hover
+      color: $color-blue
+  &__table__total
+    font-size: rem(24)
+    padding-right: 25px
+    b
+      font-size: rem(14)
+      font-family: $font-intro
+    strong
+      font-family: $font-intro
+      color: $color-blue
+      display: inline-block
+      margin-left: 10px
+      i
+        font-size: rem(22)
+  &__button
+    margin-top: 15px
+    display: table
+    width: 100%
+    &>div
+      display: table-cell
+      vertical-align: top
+      &:last-child
+        text-align: right
+    .btn--shop
+      margin-right: 28px
+  &__count
+    width: 82px
+    position: relative
+    .form-control
+      font-family: $font-intro
+      font-size: rem(16)
+      padding-right: 27px
+      color: $primary-color
+    &__div
+      position: absolute
+      top: 0
+      right: 0
+      width: 34px
+      height: 15px
+      cursor: pointer
+      line-height: 1
+      overflow: hidden
+      &:hover
+        &::after
+          color: $color-blue
+      &::after
+        position: absolute
+        content: '\f10d'
+        font-family: $font-ionicons
+        font-size: rem(11)
+        color: $primary-color
+        left: 50%
+        transform: translateX(-50%)
+        bottom: -2px
+        line-height: 1
+      &--down
+        top: inherit
+        bottom: 0
+        &::after
+          content: "\f104"
+          top: -2px
+          bottom: inherit
+
+
+.visible-xxs-inline-block
+  display: none !important
+
+.order-form
+  display: none
+  &__wrapper
+    padding-top: 30px
+  &__title
+    font-size: rem(25)
+    text-transform: uppercase
+    font-family: $font-intro
+    margin-bottom: 10px
+  &__total
+    background-color: $color-gray
+    padding: 15px 20px 10px 20px
+    margin-bottom: 20px
+    font-size: rem(14)
+    text-transform: uppercase
+    font-family: $font-intro
+    strong
+      font-size: rem(25)
+      color: $color-blue
+      display: inline-block
+      margin-top: -9px
+      font-weight: bold
+      font-family: $font-intro
+      margin-left: 5px
+      .icon-rouble
+        margin-left: -7px
+        font-size: rem(24)
+    &__wrapper
+      display: table
+      width: 100%
+      &>div
+        display: table-cell
+        vertical-align: middle
+        padding: 12px 0
+        &:last-child
+          text-align: right
