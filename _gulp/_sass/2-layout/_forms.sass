@@ -84,6 +84,7 @@ button, html input[type=button], input[type=reset], input[type=submit]
       .form-checkbox__span, .form-radio__span
         font-size: rem(18)
         top: -2px
+        color: #adadad
       .form-checkbox__label, .form-radio__label
         small
           font-size: rem(11)
@@ -92,6 +93,8 @@ button, html input[type=button], input[type=reset], input[type=submit]
           &~.form-checkbox__label, &~.form-radio__label
             strong
               color: $color-blue
+          &~.form-checkbox__span, &~.form-radio__span
+            color: $color-blue
     &__label
       font-weight: 400
       display: block
@@ -113,7 +116,7 @@ button, html input[type=button], input[type=reset], input[type=submit]
     text-transform: uppercase
     border: 0
     font-size: 16px
-    color: $color-dark
+    color: $primary-color
     font-family: $font-intro
     display: block
     margin-bottom: 25px

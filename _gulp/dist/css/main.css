@@ -5205,10 +5205,13 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     padding-left: 28px; }
     .form-checkbox--row .form-checkbox__span, .form-checkbox--row .form-radio__span, .form-radio--row .form-checkbox__span, .form-radio--row .form-radio__span {
       font-size: 1.125rem;
-      top: -2px; }
+      top: -2px;
+      color: #adadad; }
     .form-checkbox--row .form-checkbox__label small, .form-checkbox--row .form-radio__label small, .form-radio--row .form-checkbox__label small, .form-radio--row .form-radio__label small {
       font-size: 0.6875rem; }
     .form-checkbox--row .form-checkbox__input:checked ~ .form-checkbox__label strong, .form-checkbox--row .form-checkbox__input:checked ~ .form-radio__label strong, .form-checkbox--row .form-radio__input:checked ~ .form-checkbox__label strong, .form-checkbox--row .form-radio__input:checked ~ .form-radio__label strong, .form-radio--row .form-checkbox__input:checked ~ .form-checkbox__label strong, .form-radio--row .form-checkbox__input:checked ~ .form-radio__label strong, .form-radio--row .form-radio__input:checked ~ .form-checkbox__label strong, .form-radio--row .form-radio__input:checked ~ .form-radio__label strong {
+      color: #0cbeff; }
+    .form-checkbox--row .form-checkbox__input:checked ~ .form-checkbox__span, .form-checkbox--row .form-checkbox__input:checked ~ .form-radio__span, .form-checkbox--row .form-radio__input:checked ~ .form-checkbox__span, .form-checkbox--row .form-radio__input:checked ~ .form-radio__span, .form-radio--row .form-checkbox__input:checked ~ .form-checkbox__span, .form-radio--row .form-checkbox__input:checked ~ .form-radio__span, .form-radio--row .form-radio__input:checked ~ .form-checkbox__span, .form-radio--row .form-radio__input:checked ~ .form-radio__span {
       color: #0cbeff; }
   .form-checkbox__label, .form-radio__label {
     font-weight: 400;
@@ -5230,7 +5233,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   text-transform: uppercase;
   border: 0;
   font-size: 16px;
-  color: #2e2f33;
+  color: #444444;
   font-family: "Intro";
   display: block;
   margin-bottom: 25px; }
@@ -6408,6 +6411,10 @@ ul.list {
   padding-bottom: 30px;
   border-bottom: 1px solid #eff3f8;
   margin-bottom: 20px; }
+  .news__block > a:hover {
+    text-decoration: none; }
+  .news__block:hover .img-thumbnails, .news__block:hover .img--thumbnails {
+    border-color: #0cbeff; }
   .news__block:last-child {
     border-bottom: 0; }
   .news__block__wrapper {
@@ -6421,7 +6428,9 @@ ul.list {
         .news__block__wrapper > div:first-child img {
           max-width: 100%;
           display: block;
-          height: auto; }
+          height: auto;
+          -webkit-transition: border 0.35s;
+          transition: border 0.35s; }
   .news__block__text {
     background: #ffffff;
     margin-left: -50px;
